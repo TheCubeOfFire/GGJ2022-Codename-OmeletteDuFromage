@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/terrain_roadCross.obj-a19ce43229fc2a3a00bf98357fb31beb.mesh"
+path="res://.import/terrain_roadCross.obj-18873ec2979759c4e3f2a32ab10b9181.mesh"
 
 [deps]
 
-files=[ "res://.import/terrain_roadCross.obj-a19ce43229fc2a3a00bf98357fb31beb.mesh" ]
+files=[ "res://.import/terrain_roadCross.obj-18873ec2979759c4e3f2a32ab10b9181.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/terrain_roadCross.obj"
-dest_files=[ "res://.import/terrain_roadCross.obj-a19ce43229fc2a3a00bf98357fb31beb.mesh", "res://.import/terrain_roadCross.obj-a19ce43229fc2a3a00bf98357fb31beb.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/terrain_roadCross.obj"
+dest_files=[ "res://.import/terrain_roadCross.obj-18873ec2979759c4e3f2a32ab10b9181.mesh", "res://.import/terrain_roadCross.obj-18873ec2979759c4e3f2a32ab10b9181.mesh" ]
 
 [params]
 

@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/barrels_rail.obj-410e39b87b0c708d3dcffbb6d00a3473.mesh"
+path="res://.import/barrels_rail.obj-dacf5b2b1148f6923ff63c928c83b00c.mesh"
 
 [deps]
 
-files=[ "res://.import/barrels_rail.obj-410e39b87b0c708d3dcffbb6d00a3473.mesh" ]
+files=[ "res://.import/barrels_rail.obj-dacf5b2b1148f6923ff63c928c83b00c.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/barrels_rail.obj"
-dest_files=[ "res://.import/barrels_rail.obj-410e39b87b0c708d3dcffbb6d00a3473.mesh", "res://.import/barrels_rail.obj-410e39b87b0c708d3dcffbb6d00a3473.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/barrels_rail.obj"
+dest_files=[ "res://.import/barrels_rail.obj-dacf5b2b1148f6923ff63c928c83b00c.mesh", "res://.import/barrels_rail.obj-dacf5b2b1148f6923ff63c928c83b00c.mesh" ]
 
 [params]
 

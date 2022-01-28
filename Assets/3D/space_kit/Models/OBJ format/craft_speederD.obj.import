@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/craft_speederD.obj-80de7eda2dfb71ff8d93ec613dc7fe67.mesh"
+path="res://.import/craft_speederD.obj-5f93d3baddd01caca9627ffad79bdefb.mesh"
 
 [deps]
 
-files=[ "res://.import/craft_speederD.obj-80de7eda2dfb71ff8d93ec613dc7fe67.mesh" ]
+files=[ "res://.import/craft_speederD.obj-5f93d3baddd01caca9627ffad79bdefb.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/craft_speederD.obj"
-dest_files=[ "res://.import/craft_speederD.obj-80de7eda2dfb71ff8d93ec613dc7fe67.mesh", "res://.import/craft_speederD.obj-80de7eda2dfb71ff8d93ec613dc7fe67.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/craft_speederD.obj"
+dest_files=[ "res://.import/craft_speederD.obj-5f93d3baddd01caca9627ffad79bdefb.mesh", "res://.import/craft_speederD.obj-5f93d3baddd01caca9627ffad79bdefb.mesh" ]
 
 [params]
 

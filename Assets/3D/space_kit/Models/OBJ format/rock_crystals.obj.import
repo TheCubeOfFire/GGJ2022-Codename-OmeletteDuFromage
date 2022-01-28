@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/rock_crystals.obj-242ef72c368f879b80a0c066ae2f1e2f.mesh"
+path="res://.import/rock_crystals.obj-9b605c6764d75efcc5b5d7d703137594.mesh"
 
 [deps]
 
-files=[ "res://.import/rock_crystals.obj-242ef72c368f879b80a0c066ae2f1e2f.mesh" ]
+files=[ "res://.import/rock_crystals.obj-9b605c6764d75efcc5b5d7d703137594.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/rock_crystals.obj"
-dest_files=[ "res://.import/rock_crystals.obj-242ef72c368f879b80a0c066ae2f1e2f.mesh", "res://.import/rock_crystals.obj-242ef72c368f879b80a0c066ae2f1e2f.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/rock_crystals.obj"
+dest_files=[ "res://.import/rock_crystals.obj-9b605c6764d75efcc5b5d7d703137594.mesh", "res://.import/rock_crystals.obj-9b605c6764d75efcc5b5d7d703137594.mesh" ]
 
 [params]
 

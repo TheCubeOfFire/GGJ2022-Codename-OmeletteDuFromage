@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/terrain_rampLarge.obj-57e20efa2a8a48cf53de0c2925b6ba3b.mesh"
+path="res://.import/terrain_rampLarge.obj-f008d6dc4c687e6b6f10cf3b4dbd0c8b.mesh"
 
 [deps]
 
-files=[ "res://.import/terrain_rampLarge.obj-57e20efa2a8a48cf53de0c2925b6ba3b.mesh" ]
+files=[ "res://.import/terrain_rampLarge.obj-f008d6dc4c687e6b6f10cf3b4dbd0c8b.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/terrain_rampLarge.obj"
-dest_files=[ "res://.import/terrain_rampLarge.obj-57e20efa2a8a48cf53de0c2925b6ba3b.mesh", "res://.import/terrain_rampLarge.obj-57e20efa2a8a48cf53de0c2925b6ba3b.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/terrain_rampLarge.obj"
+dest_files=[ "res://.import/terrain_rampLarge.obj-f008d6dc4c687e6b6f10cf3b4dbd0c8b.mesh", "res://.import/terrain_rampLarge.obj-f008d6dc4c687e6b6f10cf3b4dbd0c8b.mesh" ]
 
 [params]
 
