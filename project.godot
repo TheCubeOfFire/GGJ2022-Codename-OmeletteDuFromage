@@ -8,9 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "PlayerLight",
+"language": "GDScript",
+"path": "res://assets/player/player_light.gd"
+} ]
+_global_script_class_icons={
+"PlayerLight": ""
+}
+
 [application]
 
 config/name="OmeletteDuFromage"
+run/main_scene="res://assets/developers/asterius/asterius_test_map.tscn"
 config/icon="res://icon.png"
 
 [physics]
