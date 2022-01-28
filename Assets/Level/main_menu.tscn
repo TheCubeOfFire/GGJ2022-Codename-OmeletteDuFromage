@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/barrels_rail.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/chimney_detailed.obj" type="ArrayMesh" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/machine_wireless.obj" type="ArrayMesh" id=12]
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/corridor_detailed.obj" type="ArrayMesh" id=13]
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/terrain.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://assets/objects/light/flickering_light.gd" type="Script" id=15]
+[ext_resource path="res://assets/objects/light/flicker_light_1.tres" type="Curve" id=16]
 
 [sub_resource type="SpatialMaterial" id=3]
 params_cull_mode = 2
@@ -341,10 +343,17 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed5"]
+[node name="FlickeringLight" type="SpotLight" parent="building/roof/lights/chimney_detailed5"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 spot_range = 3.39566
 spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 4.0
+curve = ExtResource( 16 )
 
 [node name="chimney_detailed6" type="MeshInstance" parent="building/roof/lights"]
 transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 1.00665, 2.5343, -0.00446701 )
@@ -355,10 +364,17 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed6"]
+[node name="FlickeringLight" type="SpotLight" parent="building/roof/lights/chimney_detailed6"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 spot_range = 3.39566
 spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 4.0
+curve = ExtResource( 16 )
 
 [node name="chimney_detailed7" type="MeshInstance" parent="building/roof/lights"]
 transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -1, 2.55, 0 )
@@ -369,10 +385,17 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed7"]
+[node name="FlickeringLight" type="SpotLight" parent="building/roof/lights/chimney_detailed7"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 spot_range = 3.39566
 spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 4.0
+curve = ExtResource( 16 )
 
 [node name="chimney_detailed8" type="MeshInstance" parent="building/roof/lights"]
 transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -2, 2.55, 0 )
@@ -383,10 +406,17 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed8"]
+[node name="FlickeringLight" type="SpotLight" parent="building/roof/lights/chimney_detailed8"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 spot_range = 3.39566
 spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 40.0
+curve = ExtResource( 16 )
 
 [node name="chimney_detailed9" type="MeshInstance" parent="building/roof/lights"]
 transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 1, 2.55, 1 )
@@ -397,10 +427,17 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed9"]
+[node name="FlickeringLight" type="SpotLight" parent="building/roof/lights/chimney_detailed9"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 spot_range = 3.39566
 spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 60.0
+curve = ExtResource( 16 )
 
 [node name="chimney_detailed10" type="MeshInstance" parent="building/roof/lights"]
 transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 2, 2.55, 0 )
@@ -411,10 +448,17 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed10"]
+[node name="FlickeringLight" type="SpotLight" parent="building/roof/lights/chimney_detailed10"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 spot_range = 3.39566
 spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 50.0
+curve = ExtResource( 16 )
 
 [node name="chimney_detailed11" type="MeshInstance" parent="building/roof/lights"]
 transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 1, 2.55, -1 )
@@ -425,10 +469,17 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed11"]
+[node name="FlickeringLight" type="SpotLight" parent="building/roof/lights/chimney_detailed11"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 spot_range = 3.39566
 spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 4.0
+curve = ExtResource( 16 )
 
 [node name="chimney_detailed12" type="MeshInstance" parent="building/roof/lights"]
 transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -2, 2.55, 1 )
@@ -439,10 +490,17 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed12"]
+[node name="FlickeringLight" type="SpotLight" parent="building/roof/lights/chimney_detailed12"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 spot_range = 3.39566
 spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 4.0
+curve = ExtResource( 16 )
 
 [node name="chimney_detailed13" type="MeshInstance" parent="building/roof/lights"]
 transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -2, 2.55, -1 )
@@ -453,10 +511,17 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed13"]
+[node name="FlickeringLight" type="SpotLight" parent="building/roof/lights/chimney_detailed13"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 spot_range = 3.39566
 spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 10.0
+curve = ExtResource( 16 )
 
 [node name="chimney_detailed14" type="MeshInstance" parent="building/roof/lights"]
 transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -3, 2.55, 0 )
@@ -467,10 +532,17 @@ material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed14"]
+[node name="FlickeringLight" type="SpotLight" parent="building/roof/lights/chimney_detailed14"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 spot_range = 3.39566
 spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 14.0
+curve = ExtResource( 16 )
 
 [node name="particle_dust" type="CPUParticles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0245711, 0 )
