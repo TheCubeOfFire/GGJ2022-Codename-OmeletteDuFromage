@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/terrain_roadSplit.obj-3d0302905e7df1b5632cdc8678319d16.mesh"
+path="res://.import/terrain_roadSplit.obj-5ae1e903ed4729b8888310977cf0e607.mesh"
 
 [deps]
 
-files=[ "res://.import/terrain_roadSplit.obj-3d0302905e7df1b5632cdc8678319d16.mesh" ]
+files=[ "res://.import/terrain_roadSplit.obj-5ae1e903ed4729b8888310977cf0e607.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/terrain_roadSplit.obj"
-dest_files=[ "res://.import/terrain_roadSplit.obj-3d0302905e7df1b5632cdc8678319d16.mesh", "res://.import/terrain_roadSplit.obj-3d0302905e7df1b5632cdc8678319d16.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/terrain_roadSplit.obj"
+dest_files=[ "res://.import/terrain_roadSplit.obj-5ae1e903ed4729b8888310977cf0e607.mesh", "res://.import/terrain_roadSplit.obj-5ae1e903ed4729b8888310977cf0e607.mesh" ]
 
 [params]
 

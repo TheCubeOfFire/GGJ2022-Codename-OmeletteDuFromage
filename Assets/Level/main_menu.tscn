@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/barrels_rail.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/chimney_detailed.obj" type="ArrayMesh" id=2]
@@ -14,6 +14,13 @@
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/machine_wireless.obj" type="ArrayMesh" id=12]
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/corridor_detailed.obj" type="ArrayMesh" id=13]
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/terrain.obj" type="ArrayMesh" id=14]
+
+[sub_resource type="SpatialMaterial" id=3]
+params_cull_mode = 2
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 3 )
+size = Vector2( 0.02, 0.02 )
 
 [sub_resource type="Environment" id=1]
 ambient_light_color = Color( 0.07, 0.07, 0.07, 1 )
@@ -465,5 +472,22 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 spot_range = 3.39566
 spot_angle = 12.8983
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="building"]
+[node name="particle_dust" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0245711, 0 )
+amount = 920
+lifetime = 32.66
+mesh = SubResource( 2 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 5, 5 )
+direction = Vector3( -1, 0, 0 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.1
+angular_velocity = 1.0
+angular_velocity_random = 0.57
+tangential_accel_random = 0.52
+angle_random = 0.28
+color = Color( 0.3125, 0.3125, 0.3125, 1 )
+hue_variation_random = 0.13
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )

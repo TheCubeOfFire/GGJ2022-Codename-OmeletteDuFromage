@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/terrain_roadEnd.obj-9a5d2bdf91fdeccc25cedec32c8a616d.mesh"
+path="res://.import/terrain_roadEnd.obj-0e8d60ca559150e2f1b4ecc35b9db2f9.mesh"
 
 [deps]
 
-files=[ "res://.import/terrain_roadEnd.obj-9a5d2bdf91fdeccc25cedec32c8a616d.mesh" ]
+files=[ "res://.import/terrain_roadEnd.obj-0e8d60ca559150e2f1b4ecc35b9db2f9.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/terrain_roadEnd.obj"
-dest_files=[ "res://.import/terrain_roadEnd.obj-9a5d2bdf91fdeccc25cedec32c8a616d.mesh", "res://.import/terrain_roadEnd.obj-9a5d2bdf91fdeccc25cedec32c8a616d.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/terrain_roadEnd.obj"
+dest_files=[ "res://.import/terrain_roadEnd.obj-0e8d60ca559150e2f1b4ecc35b9db2f9.mesh", "res://.import/terrain_roadEnd.obj-0e8d60ca559150e2f1b4ecc35b9db2f9.mesh" ]
 
 [params]
 

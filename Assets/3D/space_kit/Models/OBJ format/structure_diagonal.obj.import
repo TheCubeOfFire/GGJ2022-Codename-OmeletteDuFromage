@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/structure_diagonal.obj-bd8943cb7336bd1101213ae67cf47c6c.mesh"
+path="res://.import/structure_diagonal.obj-110cf7625f62c6a39665ce5443f46a5a.mesh"
 
 [deps]
 
-files=[ "res://.import/structure_diagonal.obj-bd8943cb7336bd1101213ae67cf47c6c.mesh" ]
+files=[ "res://.import/structure_diagonal.obj-110cf7625f62c6a39665ce5443f46a5a.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/structure_diagonal.obj"
-dest_files=[ "res://.import/structure_diagonal.obj-bd8943cb7336bd1101213ae67cf47c6c.mesh", "res://.import/structure_diagonal.obj-bd8943cb7336bd1101213ae67cf47c6c.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/structure_diagonal.obj"
+dest_files=[ "res://.import/structure_diagonal.obj-110cf7625f62c6a39665ce5443f46a5a.mesh", "res://.import/structure_diagonal.obj-110cf7625f62c6a39665ce5443f46a5a.mesh" ]
 
 [params]
 

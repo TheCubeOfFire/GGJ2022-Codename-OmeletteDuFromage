@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/chimney_detailed.obj-cc8b61ed6567b3ddb47d3ac9799c66a6.mesh"
+path="res://.import/chimney_detailed.obj-8255b8d0b0a6f8b15df36579813c3678.mesh"
 
 [deps]
 
-files=[ "res://.import/chimney_detailed.obj-cc8b61ed6567b3ddb47d3ac9799c66a6.mesh" ]
+files=[ "res://.import/chimney_detailed.obj-8255b8d0b0a6f8b15df36579813c3678.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/chimney_detailed.obj"
-dest_files=[ "res://.import/chimney_detailed.obj-cc8b61ed6567b3ddb47d3ac9799c66a6.mesh", "res://.import/chimney_detailed.obj-cc8b61ed6567b3ddb47d3ac9799c66a6.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/chimney_detailed.obj"
+dest_files=[ "res://.import/chimney_detailed.obj-8255b8d0b0a6f8b15df36579813c3678.mesh", "res://.import/chimney_detailed.obj-8255b8d0b0a6f8b15df36579813c3678.mesh" ]
 
 [params]
 

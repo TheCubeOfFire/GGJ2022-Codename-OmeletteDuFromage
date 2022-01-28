@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/desk_chairStool.obj-265834ddc60a1a2af2a3c6739ebf14a7.mesh"
+path="res://.import/desk_chairStool.obj-78441adea99efca38574704d8367b6be.mesh"
 
 [deps]
 
-files=[ "res://.import/desk_chairStool.obj-265834ddc60a1a2af2a3c6739ebf14a7.mesh" ]
+files=[ "res://.import/desk_chairStool.obj-78441adea99efca38574704d8367b6be.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/desk_chairStool.obj"
-dest_files=[ "res://.import/desk_chairStool.obj-265834ddc60a1a2af2a3c6739ebf14a7.mesh", "res://.import/desk_chairStool.obj-265834ddc60a1a2af2a3c6739ebf14a7.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/desk_chairStool.obj"
+dest_files=[ "res://.import/desk_chairStool.obj-78441adea99efca38574704d8367b6be.mesh", "res://.import/desk_chairStool.obj-78441adea99efca38574704d8367b6be.mesh" ]
 
 [params]
 

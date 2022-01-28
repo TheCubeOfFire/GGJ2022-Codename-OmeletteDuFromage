@@ -27,6 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="OmeletteDuFromage"
+run/main_scene="res://Assets/Level/main_menu.tscn"
 config/icon="res://icon.png"
 
 [input]

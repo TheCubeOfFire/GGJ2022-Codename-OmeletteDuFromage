@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/craft_cargoA.obj-869b3e5929a5a52944be9a376f71b382.mesh"
+path="res://.import/craft_cargoA.obj-b5ca9e620d889a297f36d8f1dd973cf1.mesh"
 
 [deps]
 
-files=[ "res://.import/craft_cargoA.obj-869b3e5929a5a52944be9a376f71b382.mesh" ]
+files=[ "res://.import/craft_cargoA.obj-b5ca9e620d889a297f36d8f1dd973cf1.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/craft_cargoA.obj"
-dest_files=[ "res://.import/craft_cargoA.obj-869b3e5929a5a52944be9a376f71b382.mesh", "res://.import/craft_cargoA.obj-869b3e5929a5a52944be9a376f71b382.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/craft_cargoA.obj"
+dest_files=[ "res://.import/craft_cargoA.obj-b5ca9e620d889a297f36d8f1dd973cf1.mesh", "res://.import/craft_cargoA.obj-b5ca9e620d889a297f36d8f1dd973cf1.mesh" ]
 
 [params]
 

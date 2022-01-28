@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/turret_single.obj-b6f663cef7d7f68855b0cc71f7ea25eb.mesh"
+path="res://.import/turret_single.obj-317b5bd24993e771d9f49fe87f3c3a7f.mesh"
 
 [deps]
 
-files=[ "res://.import/turret_single.obj-b6f663cef7d7f68855b0cc71f7ea25eb.mesh" ]
+files=[ "res://.import/turret_single.obj-317b5bd24993e771d9f49fe87f3c3a7f.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/turret_single.obj"
-dest_files=[ "res://.import/turret_single.obj-b6f663cef7d7f68855b0cc71f7ea25eb.mesh", "res://.import/turret_single.obj-b6f663cef7d7f68855b0cc71f7ea25eb.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/turret_single.obj"
+dest_files=[ "res://.import/turret_single.obj-317b5bd24993e771d9f49fe87f3c3a7f.mesh", "res://.import/turret_single.obj-317b5bd24993e771d9f49fe87f3c3a7f.mesh" ]
 
 [params]
 

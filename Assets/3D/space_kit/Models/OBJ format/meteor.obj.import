@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/meteor.obj-b509804d66abaa4b9991c6bb24b68f33.mesh"
+path="res://.import/meteor.obj-48d7955570153cd4308f12cacf8c788d.mesh"
 
 [deps]
 
-files=[ "res://.import/meteor.obj-b509804d66abaa4b9991c6bb24b68f33.mesh" ]
+files=[ "res://.import/meteor.obj-48d7955570153cd4308f12cacf8c788d.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/meteor.obj"
-dest_files=[ "res://.import/meteor.obj-b509804d66abaa4b9991c6bb24b68f33.mesh", "res://.import/meteor.obj-b509804d66abaa4b9991c6bb24b68f33.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/meteor.obj"
+dest_files=[ "res://.import/meteor.obj-48d7955570153cd4308f12cacf8c788d.mesh", "res://.import/meteor.obj-48d7955570153cd4308f12cacf8c788d.mesh" ]
 
 [params]
 

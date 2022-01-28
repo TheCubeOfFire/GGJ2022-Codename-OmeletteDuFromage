@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/hangar_roundGlass.obj-954796eeae3fd1dae58eb58a79cf6307.mesh"
+path="res://.import/hangar_roundGlass.obj-c8ee3809b6b4503c59e17a375bf945fc.mesh"
 
 [deps]
 
-files=[ "res://.import/hangar_roundGlass.obj-954796eeae3fd1dae58eb58a79cf6307.mesh" ]
+files=[ "res://.import/hangar_roundGlass.obj-c8ee3809b6b4503c59e17a375bf945fc.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/hangar_roundGlass.obj"
-dest_files=[ "res://.import/hangar_roundGlass.obj-954796eeae3fd1dae58eb58a79cf6307.mesh", "res://.import/hangar_roundGlass.obj-954796eeae3fd1dae58eb58a79cf6307.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/hangar_roundGlass.obj"
+dest_files=[ "res://.import/hangar_roundGlass.obj-c8ee3809b6b4503c59e17a375bf945fc.mesh", "res://.import/hangar_roundGlass.obj-c8ee3809b6b4503c59e17a375bf945fc.mesh" ]
 
 [params]
 

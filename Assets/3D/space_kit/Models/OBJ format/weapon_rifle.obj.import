@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/weapon_rifle.obj-b58712d4fc346c01bfb45ea4d12be274.mesh"
+path="res://.import/weapon_rifle.obj-f85d87aa4557274304bbe513e7e104ef.mesh"
 
 [deps]
 
-files=[ "res://.import/weapon_rifle.obj-b58712d4fc346c01bfb45ea4d12be274.mesh" ]
+files=[ "res://.import/weapon_rifle.obj-f85d87aa4557274304bbe513e7e104ef.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/weapon_rifle.obj"
-dest_files=[ "res://.import/weapon_rifle.obj-b58712d4fc346c01bfb45ea4d12be274.mesh", "res://.import/weapon_rifle.obj-b58712d4fc346c01bfb45ea4d12be274.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/weapon_rifle.obj"
+dest_files=[ "res://.import/weapon_rifle.obj-f85d87aa4557274304bbe513e7e104ef.mesh", "res://.import/weapon_rifle.obj-f85d87aa4557274304bbe513e7e104ef.mesh" ]
 
 [params]
 
