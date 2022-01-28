@@ -9,14 +9,15 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "SpotLight",
-"class": "FlickeringLight",
-"language": "GDScript",
-"path": "res://assets/objects/light/flickering_light.gd"
 "base": "Spatial",
 "class": "EndLevelTrigger",
 "language": "GDScript",
 "path": "res://assets/objectives/end_level_trigger.gd"
+}, {
+"base": "SpotLight",
+"class": "FlickeringLight",
+"language": "GDScript",
+"path": "res://assets/objects/light/flickering_light.gd"
 }, {
 "base": "Spatial",
 "class": "GameModeInGame",
@@ -34,8 +35,8 @@ _global_script_classes=[ {
 "path": "res://assets/player/player_light.gd"
 } ]
 _global_script_class_icons={
-"FlickeringLight": "",
 "EndLevelTrigger": "",
+"FlickeringLight": "",
 "GameModeInGame": "",
 "Player": "",
 "PlayerLight": ""
