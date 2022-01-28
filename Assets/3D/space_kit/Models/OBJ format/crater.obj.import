@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/crater.obj-3283bb9976aae2ee6df77d1a5edbda6d.mesh"
+path="res://.import/crater.obj-600d256beccf1e129301683de8952b02.mesh"
 
 [deps]
 
-files=[ "res://.import/crater.obj-3283bb9976aae2ee6df77d1a5edbda6d.mesh" ]
+files=[ "res://.import/crater.obj-600d256beccf1e129301683de8952b02.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/crater.obj"
-dest_files=[ "res://.import/crater.obj-3283bb9976aae2ee6df77d1a5edbda6d.mesh", "res://.import/crater.obj-3283bb9976aae2ee6df77d1a5edbda6d.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/crater.obj"
+dest_files=[ "res://.import/crater.obj-600d256beccf1e129301683de8952b02.mesh", "res://.import/crater.obj-600d256beccf1e129301683de8952b02.mesh" ]
 
 [params]
 

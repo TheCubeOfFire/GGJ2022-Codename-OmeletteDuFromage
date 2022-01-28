@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/monorail_trackStraight.obj-981b0092edeb49bb5137ac07a11015c4.mesh"
+path="res://.import/monorail_trackStraight.obj-37d81cf1f96afa92554d111b11665f79.mesh"
 
 [deps]
 
-files=[ "res://.import/monorail_trackStraight.obj-981b0092edeb49bb5137ac07a11015c4.mesh" ]
+files=[ "res://.import/monorail_trackStraight.obj-37d81cf1f96afa92554d111b11665f79.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/monorail_trackStraight.obj"
-dest_files=[ "res://.import/monorail_trackStraight.obj-981b0092edeb49bb5137ac07a11015c4.mesh", "res://.import/monorail_trackStraight.obj-981b0092edeb49bb5137ac07a11015c4.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/monorail_trackStraight.obj"
+dest_files=[ "res://.import/monorail_trackStraight.obj-37d81cf1f96afa92554d111b11665f79.mesh", "res://.import/monorail_trackStraight.obj-37d81cf1f96afa92554d111b11665f79.mesh" ]
 
 [params]
 

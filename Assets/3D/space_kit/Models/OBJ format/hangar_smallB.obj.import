@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/hangar_smallB.obj-7b9013adf4f58ca5dd3e37db775be598.mesh"
+path="res://.import/hangar_smallB.obj-92e89fb983fcf51a98ea8ceded370bf9.mesh"
 
 [deps]
 
-files=[ "res://.import/hangar_smallB.obj-7b9013adf4f58ca5dd3e37db775be598.mesh" ]
+files=[ "res://.import/hangar_smallB.obj-92e89fb983fcf51a98ea8ceded370bf9.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/hangar_smallB.obj"
-dest_files=[ "res://.import/hangar_smallB.obj-7b9013adf4f58ca5dd3e37db775be598.mesh", "res://.import/hangar_smallB.obj-7b9013adf4f58ca5dd3e37db775be598.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/hangar_smallB.obj"
+dest_files=[ "res://.import/hangar_smallB.obj-92e89fb983fcf51a98ea8ceded370bf9.mesh", "res://.import/hangar_smallB.obj-92e89fb983fcf51a98ea8ceded370bf9.mesh" ]
 
 [params]
 

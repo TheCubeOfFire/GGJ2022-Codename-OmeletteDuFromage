@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/pipe_ringHigh.obj-22c131d382da5433fd50372bf4800992.mesh"
+path="res://.import/pipe_ringHigh.obj-30e63c649f09611cbec963bdf113c8ad.mesh"
 
 [deps]
 
-files=[ "res://.import/pipe_ringHigh.obj-22c131d382da5433fd50372bf4800992.mesh" ]
+files=[ "res://.import/pipe_ringHigh.obj-30e63c649f09611cbec963bdf113c8ad.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/pipe_ringHigh.obj"
-dest_files=[ "res://.import/pipe_ringHigh.obj-22c131d382da5433fd50372bf4800992.mesh", "res://.import/pipe_ringHigh.obj-22c131d382da5433fd50372bf4800992.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/pipe_ringHigh.obj"
+dest_files=[ "res://.import/pipe_ringHigh.obj-30e63c649f09611cbec963bdf113c8ad.mesh", "res://.import/pipe_ringHigh.obj-30e63c649f09611cbec963bdf113c8ad.mesh" ]
 
 [params]
 

@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/corridor_cross.obj-fd75cc82ba9c92117b3d2a0232942261.mesh"
+path="res://.import/corridor_cross.obj-4fa363d9154dd946300435543311d8e7.mesh"
 
 [deps]
 
-files=[ "res://.import/corridor_cross.obj-fd75cc82ba9c92117b3d2a0232942261.mesh" ]
+files=[ "res://.import/corridor_cross.obj-4fa363d9154dd946300435543311d8e7.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/corridor_cross.obj"
-dest_files=[ "res://.import/corridor_cross.obj-fd75cc82ba9c92117b3d2a0232942261.mesh", "res://.import/corridor_cross.obj-fd75cc82ba9c92117b3d2a0232942261.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/corridor_cross.obj"
+dest_files=[ "res://.import/corridor_cross.obj-4fa363d9154dd946300435543311d8e7.mesh", "res://.import/corridor_cross.obj-4fa363d9154dd946300435543311d8e7.mesh" ]
 
 [params]
 

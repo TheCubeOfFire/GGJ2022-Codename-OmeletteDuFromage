@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/corridor_roof.obj-f2b6ee2217b10267aefaf7d9c94e5a9b.mesh"
+path="res://.import/corridor_roof.obj-4eeab8bd241aa16feab06b144ba7bd54.mesh"
 
 [deps]
 
-files=[ "res://.import/corridor_roof.obj-f2b6ee2217b10267aefaf7d9c94e5a9b.mesh" ]
+files=[ "res://.import/corridor_roof.obj-4eeab8bd241aa16feab06b144ba7bd54.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/corridor_roof.obj"
-dest_files=[ "res://.import/corridor_roof.obj-f2b6ee2217b10267aefaf7d9c94e5a9b.mesh", "res://.import/corridor_roof.obj-f2b6ee2217b10267aefaf7d9c94e5a9b.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/corridor_roof.obj"
+dest_files=[ "res://.import/corridor_roof.obj-4eeab8bd241aa16feab06b144ba7bd54.mesh", "res://.import/corridor_roof.obj-4eeab8bd241aa16feab06b144ba7bd54.mesh" ]
 
 [params]
 
