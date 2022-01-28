@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/pipe_cornerDiagonal.obj-27e8c23f94f5bec325ce7388fcbad847.mesh"
+path="res://.import/pipe_cornerDiagonal.obj-c1257b1c487eb3682dfda94f1039941d.mesh"
 
 [deps]
 
-files=[ "res://.import/pipe_cornerDiagonal.obj-27e8c23f94f5bec325ce7388fcbad847.mesh" ]
+files=[ "res://.import/pipe_cornerDiagonal.obj-c1257b1c487eb3682dfda94f1039941d.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/pipe_cornerDiagonal.obj"
-dest_files=[ "res://.import/pipe_cornerDiagonal.obj-27e8c23f94f5bec325ce7388fcbad847.mesh", "res://.import/pipe_cornerDiagonal.obj-27e8c23f94f5bec325ce7388fcbad847.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/pipe_cornerDiagonal.obj"
+dest_files=[ "res://.import/pipe_cornerDiagonal.obj-c1257b1c487eb3682dfda94f1039941d.mesh", "res://.import/pipe_cornerDiagonal.obj-c1257b1c487eb3682dfda94f1039941d.mesh" ]
 
 [params]
 

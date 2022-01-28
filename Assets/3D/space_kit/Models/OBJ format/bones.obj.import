@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/bones.obj-472bbe8552c44c89e203f337bbf76079.mesh"
+path="res://.import/bones.obj-635f6daffcf987aac0c4648e600dc954.mesh"
 
 [deps]
 
-files=[ "res://.import/bones.obj-472bbe8552c44c89e203f337bbf76079.mesh" ]
+files=[ "res://.import/bones.obj-635f6daffcf987aac0c4648e600dc954.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/bones.obj"
-dest_files=[ "res://.import/bones.obj-472bbe8552c44c89e203f337bbf76079.mesh", "res://.import/bones.obj-472bbe8552c44c89e203f337bbf76079.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/bones.obj"
+dest_files=[ "res://.import/bones.obj-635f6daffcf987aac0c4648e600dc954.mesh", "res://.import/bones.obj-635f6daffcf987aac0c4648e600dc954.mesh" ]
 
 [params]
 

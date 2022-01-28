@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/astronautB.obj-a2db3b4bc81944169350c4785e184eb4.mesh"
+path="res://.import/astronautB.obj-42e778d80cdca585c7d98c844b5c5a96.mesh"
 
 [deps]
 
-files=[ "res://.import/astronautB.obj-a2db3b4bc81944169350c4785e184eb4.mesh" ]
+files=[ "res://.import/astronautB.obj-42e778d80cdca585c7d98c844b5c5a96.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/astronautB.obj"
-dest_files=[ "res://.import/astronautB.obj-a2db3b4bc81944169350c4785e184eb4.mesh", "res://.import/astronautB.obj-a2db3b4bc81944169350c4785e184eb4.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/astronautB.obj"
+dest_files=[ "res://.import/astronautB.obj-42e778d80cdca585c7d98c844b5c5a96.mesh", "res://.import/astronautB.obj-42e778d80cdca585c7d98c844b5c5a96.mesh" ]
 
 [params]
 

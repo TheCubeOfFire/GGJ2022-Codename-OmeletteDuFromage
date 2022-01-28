@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/monorail_trainCargo.obj-5172a142d0575f1437b1967b7057fcc7.mesh"
+path="res://.import/monorail_trainCargo.obj-768e96fe0d0528e06a16fdd8b058e96c.mesh"
 
 [deps]
 
-files=[ "res://.import/monorail_trainCargo.obj-5172a142d0575f1437b1967b7057fcc7.mesh" ]
+files=[ "res://.import/monorail_trainCargo.obj-768e96fe0d0528e06a16fdd8b058e96c.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/monorail_trainCargo.obj"
-dest_files=[ "res://.import/monorail_trainCargo.obj-5172a142d0575f1437b1967b7057fcc7.mesh", "res://.import/monorail_trainCargo.obj-5172a142d0575f1437b1967b7057fcc7.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/monorail_trainCargo.obj"
+dest_files=[ "res://.import/monorail_trainCargo.obj-768e96fe0d0528e06a16fdd8b058e96c.mesh", "res://.import/monorail_trainCargo.obj-768e96fe0d0528e06a16fdd8b058e96c.mesh" ]
 
 [params]
 

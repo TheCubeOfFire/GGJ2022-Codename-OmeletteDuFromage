@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/machine_wireless.obj-347b543bb097b7fce5be36678967e0e5.mesh"
+path="res://.import/machine_wireless.obj-1a2d2e45ba3b8c3c12e123cb2e1d12f5.mesh"
 
 [deps]
 
-files=[ "res://.import/machine_wireless.obj-347b543bb097b7fce5be36678967e0e5.mesh" ]
+files=[ "res://.import/machine_wireless.obj-1a2d2e45ba3b8c3c12e123cb2e1d12f5.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/machine_wireless.obj"
-dest_files=[ "res://.import/machine_wireless.obj-347b543bb097b7fce5be36678967e0e5.mesh", "res://.import/machine_wireless.obj-347b543bb097b7fce5be36678967e0e5.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/machine_wireless.obj"
+dest_files=[ "res://.import/machine_wireless.obj-1a2d2e45ba3b8c3c12e123cb2e1d12f5.mesh", "res://.import/machine_wireless.obj-1a2d2e45ba3b8c3c12e123cb2e1d12f5.mesh" ]
 
 [params]
 

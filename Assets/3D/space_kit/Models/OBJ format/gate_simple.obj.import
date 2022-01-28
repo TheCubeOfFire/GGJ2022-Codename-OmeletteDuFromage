@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/gate_simple.obj-ab2e7909b0d60f5ac12290ea54066010.mesh"
+path="res://.import/gate_simple.obj-8ba20ce499309506bb3f81595bc1bcf8.mesh"
 
 [deps]
 
-files=[ "res://.import/gate_simple.obj-ab2e7909b0d60f5ac12290ea54066010.mesh" ]
+files=[ "res://.import/gate_simple.obj-8ba20ce499309506bb3f81595bc1bcf8.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/gate_simple.obj"
-dest_files=[ "res://.import/gate_simple.obj-ab2e7909b0d60f5ac12290ea54066010.mesh", "res://.import/gate_simple.obj-ab2e7909b0d60f5ac12290ea54066010.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/gate_simple.obj"
+dest_files=[ "res://.import/gate_simple.obj-8ba20ce499309506bb3f81595bc1bcf8.mesh", "res://.import/gate_simple.obj-8ba20ce499309506bb3f81595bc1bcf8.mesh" ]
 
 [params]
 

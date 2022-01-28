@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/stairs_short.obj-5a0934fd2238cc585093af250ee8dea2.mesh"
+path="res://.import/stairs_short.obj-9089ba272a39976edf7cbc32e5388366.mesh"
 
 [deps]
 
-files=[ "res://.import/stairs_short.obj-5a0934fd2238cc585093af250ee8dea2.mesh" ]
+files=[ "res://.import/stairs_short.obj-9089ba272a39976edf7cbc32e5388366.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/stairs_short.obj"
-dest_files=[ "res://.import/stairs_short.obj-5a0934fd2238cc585093af250ee8dea2.mesh", "res://.import/stairs_short.obj-5a0934fd2238cc585093af250ee8dea2.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/stairs_short.obj"
+dest_files=[ "res://.import/stairs_short.obj-9089ba272a39976edf7cbc32e5388366.mesh", "res://.import/stairs_short.obj-9089ba272a39976edf7cbc32e5388366.mesh" ]
 
 [params]
 

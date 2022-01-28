@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/rocket_topA.obj-a46bb4fb7800b7f0dd5bc6323f0dcf60.mesh"
+path="res://.import/rocket_topA.obj-a3943adb7829ca268f392a7cbbbd6d8c.mesh"
 
 [deps]
 
-files=[ "res://.import/rocket_topA.obj-a46bb4fb7800b7f0dd5bc6323f0dcf60.mesh" ]
+files=[ "res://.import/rocket_topA.obj-a3943adb7829ca268f392a7cbbbd6d8c.mesh" ]
 
-source_file="res://Assets/3D/space_kit/Models/OBJ format/rocket_topA.obj"
-dest_files=[ "res://.import/rocket_topA.obj-a46bb4fb7800b7f0dd5bc6323f0dcf60.mesh", "res://.import/rocket_topA.obj-a46bb4fb7800b7f0dd5bc6323f0dcf60.mesh" ]
+source_file="res://assets/3D/space_kit/Models/OBJ format/rocket_topA.obj"
+dest_files=[ "res://.import/rocket_topA.obj-a3943adb7829ca268f392a7cbbbd6d8c.mesh", "res://.import/rocket_topA.obj-a3943adb7829ca268f392a7cbbbd6d8c.mesh" ]
 
 [params]
 
