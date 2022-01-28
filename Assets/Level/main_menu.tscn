@@ -1,0 +1,469 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/barrels_rail.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/chimney_detailed.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/machine_generatorLarge.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/craft_cargoB.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/alien.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/gate_complex.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/platform_center.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/machine_barrelLarge.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/barrels.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/corridor_wall.obj" type="ArrayMesh" id=10]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/hangar_roundA.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/machine_wireless.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/corridor_detailed.obj" type="ArrayMesh" id=13]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/terrain.obj" type="ArrayMesh" id=14]
+
+[sub_resource type="Environment" id=1]
+ambient_light_color = Color( 0.07, 0.07, 0.07, 1 )
+fog_enabled = true
+fog_color = Color( 0.576471, 0.701961, 0.501961, 1 )
+fog_depth_begin = 0.0
+fog_depth_curve = 0.732043
+
+[node name="MainMenuRoot" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.815421, 0, 0.578869, 0, 1, 0, -0.578868, 0, 0.815421, 0.775624, 0.565897, 1.49422 )
+current = true
+
+[node name="props" type="Spatial" parent="."]
+
+[node name="alien" type="MeshInstance" parent="props"]
+transform = Transform( 0.716278, 0, 0.697815, 0, 1, 0, -0.697815, 0, 0.716278, -3.68166, 0, 2.08663 )
+mesh = ExtResource( 5 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
+
+[node name="barrels" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32201, 0, -1.67235 )
+mesh = ExtResource( 9 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+
+[node name="chimney_detailed" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57998, 0, -1.43458 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="craft_cargoB" type="MeshInstance" parent="props"]
+transform = Transform( -0.526956, 0, 0.849893, 0, 1, 0, -0.849893, 0, -0.526956, -2.67824, 2.38419e-07, 3.20649 )
+mesh = ExtResource( 4 )
+skeleton = NodePath("../barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="barrels_rail" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.40732, 0, 0.00280786 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../barrels")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+
+[node name="corridor_detailed" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33752, 0, -1.92055 )
+mesh = ExtResource( 13 )
+skeleton = NodePath("../chimney_detailed")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="barrels2" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28573, -2.38419e-07, -2.27023 )
+mesh = ExtResource( 9 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+
+[node name="alien2" type="MeshInstance" parent="props"]
+transform = Transform( 0.716278, 0, 0.697815, 0, 1, 0, -0.697815, 0, 0.716278, -3.3336, 0, 1.37668 )
+mesh = ExtResource( 5 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
+
+[node name="alien3" type="MeshInstance" parent="props"]
+transform = Transform( 0.716278, 0, 0.697815, 0, 1, 0, -0.697815, 0, 0.716278, -2.69571, 0, 1.61317 )
+mesh = ExtResource( 5 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
+
+[node name="machine_barrelLarge" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56621, 0, -4.12854 )
+mesh = ExtResource( 8 )
+skeleton = NodePath("../machine_wireless")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="machine_wireless" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93189, 0, -4.06004 )
+mesh = ExtResource( 12 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="chimney_detailed2" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.579985, 0, -1.43458 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="chimney_detailed3" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.420015, 0, -1.43458 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="chimney_detailed4" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42002, 0, -1.43458 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="machine_barrelLarge2" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56621, 0, -3.12854 )
+mesh = ExtResource( 8 )
+skeleton = NodePath("../machine_wireless")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="machine_barrelLarge3" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.566206, 0, -4.12854 )
+mesh = ExtResource( 8 )
+skeleton = NodePath("../machine_wireless")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="machine_generatorLarge" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../gate_complex")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="gate_complex" type="MeshInstance" parent="props"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.7838, 0, 1 )
+mesh = ExtResource( 6 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="machine_generatorLarge2" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../gate_complex")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="machine_generatorLarge3" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../gate_complex")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="hangar_roundA" type="MeshInstance" parent="props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3 )
+mesh = ExtResource( 11 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="building" type="Spatial" parent="."]
+
+[node name="corridor_wall3" type="MeshInstance" parent="building"]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 10.2, 5, 0, 0 )
+mesh = ExtResource( 10 )
+skeleton = NodePath("../corridor_wall")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="corridor_wall2" type="MeshInstance" parent="building"]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 10.2, -5, 0, 0 )
+mesh = ExtResource( 10 )
+skeleton = NodePath("../corridor_wall")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="corridor_wall" type="MeshInstance" parent="building"]
+transform = Transform( -8.4639e-07, 0, -10.2, 0, 3.2, 0, 3, 0, -2.87773e-06, 0, 0, -5 )
+mesh = ExtResource( 10 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="corridor_wall4" type="MeshInstance" parent="building"]
+transform = Transform( -4.88762e-07, 0, -10.2, 0, 3.2, 0, 3, 0, -1.66179e-06, 0, 0, 5 )
+mesh = ExtResource( 10 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="terrain" type="MeshInstance" parent="building"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+mesh = ExtResource( 14 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="roof" type="MeshInstance" parent="building"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 2.50463, 0 )
+mesh = ExtResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="lights" type="Spatial" parent="building/roof"]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, -2.50463, 0 )
+
+[node name="chimney_detailed5" type="MeshInstance" parent="building/roof/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 0, 2.55, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("../../../../props/barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed5"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+
+[node name="chimney_detailed6" type="MeshInstance" parent="building/roof/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 1.00665, 2.5343, -0.00446701 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("../../../../props/barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed6"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+
+[node name="chimney_detailed7" type="MeshInstance" parent="building/roof/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -1, 2.55, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("../../../../props/barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed7"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+
+[node name="chimney_detailed8" type="MeshInstance" parent="building/roof/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -2, 2.55, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("../../../../props/barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed8"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+
+[node name="chimney_detailed9" type="MeshInstance" parent="building/roof/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 1, 2.55, 1 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("../../../../props/barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed9"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+
+[node name="chimney_detailed10" type="MeshInstance" parent="building/roof/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 2, 2.55, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("../../../../props/barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed10"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+
+[node name="chimney_detailed11" type="MeshInstance" parent="building/roof/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 1, 2.55, -1 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("../../../../props/barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed11"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+
+[node name="chimney_detailed12" type="MeshInstance" parent="building/roof/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -2, 2.55, 1 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("../../../../props/barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed12"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+
+[node name="chimney_detailed13" type="MeshInstance" parent="building/roof/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -2, 2.55, -1 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("../../../../props/barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed13"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+
+[node name="chimney_detailed14" type="MeshInstance" parent="building/roof/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -3, 2.55, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("../../../../props/barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="SpotLight" type="SpotLight" parent="building/roof/lights/chimney_detailed14"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="building"]
+environment = SubResource( 1 )
