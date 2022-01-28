@@ -9,20 +9,33 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody",
+"class": "Player",
+"language": "GDScript",
+"path": "res://assets/player/player.gd"
+}, {
 "base": "Spatial",
 "class": "PlayerLight",
 "language": "GDScript",
 "path": "res://assets/player/player_light.gd"
 } ]
 _global_script_class_icons={
+"Player": "",
 "PlayerLight": ""
 }
 
 [application]
 
 config/name="OmeletteDuFromage"
-run/main_scene="res://assets/developers/asterius/asterius_test_map.tscn"
 config/icon="res://icon.png"
+
+[input]
+
+dash={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [physics]
 
