@@ -5,9 +5,9 @@ const MAX_SPEED: float = 5.0
 
 const MOUSE_SENSIVITY: float = 0.05
 
-var _velocity := Vector3.ZERO
+var velocity := Vector3.ZERO
 
-onready var _camera_target := $CameraTarget as Position3D
+onready var camera_target := $CameraTarget as Position3D
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -15,8 +15,14 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var direction := Vector3.ZERO
 	
-	_velocity = MAX_SPEED * direction
-	_velocity = move_and_slide(_velocity, Vector3.UP)
+	velocity = MAX_SPEED * direction
+	velocity = move_and_slide(velocity, Vector3.UP)
 
 func _input(event: InputEvent) -> void:
-	pass
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		_rotate_camera(event.relative.y, event.relative.x, -MOUSE_SENSIVITY)
+
+func _rotate_camera(rx: float, ry: float, scale: float) -> void:
+	camera_target.rotate_x(deg2rad(rx * scale))
+	camera_target.rotation.x = clamp(camera_target.rotation.x, - PI / 2.0, PI / 2.0)
+	self.rotate_y(deg2rad(ry * scale))
