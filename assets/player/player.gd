@@ -8,6 +8,7 @@ const MOUSE_SENSIVITY: float = 0.05
 var velocity := Vector3.ZERO
 
 onready var camera_target := $CameraTarget as Position3D
+onready var player_light := $PlayerLight as PlayerLight
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
