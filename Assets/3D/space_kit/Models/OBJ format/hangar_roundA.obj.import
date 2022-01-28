@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/hangar_roundA.obj-53f340109213a673b970f0dd1aa3cadb.mesh"
+
+[deps]
+
+files=[ "res://.import/hangar_roundA.obj-53f340109213a673b970f0dd1aa3cadb.mesh" ]
+
+source_file="res://Assets/3D/space_kit/Models/OBJ format/hangar_roundA.obj"
+dest_files=[ "res://.import/hangar_roundA.obj-53f340109213a673b970f0dd1aa3cadb.mesh", "res://.import/hangar_roundA.obj-53f340109213a673b970f0dd1aa3cadb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/desk_computerScreen.obj-c088fbafdb2b4b598c30d206dec63dd8.mesh"
+
+[deps]
+
+files=[ "res://.import/desk_computerScreen.obj-c088fbafdb2b4b598c30d206dec63dd8.mesh" ]
+
+source_file="res://Assets/3D/space_kit/Models/OBJ format/desk_computerScreen.obj"
+dest_files=[ "res://.import/desk_computerScreen.obj-c088fbafdb2b4b598c30d206dec63dd8.mesh", "res://.import/desk_computerScreen.obj-c088fbafdb2b4b598c30d206dec63dd8.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
