@@ -13,6 +13,15 @@ _global_script_classes=[ {
 "class": "FlickeringLight",
 "language": "GDScript",
 "path": "res://assets/objects/light/flickering_light.gd"
+"base": "Spatial",
+"class": "EndLevelTrigger",
+"language": "GDScript",
+"path": "res://assets/objectives/end_level_trigger.gd"
+}, {
+"base": "Spatial",
+"class": "GameModeInGame",
+"language": "GDScript",
+"path": "res://assets/game_mode/game_mode_in_game.gd"
 }, {
 "base": "KinematicBody",
 "class": "Player",
@@ -26,6 +35,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "FlickeringLight": "",
+"EndLevelTrigger": "",
+"GameModeInGame": "",
 "Player": "",
 "PlayerLight": ""
 }

@@ -1,22 +1,26 @@
 extends KinematicBody
 class_name Player
 
-const MAX_SPEED: float = 5.0
+const DASH_ACCELERATION: float = 2000.0
 
 const MOUSE_SENSIVITY: float = 0.05
 
 var velocity := Vector3.ZERO
 
 onready var camera_target := $CameraTarget as Position3D
+onready var player_light := $PlayerLight as PlayerLight
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
-	var direction := Vector3.ZERO
+	var direction := Vector3.FORWARD.rotated(Vector3.UP, rotation.y)
 	
-	velocity = MAX_SPEED * direction
+	if Input.is_action_just_pressed("dash"):
+		velocity += DASH_ACCELERATION * direction * delta
+	
 	velocity = move_and_slide(velocity, Vector3.UP)
+	velocity *= 0.95
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
