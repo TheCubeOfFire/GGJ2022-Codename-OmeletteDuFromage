@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "SpotLight",
+"class": "FlickeringLight",
+"language": "GDScript",
+"path": "res://assets/objects/light/flickering_light.gd"
+}, {
 "base": "KinematicBody",
 "class": "Player",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://assets/player/player_light.gd"
 } ]
 _global_script_class_icons={
+"FlickeringLight": "",
 "Player": "",
 "PlayerLight": ""
 }
