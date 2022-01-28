@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="SphereMesh" id=1]
+
+[sub_resource type="Shader" id=2]
+code = "shader_type spatial;
+render_mode diffuse_burley;
+
+uniform sampler2D noise;
+uniform float fHeight;
+uniform float fFrequency;
+uniform float fRepetition;
+
+void vertex()
+{
+	vec4 fNoise = fHeight * texture(noise, UV * vec2(1.0, sin(TIME / fFrequency)));
+	VERTEX *= vec3(fNoise.xyz);
+}"
+
+[sub_resource type="OpenSimplexNoise" id=4]
+seed = 5
+octaves = 5
+period = 175.8
+persistence = 1.0
+lacunarity = 3.21
+
+[sub_resource type="NoiseTexture" id=5]
+seamless = true
+bump_strength = 19.6
+noise = SubResource( 4 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/fHeight = 1.0
+shader_param/fFrequency = 100.0
+shader_param/fRepetition = 4.0
+shader_param/noise = SubResource( 5 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="ClippedCamera" type="ClippedCamera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.879507, 0.475885, 0, -0.475885, 0.879507, 0, 3.40124, 5.12784 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00017786, 0.00662887, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
