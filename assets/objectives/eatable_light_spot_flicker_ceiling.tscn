@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/objectives/eatable_light_spot_flicker.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/objects/light/spotlight_flicker.tscn" type="PackedScene" id=3]
+
+[node name="EatableLightSpotFlickerCeiling" instance=ExtResource( 1 )]
+light_path = NodePath("FlickeringLight")
+
+[node name="FlickeringLight" parent="." index="0"]
+transform = Transform( -1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+flicker_threshold_random = 4.0
+
+[node name="chimney_detailed5" parent="." index="2" instance=ExtResource( 3 )]
+transform = Transform( -0.766167, 4.06154e-09, 0, -6.69804e-08, -0.0464587, 0, 0, 0, 0.766171, 0, 0, 0 )

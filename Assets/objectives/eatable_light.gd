@@ -17,17 +17,17 @@ export(float) var given_life := 5.0
 
 
 func _ready() -> void:
-	assert(given_life <= MAX_GIVEN_LIFE)
-	assert(area.connect("body_entered", self, "_on_area_entered") == 0)
-	_update_light_intensity()
+    assert(given_life <= MAX_GIVEN_LIFE)
+    assert(area.connect("body_entered", self, "_on_area_entered") == 0)
+    _update_light_intensity()
 
-	
+    
 func _update_light_intensity() ->  void:
-	light.light_energy = light_intensity_curve.interpolate(given_life / MAX_GIVEN_LIFE)
-	
+    light.light_energy = light_intensity_curve.interpolate(given_life / MAX_GIVEN_LIFE)
+    
 
 func _on_area_entered(body: Node) -> void:
-	if body is Player:
-		var player := body as Player
-		player.player_light.modify_life(given_life)
-		queue_free()
+    if body is Player:
+        var player := body as Player
+        player.player_light.modify_life(given_life)
+        queue_free()
