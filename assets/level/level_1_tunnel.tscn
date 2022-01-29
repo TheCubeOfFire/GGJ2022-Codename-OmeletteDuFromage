@@ -33,11 +33,11 @@ fog_depth_curve = 0.732043
 [node name="Section1" type="Spatial" parent="building"]
 
 [node name="corridor_wall5" parent="building/Section1" instance=ExtResource( 8 )]
-transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 67.6483, 2.391, 0, -28.977 )
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 32.4481, 2.391, 0, -9.11397 )
 skeleton = NodePath("")
 
 [node name="corridor_wall6" parent="building/Section1" instance=ExtResource( 8 )]
-transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 72.3393, -2.391, 0, -31.318 )
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 34.6982, -2.391, 0, -12.7417 )
 skeleton = NodePath("")
 
 [node name="corridor_wall7" parent="building/Section1" instance=ExtResource( 8 )]
@@ -45,12 +45,11 @@ transform = Transform( -3.76261e-08, 0, 5.00199, 0, 3.2, 0, -3, 0, -7.62016e-07,
 skeleton = NodePath("")
 
 [node name="roof" parent="building/Section1" instance=ExtResource( 12 )]
-transform = Transform( 5.02126, 0, 0, 0, 1, 0, 0, 0, 72.3674, 0, 2.50463, -31.4398 )
-visible = false
+transform = Transform( 5.02126, 0, 0, 0, 1, 0, 0, 0, 34.7117, 0, 2.50463, -12.754 )
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section1" instance=ExtResource( 1 )]
-transform = Transform( 5.08809, 0, 0, 0, 1, 0, 0, 0, 72.541, 0, 0, -31.2557 )
+transform = Transform( 5.08809, 0, 0, 0, 1, 0, 0, 0, 38.301, 0, 0, -14.4657 )
 skeleton = NodePath("../../..")
 
 [node name="EatableLightSpotFlickerCeiling" parent="building/Section1" instance=ExtResource( 2 )]
@@ -71,60 +70,57 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.912732, 0, -4.14298 )
 [node name="Section2" type="Spatial" parent="building"]
 
 [node name="corridor_wall5" parent="building/Section2" instance=ExtResource( 8 )]
-transform = Transform( -1.31134e-07, 0, 63.4158, 0, 3.2, 0, -3, 0, -2.77199e-06, 33.941, 0, -62.956 )
+transform = Transform( -1.31134e-07, 0, 29.556, 0, 3.2, 0, -3, 0, -1.29193e-06, 16.959, 0, -25.63 )
 skeleton = NodePath("")
 
 [node name="corridor_wall6" parent="building/Section2" instance=ExtResource( 8 )]
-transform = Transform( -1.31134e-07, 0, 72.3393, 0, 3.2, 0, -3, 0, -3.16205e-06, 33.626, 0, -67.639 )
+transform = Transform( -1.31134e-07, 0, 38.1245, 0, 3.2, 0, -3, 0, -1.66647e-06, 16.607, 0, -30.175 )
 skeleton = NodePath("")
 
 [node name="roof" parent="building/Section2" instance=ExtResource( 12 )]
-transform = Transform( -2.19486e-07, 0, 72.3674, 0, 1, 0, -5.02126, 0, -3.16328e-06, 33.8295, 2.50463, -65.5751 )
-visible = false
+transform = Transform( -2.19486e-07, 0, 38.1393, 0, 1, 0, -5.02126, 0, -1.66712e-06, 16.6071, 2.50463, -28.2489 )
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section2" instance=ExtResource( 1 )]
-transform = Transform( -2.22407e-07, 0, 72.541, 0, 1, 0, -5.08809, 0, -3.17087e-06, 34.0546, 0, -65.2247 )
+transform = Transform( -2.22407e-07, 0, 38.2308, 0, 1, 0, -5.08809, 0, -1.67112e-06, 16.6071, 0, -27.8985 )
 
 [node name="Section3" type="Spatial" parent="building"]
 
 [node name="corridor_wall6" parent="building/Section3" instance=ExtResource( 8 )]
-transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 72.3393, 65.5, 0, -26.636 )
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 44.0001, 31.475, 0, -3.526 )
 skeleton = NodePath("")
 
 [node name="corridor_wall5" parent="building/Section3" instance=ExtResource( 8 )]
-transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 67.6483, 69.946, 0, -33.965 )
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 39.962, 35.788, 0, -10.385 )
 skeleton = NodePath("")
 
 [node name="roof" parent="building/Section3" instance=ExtResource( 12 )]
-transform = Transform( 5.02126, 0, 0, 0, 1, 0, 0, 0, 77.1144, 67.4979, 2.50463, -28.17 )
-visible = false
+transform = Transform( 5.02126, 0, 0, 0, 1, 0, 0, 0, 39.962, 33.478, 2.462, -5.766 )
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section3" instance=ExtResource( 1 )]
-transform = Transform( 5.08809, 0, 0, 0, 1, 0, 0, 0, 76.1725, 68.1092, 0, -29.1982 )
+transform = Transform( 5.08809, 0, 0, 0, 1, 0, 0, 0, 39.962, 34.0843, 0, -5.61783 )
 
 [node name="Section4" type="Spatial" parent="building"]
 
 [node name="corridor_wall7" parent="building/Section4" instance=ExtResource( 8 )]
-transform = Transform( 2.02255, 0, 48.1197, 0, 3.051, 0, -2.02255, 0, 48.1197, 89.511, 0, 33.494 )
+transform = Transform( 2.02255, 0, 48.1197, 0, 3.051, 0, -2.02255, 0, 48.1197, 54.531, 0, 41.888 )
 skeleton = NodePath("")
 
 [node name="corridor_wall8" parent="building/Section4" instance=ExtResource( 8 )]
-transform = Transform( 2.12132, 0, 51.1516, 0, 3.2, 0, -2.12132, 0, 51.1516, 95.478, 0, 25.33 )
+transform = Transform( 2.12132, 0, 51.1516, 0, 3.2, 0, -2.12132, 0, 51.1516, 61.536, 0, 35.069 )
 skeleton = NodePath("")
 
 [node name="corridor_wall9" parent="building/Section4" instance=ExtResource( 8 )]
-transform = Transform( 2.08028, 0, -7.40422, 0, 3.2, 0, 2.16158, 0, 7.12574, 116.652, 0, 53.5222 )
+transform = Transform( 2.08028, 0, -7.40422, 0, 3.2, 0, 2.16158, 0, 7.12574, 81.2929, 0, 62.2038 )
 skeleton = NodePath("")
 
 [node name="roof" parent="building/Section4" instance=ExtResource( 12 )]
-transform = Transform( 7.07107, 0, 49.4975, 0, 1, 0, -7.07107, 0, 49.4975, 92.207, 2.505, 28.962 )
-visible = false
+transform = Transform( 9.34288, 0, 65.4001, 0, 1, 0, -9.34288, 0, 65.4001, 58.7119, 2.505, 39.5805 )
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section4" instance=ExtResource( 1 )]
-transform = Transform( 7.07107, 0, 49.4975, 0, 1, 0, -7.07107, 0, 49.4975, 92.207, 0, 28.962 )
+transform = Transform( 8.39768, 0, 58.7838, 0, 1, 0, -8.39768, 0, 58.7838, 58.7119, 0, 39.5805 )
 skeleton = NodePath("../../../..")
 
 [node name="props" type="Spatial" parent="building/Section4"]
