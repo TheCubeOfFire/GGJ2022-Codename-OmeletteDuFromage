@@ -3,7 +3,7 @@ class_name Player
 
 const DASH_ACCELERATION: float = 2000.0
 
-const MOUSE_SENSIVITY: float = 0.05
+const MOUSE_SENSIVITY: float = 5.0
 
 var velocity := Vector3.ZERO
 
@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		_rotate_camera(event.relative.y, event.relative.x, -MOUSE_SENSIVITY)
+		_rotate_camera(event.relative.y, event.relative.x, -MOUSE_SENSIVITY * get_process_delta_time())
 
 func _rotate_camera(rx: float, ry: float, scale: float) -> void:
 	camera_target.rotate_x(deg2rad(rx * scale))
