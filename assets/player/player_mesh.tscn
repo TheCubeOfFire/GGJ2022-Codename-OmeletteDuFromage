@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/player/player_mesh.gdshader" type="Shader" id=1]
+[ext_resource path="res://assets/player/blobCoreScript.gd" type="Script" id=2]
 
 [sub_resource type="SphereMesh" id=1]
 
@@ -118,7 +119,13 @@ mesh = SubResource( 1 )
 skeleton = NodePath("../../..")
 material/0 = SubResource( 3 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="blobCoreMeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
 mesh = SubResource( 10 )
 material/0 = SubResource( 12 )
+script = ExtResource( 2 )
+changeTime = 1.0
+maxBound = Vector3( 0.3, 0.3, 0.3 )
+minBound = Vector3( -0.3, -0.3, -0.3 )
+minSpeed = 0.5
+maxSpeed = 2.0
