@@ -2,10 +2,11 @@
 
 [ext_resource path="res://assets/objects/meshes/terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/objectives/eatable_light_spot_flicker_ceiling.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/music/level_music.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/player/main_menu.tres" type="Environment" id=4]
 [ext_resource path="res://assets/objects/meshes/corridor_wall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/objects/meshes/gate_complex.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/objects/meshes/roof.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/music/Menu_project.wav" type="AudioStream" id=17]
 [ext_resource path="res://assets/game_mode/game_mode_in_game.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/objectives/end_level_trigger.tscn" type="PackedScene" id=21]
 
@@ -15,13 +16,6 @@ params_cull_mode = 2
 [sub_resource type="QuadMesh" id=2]
 material = SubResource( 3 )
 size = Vector2( 0.02, 0.02 )
-
-[sub_resource type="Environment" id=1]
-ambient_light_color = Color( 0.07, 0.07, 0.07, 1 )
-fog_enabled = true
-fog_color = Color( 0.576471, 0.701961, 0.501961, 1 )
-fog_depth_begin = 0.0
-fog_depth_curve = 0.732043
 
 [node name="MainMenuRoot2" type="Spatial"]
 
@@ -170,11 +164,10 @@ color = Color( 0.3125, 0.3125, 0.3125, 1 )
 hue_variation_random = 0.13
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+environment = ExtResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 17 )
-autoplay = true
+stream = ExtResource( 3 )
 
 [node name="GameModeInGame" parent="." instance=ExtResource( 19 )]
 player_start_path = NodePath("Start")
