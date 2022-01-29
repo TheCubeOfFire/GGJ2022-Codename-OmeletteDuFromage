@@ -94,6 +94,9 @@ material/0 = null
 material/1 = null
 material/2 = null
 material/3 = null
+__meta__ = {
+"apply_volumetrics": false
+}
 
 [node name="StaticBody" type="StaticBody" parent="."]
 
@@ -112,3 +115,6 @@ light_color = Color( 0.317647, 0.584314, 0.741176, 1 )
 light_energy = 7.0
 spot_range = 1.94531
 spot_angle = 89.99
+__meta__ = {
+"volumetric": 0.2
+}
