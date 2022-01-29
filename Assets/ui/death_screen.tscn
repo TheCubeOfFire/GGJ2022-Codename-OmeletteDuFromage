@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/ui/death_screen.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/font/sarpanch-regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/music/dead_music.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -47,3 +48,7 @@ margin_right = 179.0
 margin_bottom = 74.0
 custom_fonts/font = SubResource( 2 )
 text = "Retry"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
