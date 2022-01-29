@@ -7,7 +7,7 @@ data = PoolVector3Array( -0.1148, 0.1, 0.2772, -0.1148, 0, 0.3272, -0.1148, 0, 0
 
 [node name="machine_barrelLarge4" type="MeshInstance"]
 mesh = ExtResource( 1 )
-skeleton = NodePath("../machine_wireless")
+skeleton = NodePath("")
 material/0 = null
 material/1 = null
 material/2 = null
