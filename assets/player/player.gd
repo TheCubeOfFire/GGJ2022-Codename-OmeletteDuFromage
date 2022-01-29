@@ -1,8 +1,10 @@
 extends KinematicBody
 class_name Player
 
-const DASH_ACCELERATION: float = 600.0
-const DRAG_FACTOR: float = 2.0
+const DASH_ACCELERATION: float = 2000.0
+const DRAG_FACTOR: float = 10.0
+
+const GRAVITY: float = 9.81
 
 const MOUSE_SENSIVITY: float = 5.0
 
@@ -21,7 +23,7 @@ func _ready() -> void:
         push_error("Error connecting dash timer")
 
 func _physics_process(delta: float) -> void:
-    var direction := Vector3.FORWARD.rotated(Vector3.UP, rotation.y)
+    var direction := (Vector3.FORWARD.rotated(Vector3.UP, rotation.y) + Vector3.UP * 0.1).normalized()
 
     var drag := -DRAG_FACTOR * velocity
 
@@ -32,6 +34,8 @@ func _physics_process(delta: float) -> void:
             dash_particles.emitting = true
             dash_timer.start()
             velocity += DASH_ACCELERATION * direction * delta
+
+    velocity += GRAVITY * Vector3.DOWN * delta
 
     velocity = move_and_slide(velocity, Vector3.UP)
     velocity += drag * delta
