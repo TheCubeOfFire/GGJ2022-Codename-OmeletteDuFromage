@@ -53,6 +53,7 @@ func _update_time_counter(delta: float) -> void:
 	current_counter_value += delta
 	hud.set_counter_value(current_counter_value)
 
+
 func _on_die() -> void:
 	_retry_current_level()
 
