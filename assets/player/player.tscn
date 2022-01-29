@@ -15,9 +15,17 @@ script = ExtResource( 1 )
 shape = SubResource( 6 )
 
 [node name="CameraTarget" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0 )
 
-[node name="Camera" type="Camera" parent="CameraTarget"]
-transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 2, 4 )
+[node name="SpringArm" type="SpringArm" parent="CameraTarget"]
+spring_length = 4.0
+
+[node name="Camera" type="Camera" parent="CameraTarget/SpringArm"]
+transform = Transform( 1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 0, 0, 0 )
 
 [node name="PlayerLight" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0347508, 0.0409084, -0.0473249 )
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
