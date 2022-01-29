@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Position3D",
+"class": "CameraTarget",
+"language": "GDScript",
+"path": "res://assets/player/camera_target.gd"
+}, {
 "base": "Control",
 "class": "DeathScreen",
 "language": "GDScript",
@@ -60,6 +65,7 @@ _global_script_classes=[ {
 "path": "res://assets/player/player_light.gd"
 } ]
 _global_script_class_icons={
+"CameraTarget": "",
 "DeathScreen": "",
 "EatableLight": "",
 "EndLevelTrigger": "",

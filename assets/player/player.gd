@@ -9,7 +9,7 @@ const MOUSE_SENSIVITY: float = 5.0
 var velocity := Vector3.ZERO
 var can_dash := true
 
-onready var camera_target := $CameraTarget as Position3D
+onready var camera_target := $CameraTarget as CameraTarget
 onready var player_light := $PlayerLight as PlayerLight
 onready var dash_timer := $DashTimer as Timer
 onready var dash_particles := $DashParticles as CPUParticles
@@ -27,6 +27,7 @@ func _physics_process(delta: float) -> void:
 
     if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
         if can_dash and Input.is_action_just_pressed("dash"):
+            camera_target.start_dash_effect()
             can_dash = false
             dash_particles.emitting = true
             dash_timer.start()
@@ -41,10 +42,10 @@ func _input(event: InputEvent) -> void:
             _rotate_camera(event.relative.y, event.relative.x, -MOUSE_SENSIVITY * get_physics_process_delta_time())
 
 func _rotate_camera(rx: float, ry: float, scale: float) -> void:
-    camera_target.rotate_x(deg2rad(rx * scale))
-    camera_target.rotation.x = clamp(camera_target.rotation.x, - PI / 2.0, PI / 2.0)
+    camera_target.rotate_camera(rx, scale)
     self.rotate_y(deg2rad(ry * scale))
 
 func _enable_dash() -> void:
+    camera_target.stop_dash_effect()
     dash_particles.emitting = false
     can_dash = true
