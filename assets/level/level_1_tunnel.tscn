@@ -1,13 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/objects/meshes/terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/objectives/eatable_light_spot_flicker_ceiling.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/objects/light/machine_barrelLarge_light.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/objectives/eatable_light_spot_barrel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/objects/meshes/corridor_wall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/objects/meshes/gate_complex.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/objects/meshes/roof.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/objects/meshes/craft_cargoB.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/music/Menu_project.wav" type="AudioStream" id=17]
 [ext_resource path="res://assets/game_mode/game_mode_in_game.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/objectives/end_level_trigger.tscn" type="PackedScene" id=21]
@@ -46,26 +43,12 @@ skeleton = NodePath("")
 
 [node name="roof" parent="building/Section1" instance=ExtResource( 12 )]
 transform = Transform( 5.02126, 0, 0, 0, 1, 0, 0, 0, 34.7117, 0, 2.50463, -12.754 )
+visible = false
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section1" instance=ExtResource( 1 )]
 transform = Transform( 5.08809, 0, 0, 0, 1, 0, 0, 0, 38.301, 0, 0, -14.4657 )
 skeleton = NodePath("../../..")
-
-[node name="EatableLightSpotFlickerCeiling" parent="building/Section1" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318, 2.505, -30.227 )
-
-[node name="EatableLightSpotFlickerCeiling2" parent="building/Section1" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2572, 2.505, -42.9383 )
-
-[node name="EatableLightSpotFlickerCeiling3" parent="building/Section1" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363024, 2.505, -58.9425 )
-
-[node name="EatableLightSpotFlickerCeiling4" parent="building/Section1" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35402, 2.505, -13.8435 )
-
-[node name="EatableLightSpot_Barrel" parent="building/Section1" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.912732, 0, -4.14298 )
 
 [node name="Section2" type="Spatial" parent="building"]
 
@@ -79,6 +62,7 @@ skeleton = NodePath("")
 
 [node name="roof" parent="building/Section2" instance=ExtResource( 12 )]
 transform = Transform( -2.19486e-07, 0, 38.1393, 0, 1, 0, -5.02126, 0, -1.66712e-06, 16.6071, 2.50463, -28.2489 )
+visible = false
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section2" instance=ExtResource( 1 )]
@@ -96,6 +80,7 @@ skeleton = NodePath("")
 
 [node name="roof" parent="building/Section3" instance=ExtResource( 12 )]
 transform = Transform( 5.02126, 0, 0, 0, 1, 0, 0, 0, 39.962, 33.478, 2.462, -5.766 )
+visible = false
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section3" instance=ExtResource( 1 )]
@@ -117,6 +102,7 @@ skeleton = NodePath("")
 
 [node name="roof" parent="building/Section4" instance=ExtResource( 12 )]
 transform = Transform( 9.34288, 0, 65.4001, 0, 1, 0, -9.34288, 0, 65.4001, 58.7119, 2.505, 39.5805 )
+visible = false
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section4" instance=ExtResource( 1 )]
@@ -126,23 +112,49 @@ skeleton = NodePath("../../../..")
 [node name="props" type="Spatial" parent="building/Section4"]
 
 [node name="gate_complex2" parent="building/Section4/props" instance=ExtResource( 9 )]
-transform = Transform( 0.694909, 0, 0.719097, 0, 1, 0, -0.719097, 0, 0.694909, 114.754, -5.96046e-08, 52.3244 )
+transform = Transform( 0.694909, 0, 0.719097, 0, 1, 0, -0.719097, 0, 0.694909, 79.462, -5.96046e-08, 60.9077 )
 skeleton = NodePath("../../../../..")
 
-[node name="craft_cargoB" parent="building/Section4/props" instance=ExtResource( 13 )]
-transform = Transform( 0.694909, 0, 0.719097, 0, 1, 0, -0.719097, 0, 0.694909, 77.0224, 4.76837e-07, 16.6955 )
+[node name="Lights" type="Spatial" parent="building"]
 
-[node name="craft_cargoB2" parent="building/Section4/props" instance=ExtResource( 13 )]
-transform = Transform( 0.694909, 0, 0.719097, 0, 1, 0, -0.719097, 0, 0.694909, 83.6372, 4.76837e-07, 17.9276 )
+[node name="EatableLightSpotFlickerCeiling" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318, 2.505, -27.5275 )
 
-[node name="machine_barrelLarge4" parent="building/Section4/props" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 91.1971, 2.38419e-07, 27.3326 )
+[node name="EatableLightSpotFlickerCeiling2" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318, 2.505, -22.04 )
 
-[node name="machine_barrelLarge5" parent="building/Section4/props" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 93.5494, 2.38419e-07, 34.7504 )
+[node name="EatableLightSpotFlickerCeiling3" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318, 2.505, -12.3295 )
 
-[node name="machine_barrelLarge6" parent="building/Section4/props" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 97.9676, 2.38419e-07, 32.2201 )
+[node name="EatableLightSpotFlickerCeiling4" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318, 2.505, -2.30459 )
+
+[node name="EatableLightSpotFlickerCeiling5" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0885, 2.505, -28.5152 )
+
+[node name="EatableLightSpotFlickerCeiling6" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8259, 2.505, -28.2109 )
+
+[node name="EatableLightSpotFlickerCeiling7" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2878, 2.505, -28.0761 )
+
+[node name="EatableLightSpotFlickerCeiling8" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.0924, 2.505, -10.2906 )
+
+[node name="EatableLightSpotFlickerCeiling9" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.7151, 2.505, 2.42575 )
+
+[node name="EatableLightSpotFlickerCeiling10" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6369, 2.505, 22.8787 )
+
+[node name="EatableLightSpotFlickerCeiling11" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6459, 2.505, 26.8855 )
+
+[node name="EatableLightSpotFlickerCeiling12" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.9008, 2.505, 43.4779 )
+
+[node name="EatableLightSpotFlickerCeiling13" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.3448, 2.505, 52.2686 )
 
 [node name="particle_dust" type="CPUParticles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0245711, 0 )
@@ -176,4 +188,4 @@ end_level_path = NodePath("EndLevelTrigger")
 transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0, 0 )
 
 [node name="EndLevelTrigger" parent="GameModeInGame" instance=ExtResource( 21 )]
-transform = Transform( 1.49053, 0, 1.4602, 0, 1, 0, -1.4602, 0, 1.49053, 114.834, 0.330399, 52.0619 )
+transform = Transform( 1.49053, 0, 1.4602, 0, 1, 0, -1.4602, 0, 1.49053, 78.804, 0.330399, 60.2541 )

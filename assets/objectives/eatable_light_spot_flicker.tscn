@@ -15,6 +15,8 @@ area_path = NodePath("Area")
 light_intensity_curve = SubResource( 2 )
 
 [node name="FlickeringLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+spot_angle = 12.9
 script = ExtResource( 2 )
 flicker_enabled = true
 flicker_threshold_random = 40.0
@@ -23,4 +25,8 @@ curve = ExtResource( 3 )
 [node name="Area" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 0.56, 0, 0, 0, 0.1, 0, 0, 0, 0.56, 0, -2.443, 0 )
 shape = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
