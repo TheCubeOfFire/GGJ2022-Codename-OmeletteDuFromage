@@ -10,27 +10,48 @@ onready var end_level := get_node(end_level_path) as EndLevelTrigger
 
 export(PackedScene) var next_scene: PackedScene
 export(PackedScene) var player_class: PackedScene
+export(PackedScene) var hud_class: PackedScene
 
 
 var player: Player
+var hud: HUD
+
+var current_counter_value := 0.0
 
 
 func _ready() -> void:
-	player = player_class.instance() as Player
-	add_child(player)
-	
-	player.player_light.connect("on_die", self, "_on_die")
-	
-	if player_start != null:
-		player.transform = player_start.transform
-		
-	assert(end_level != null)
-	end_level.connect("on_triggered", self, "_on_end_level_triggered")
+	_spawn_hud()
+	_spawn_player()
+	_register_to_end_level()
 
 
 func _process(delta: float) -> void:
-	pass
+	_update_time_counter(delta)
 
+
+func _spawn_hud() -> void:
+	hud = hud_class.instance() as HUD
+	add_child(hud)
+
+
+func _spawn_player() -> void:
+	player = player_class.instance() as Player
+	add_child(player)
+	
+	assert(player.player_light.connect("on_die", self, "_on_die") == 0)
+	
+	if player_start != null:
+		player.transform = player_start.transform
+
+
+func _register_to_end_level() -> void:
+	assert(end_level != null)
+	assert(end_level.connect("on_triggered", self, "_on_end_level_triggered") == 0)
+
+
+func _update_time_counter(delta: float) -> void:
+	current_counter_value += delta
+	hud.set_counter_value(current_counter_value)
 
 func _on_die() -> void:
 	_retry_current_level()
