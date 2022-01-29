@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/objects/meshes/terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/chimney_detailed.obj" type="ArrayMesh" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://assets/game_mode/game_mode_main_menu.gd" type="Script" id=18]
 [ext_resource path="res://assets/player/player.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/objects/meshes/barrels.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/objectives/load_level_trigger.tscn" type="PackedScene" id=21]
+[ext_resource path="res://assets/Level/level_1_tunnel.tscn" type="PackedScene" id=22]
 
 [sub_resource type="SpatialMaterial" id=3]
 params_cull_mode = 2
@@ -350,6 +352,12 @@ curve = ExtResource( 16 )
 
 [node name="terrain2" parent="building" instance=ExtResource( 1 )]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+
+[node name="Triggers" type="Spatial" parent="."]
+
+[node name="LoadLevel01" parent="Triggers" instance=ExtResource( 21 )]
+transform = Transform( 0.343592, 0, 0, 0, 0.63132, 0, 0, 0, 0.5742, 3.75795, 0.428703, 1.01406 )
+level_to_load = ExtResource( 22 )
 
 [node name="particle_dust" type="CPUParticles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0245711, 0 )
