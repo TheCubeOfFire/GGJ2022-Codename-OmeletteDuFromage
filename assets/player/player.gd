@@ -3,6 +3,7 @@ class_name Player
 
 const DASH_ACCELERATION: float = 2000.0
 const DRAG_FACTOR: float = 10.0
+const JUMP_FACTOR: float = 0.1
 
 const GRAVITY: float = 9.81
 
@@ -23,7 +24,7 @@ func _ready() -> void:
         push_error("Error connecting dash timer")
 
 func _physics_process(delta: float) -> void:
-    var direction := (Vector3.FORWARD.rotated(Vector3.UP, rotation.y) + Vector3.UP * 0.1).normalized()
+    var direction := (Vector3.FORWARD.rotated(Vector3.UP, rotation.y) + Vector3.UP * JUMP_FACTOR).normalized()
 
     var drag := -DRAG_FACTOR * velocity
 

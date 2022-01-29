@@ -80,7 +80,6 @@ transform = Transform( 0.996471, 0, -0.0839387, 0, 1, 0, 0.0839387, 0, 0.996471,
 
 [node name="craft_cargoB" parent="props" instance=ExtResource( 13 )]
 transform = Transform( -0.526956, 0, 0.849893, 0, 1, 0, -0.849893, 0, -0.526956, -2.678, 0, 3.206 )
-skeleton = NodePath("")
 
 [node name="barrels3" parent="props" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32201, 0, -1.67235 )
@@ -112,18 +111,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33752, 0, -1.92055 )
 
 [node name="machine_barrelLarge4" parent="props" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56621, 0, -4.12854 )
-skeleton = NodePath("")
 
 [node name="machine_wireless2" parent="props" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93189, 0, -4.06004 )
 
 [node name="machine_barrelLarge5" parent="props" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56621, 0, -3.12854 )
-skeleton = NodePath("")
 
 [node name="machine_barrelLarge6" parent="props" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.566206, 0, -4.12854 )
-skeleton = NodePath("")
 
 [node name="machine_generatorLarge4" parent="props" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )

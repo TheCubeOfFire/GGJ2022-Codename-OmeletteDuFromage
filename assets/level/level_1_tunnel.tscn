@@ -46,7 +46,6 @@ skeleton = NodePath("")
 
 [node name="roof" parent="building/Section1" instance=ExtResource( 12 )]
 transform = Transform( 5.02126, 0, 0, 0, 1, 0, 0, 0, 72.3674, 0, 2.50463, -31.4398 )
-visible = false
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section1" instance=ExtResource( 1 )]
@@ -80,7 +79,6 @@ skeleton = NodePath("")
 
 [node name="roof" parent="building/Section2" instance=ExtResource( 12 )]
 transform = Transform( -2.19486e-07, 0, 72.3674, 0, 1, 0, -5.02126, 0, -3.16328e-06, 33.8295, 2.50463, -65.5751 )
-visible = false
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section2" instance=ExtResource( 1 )]
@@ -98,7 +96,6 @@ skeleton = NodePath("")
 
 [node name="roof" parent="building/Section3" instance=ExtResource( 12 )]
 transform = Transform( 5.02126, 0, 0, 0, 1, 0, 0, 0, 77.1144, 67.4979, 2.50463, -28.17 )
-visible = false
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section3" instance=ExtResource( 1 )]
@@ -120,7 +117,6 @@ skeleton = NodePath("")
 
 [node name="roof" parent="building/Section4" instance=ExtResource( 12 )]
 transform = Transform( 7.07107, 0, 49.4975, 0, 1, 0, -7.07107, 0, 49.4975, 92.207, 2.505, 28.962 )
-visible = false
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section4" instance=ExtResource( 1 )]
