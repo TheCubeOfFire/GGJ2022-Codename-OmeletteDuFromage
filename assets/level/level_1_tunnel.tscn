@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/objects/meshes/terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/objectives/eatable_light_spot_flicker_ceiling.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/music/level_music.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/player/main_menu.tres" type="Environment" id=4]
 [ext_resource path="res://assets/objects/meshes/corridor_wall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/objects/meshes/gate_complex.tscn" type="PackedScene" id=9]
@@ -165,9 +164,6 @@ hue_variation_random = 0.13
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
 
 [node name="GameModeInGame" parent="." instance=ExtResource( 19 )]
 player_start_path = NodePath("Start")
