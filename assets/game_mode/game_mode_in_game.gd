@@ -18,6 +18,7 @@ export(float) var override_player_initial_life := -1.0
 export(float) var override_player_life_loss_per_seconds := -1.0
 
 
+onready var persistent_data := get_node("/root/PersistentData") as PersistentData
 var player: Player
 var hud: HUD
 var death_screen: DeathScreen
@@ -88,7 +89,12 @@ func _on_die() -> void:
 
 
 func _on_end_level_triggered() -> void:
+	_compute_and_update_total_score()
 	_proceed_to_next_scene()
+
+
+func _compute_and_update_total_score() -> void:
+	persistent_data.total_score += 1.0
 
 
 func _proceed_to_next_scene() -> void:

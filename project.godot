@@ -66,6 +66,10 @@ config/name="OmeletteDuFromage"
 run/main_scene="res://Assets/Level/main_menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PersistentData="*res://assets/game_mode/persistent_data.gd"
+
 [input]
 
 dash={
