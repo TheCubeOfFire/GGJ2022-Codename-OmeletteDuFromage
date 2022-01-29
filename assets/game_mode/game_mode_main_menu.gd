@@ -13,7 +13,7 @@ var color_g_value : float = 0.0
 var color_b_value : float = 0.0
 
 var color_variation_factor : float = 0.1
-var color_variation_threshold : float = 0.6
+var color_variation_threshold : float = 1.0
 
 var color_chosen : bool = false
 
@@ -57,5 +57,5 @@ func _process(delta):
     
     var new_color := Vector3(color_r_value, color_g_value, color_b_value)
     var material_blob := blobMeshInstance.get_surface_material(0) as ShaderMaterial
-    material_blob.set_shader_param("emissionColor", new_color)
+    material_blob.set_shader_param("albedo", new_color)
 

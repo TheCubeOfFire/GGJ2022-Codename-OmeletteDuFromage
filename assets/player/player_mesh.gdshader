@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode specular_schlick_ggx, diffuse_burley, blend_mix;
+render_mode specular_schlick_ggx, diffuse_burley, blend_mix, ambient_light_disabled;
 
 uniform sampler2D noise;
 uniform float fThreshold;
