@@ -6,8 +6,8 @@ class_name PlayerLight
 export(NodePath) var light_path
 onready var light := get_node(light_path) as OmniLight
 
+export(Curve) var light_intensity_curve: Curve = null
 export(float) var max_life := 100.0
-export(float) var max_intensity := 1.0
 export(float) var life_loss_per_second := 2.0
 
 
@@ -42,4 +42,4 @@ func _update_current_life(delta: float) -> void:
 
 
 func _update_light_intensity() -> void:
-	light.light_energy = max_intensity * (current_life/max_life)
+	light.light_energy = light_intensity_curve.interpolate(current_life / max_life)
