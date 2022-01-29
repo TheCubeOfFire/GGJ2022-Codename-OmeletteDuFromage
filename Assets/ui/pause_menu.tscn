@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/ui/pause_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/font/sarpanch-regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/ui/font/sarpanch_regular.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/Level/main_menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/music/Pause_music.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -62,3 +63,7 @@ margin_right = 99.0
 margin_bottom = 142.0
 custom_fonts/font = ExtResource( 3 )
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
