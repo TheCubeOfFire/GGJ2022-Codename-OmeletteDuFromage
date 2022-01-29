@@ -24,17 +24,11 @@ func _ready() -> void:
         push_error("Error connecting dash timer")
 
 func _physics_process(delta: float) -> void:
-    var direction := (Vector3.FORWARD.rotated(Vector3.UP, rotation.y) + Vector3.UP * JUMP_FACTOR).normalized()
-
     var drag := -DRAG_FACTOR * velocity
 
     if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-        if can_dash and Input.is_action_just_pressed("dash"):
-            camera_target.start_dash_effect()
-            can_dash = false
-            dash_particles.emitting = true
-            dash_timer.start()
-            velocity += DASH_ACCELERATION * direction * delta
+        if is_on_floor() && can_dash && Input.is_action_pressed("dash"):
+            _dash(delta)
 
     velocity += GRAVITY * Vector3.DOWN * delta
 
@@ -45,6 +39,14 @@ func _input(event: InputEvent) -> void:
     if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
         if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
             _rotate_camera(event.relative.y, event.relative.x, -MOUSE_SENSIVITY * get_physics_process_delta_time())
+
+func _dash(delta: float) -> void:
+    var direction := (Vector3.FORWARD.rotated(Vector3.UP, rotation.y) + Vector3.UP * JUMP_FACTOR).normalized()
+    camera_target.start_dash_effect()
+    can_dash = false
+    dash_particles.emitting = true
+    dash_timer.start()
+    velocity += DASH_ACCELERATION * direction * delta
 
 func _rotate_camera(rx: float, ry: float, scale: float) -> void:
     camera_target.rotate_camera(rx, scale)
