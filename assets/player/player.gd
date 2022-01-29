@@ -1,8 +1,8 @@
 extends KinematicBody
 class_name Player
 
-const DASH_ACCELERATION: float = 3000.0
-const DRAG_FACTOR: float = 10.0
+const DASH_ACCELERATION: float = 600.0
+const DRAG_FACTOR: float = 2.0
 
 const MOUSE_SENSIVITY: float = 5.0
 
