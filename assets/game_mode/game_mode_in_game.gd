@@ -3,7 +3,7 @@ extends Spatial
 class_name GameModeInGame
 
 export(NodePath) var player_start_path
-onready var player_start := get_node(player_start_path) as Spatial
+onready var player_start := get_node_or_null(player_start_path) as Spatial
 
 export(NodePath) var end_level_path
 onready var end_level := get_node(end_level_path) as EndLevelTrigger

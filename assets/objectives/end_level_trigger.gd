@@ -11,8 +11,8 @@ signal on_triggered
 
 
 func _ready() -> void:
-	area.connect("body_entered", self, "_on_body_entered_area")
+	var _connect_error := area.connect("body_entered", self, "_on_body_entered_area")
 	
 
-func _on_body_entered_area(body: Node) -> void:
+func _on_body_entered_area(_body: Node) -> void:
 	emit_signal("on_triggered")
