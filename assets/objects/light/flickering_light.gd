@@ -31,4 +31,4 @@ func _process(delta: float) -> void :
             flicker_threshold = rand_range(0.0, flicker_threshold_random)
         else:
             var curve_pos = (flicker_elapsed_time_on - flicker_threshold) * curve_time_scale
-            light_energy = 1.0 if curve.interpolate(curve_pos) > 0.5 else 0.0
+            light_energy = light_energy_init if curve.interpolate(curve_pos) > 0.5 else 0.0
