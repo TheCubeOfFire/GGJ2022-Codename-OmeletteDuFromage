@@ -3,7 +3,7 @@ extends Control
 class_name PauseMenu
 
 
-export(PackedScene) var main_menu_scene: PackedScene
+export(String) var main_menu_scene := "res://assets/Level/main_menu.tscn"
 
 
 onready var button_resume := $VBoxContainer/ButtonResume
@@ -15,26 +15,26 @@ signal on_resume
 
 
 func _ready() -> void:
-	assert(button_resume.connect("pressed", self, "_on_resume") == 0)
-	assert(button_return_to_main_menu.connect("pressed", self, "_on_return_to_main_menu") == 0)
-	assert(button_quit.connect("pressed", self, "_on_quit") == 0)
-	_set_pause(true)
+    assert(button_resume.connect("pressed", self, "_on_resume") == 0)
+    assert(button_return_to_main_menu.connect("pressed", self, "_on_return_to_main_menu") == 0)
+    assert(button_quit.connect("pressed", self, "_on_quit") == 0)
+    _set_pause(true)
 
 
 func _on_resume() -> void:
-	emit_signal("on_resume")
-	_set_pause(false)
-	queue_free()
+    emit_signal("on_resume")
+    _set_pause(false)
+    queue_free()
 
 
 func _on_return_to_main_menu() -> void:
-	_set_pause(false)
-	get_tree().change_scene_to(main_menu_scene)
+    _set_pause(false)
+    get_tree().change_scene_to(load(main_menu_scene) as PackedScene)
 
 
 func _on_quit() -> void:
-	get_tree().quit(0)
+    get_tree().quit(0)
 
 
 func _set_pause(paused: bool) -> void:
-	get_tree().paused = paused
+    get_tree().paused = paused
