@@ -17,9 +17,9 @@
 [ext_resource path="res://assets/objects/light/flickering_light.gd" type="Script" id=15]
 [ext_resource path="res://assets/objects/light/flicker_light_1.tres" type="Curve" id=16]
 [ext_resource path="res://assets/music/Menu_project.wav" type="AudioStream" id=17]
-[ext_resource path="res://assets/game_mode/game_mode_main_menu.gd" type="Script" id=18]
-[ext_resource path="res://assets/player/player.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/game_mode/game_mode_in_game.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/objects/meshes/barrels.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/objectives/end_level_trigger.tscn" type="PackedScene" id=21]
 
 [sub_resource type="SpatialMaterial" id=3]
 params_cull_mode = 2
@@ -36,9 +36,9 @@ fog_depth_begin = 0.0
 fog_depth_curve = 0.732043
 
 [node name="MainMenuRoot" type="Spatial"]
-script = ExtResource( 18 )
 
 [node name="props" type="Spatial" parent="."]
+visible = false
 
 [node name="alien" parent="props" instance=ExtResource( 5 )]
 transform = Transform( 0.937955, 0, 0.346756, 0, 1, 0, -0.346756, 0, 0.937955, -3.42298, 0, 2.08614 )
@@ -116,24 +116,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3 )
 
 [node name="building" type="Spatial" parent="."]
 
-[node name="corridor_wall5" parent="building" instance=ExtResource( 8 )]
-transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 10.2, 5, 0, 0 )
-skeleton = NodePath("")
-
-[node name="corridor_wall6" parent="building" instance=ExtResource( 8 )]
-transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 10.2, -5, 0, 0 )
-skeleton = NodePath("")
-
-[node name="corridor_wall7" parent="building" instance=ExtResource( 8 )]
-transform = Transform( -4.88762e-07, 0, -10.2, 0, 3.2, 0, 3, 0, -1.66179e-06, 0, 0, -5 )
-skeleton = NodePath("../..")
-
-[node name="corridor_wall8" parent="building" instance=ExtResource( 8 )]
-transform = Transform( -4.88762e-07, 0, -10.2, 0, 3.2, 0, 3, 0, -1.66179e-06, 0, 0, 5 )
-skeleton = NodePath("../..")
-
 [node name="roof2" parent="building" instance=ExtResource( 12 )]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 2.50463, 0 )
+visible = false
 
 [node name="lights" type="Spatial" parent="building/roof2"]
 transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, -2.50463, 0 )
@@ -350,6 +335,55 @@ curve = ExtResource( 16 )
 
 [node name="terrain2" parent="building" instance=ExtResource( 1 )]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+visible = false
+
+[node name="Section1" type="Spatial" parent="building"]
+
+[node name="corridor_wall5" parent="building/Section1" instance=ExtResource( 8 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 67.6483, 2.391, 0, -28.977 )
+skeleton = NodePath("")
+
+[node name="corridor_wall6" parent="building/Section1" instance=ExtResource( 8 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 72.3393, -2.391, 0, -31.318 )
+skeleton = NodePath("")
+
+[node name="corridor_wall7" parent="building/Section1" instance=ExtResource( 8 )]
+transform = Transform( -3.76261e-08, 0, 5.00199, 0, 3.2, 0, -3, 0, -7.62016e-07, 0, 0, 4.70449 )
+skeleton = NodePath("")
+
+[node name="Section2" type="Spatial" parent="building"]
+
+[node name="corridor_wall5" parent="building/Section2" instance=ExtResource( 8 )]
+transform = Transform( -1.31134e-07, 0, 63.4158, 0, 3.2, 0, -3, 0, -2.77199e-06, 33.941, 0, -62.956 )
+skeleton = NodePath("")
+
+[node name="corridor_wall6" parent="building/Section2" instance=ExtResource( 8 )]
+transform = Transform( -1.31134e-07, 0, 72.3393, 0, 3.2, 0, -3, 0, -3.16205e-06, 33.626, 0, -67.639 )
+skeleton = NodePath("")
+
+[node name="Section3" type="Spatial" parent="building"]
+
+[node name="corridor_wall6" parent="building/Section3" instance=ExtResource( 8 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 72.3393, 65.5, 0, -26.636 )
+skeleton = NodePath("")
+
+[node name="corridor_wall5" parent="building/Section3" instance=ExtResource( 8 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 67.6483, 69.946, 0, -33.965 )
+skeleton = NodePath("")
+
+[node name="Section4" type="Spatial" parent="building"]
+
+[node name="corridor_wall7" parent="building/Section4" instance=ExtResource( 8 )]
+transform = Transform( 2.02255, 0, 48.1197, 0, 3.051, 0, -2.02255, 0, 48.1197, 89.511, 0, 33.494 )
+skeleton = NodePath("")
+
+[node name="corridor_wall8" parent="building/Section4" instance=ExtResource( 8 )]
+transform = Transform( 2.12132, 0, 51.1516, 0, 3.2, 0, -2.12132, 0, 51.1516, 95.478, 0, 25.33 )
+skeleton = NodePath("")
+
+[node name="corridor_wall9" parent="building/Section4" instance=ExtResource( 8 )]
+transform = Transform( 2.08028, 0, -7.40422, 0, 3.2, 0, 2.16158, 0, 7.12574, 116.652, 0, 53.5222 )
+skeleton = NodePath("")
 
 [node name="particle_dust" type="CPUParticles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0245711, 0 )
@@ -375,5 +409,12 @@ environment = SubResource( 1 )
 stream = ExtResource( 17 )
 autoplay = true
 
-[node name="Player" parent="." instance=ExtResource( 19 )]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.3302, 0.335041, 0.389998 )
+[node name="GameModeInGame" parent="." instance=ExtResource( 19 )]
+player_start_path = NodePath("Start")
+end_level_path = NodePath("EndLevelTrigger")
+
+[node name="Start" type="Spatial" parent="GameModeInGame"]
+transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0, 0 )
+
+[node name="EndLevelTrigger" parent="GameModeInGame" instance=ExtResource( 21 )]
+transform = Transform( 1.49053, 0, 1.4602, 0, 1, 0, -1.4602, 0, 1.49053, 114.834, 0.330399, 52.0619 )
