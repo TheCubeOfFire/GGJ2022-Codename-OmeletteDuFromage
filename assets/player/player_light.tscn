@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/player/player_light.gd" type="Script" id=1]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 1.0, 0, 1, Vector2( 1, 1 ), 1.0, 0.0, 1, 0 ]
 
 [node name="PlayerLight" type="Spatial"]
 script = ExtResource( 1 )
 light_path = NodePath("OmniLight")
+light_intensity_curve = SubResource( 1 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 light_color = Color( 0.960784, 0.772549, 0.0431373, 1 )
