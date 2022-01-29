@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/ui/pause_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/font/sarpanch-regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/ui/font/sarpanch_regular.tres" type="DynamicFont" id=3]
-[ext_resource path="res://assets/Level/main_menu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/music/Pause_music.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -19,7 +18,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-main_menu_scene = ExtResource( 4 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5

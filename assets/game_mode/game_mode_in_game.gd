@@ -76,7 +76,8 @@ func _spawn_player() -> void:
     assert(player.player_light.connect("on_die", self, "_on_die") == 0)
     
     if player_start != null:
-        player.transform = player_start.transform
+        player.set_translation(player_start.get_translation())
+        player.set_rotation(player_start.get_rotation())
         
     if override_player_max_life > 0.0:
         player.player_light.max_life = override_player_max_life
