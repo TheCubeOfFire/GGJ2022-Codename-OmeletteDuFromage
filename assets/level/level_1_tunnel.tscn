@@ -1,0 +1,379 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://assets/objects/meshes/terrain.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/chimney_detailed.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://assets/objects/meshes/machine_wireless.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/objects/meshes/barrels_rail.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/objects/meshes/alien.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/objects/meshes/corridor_detailed.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/objects/meshes/hangar_roundA.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/objects/meshes/corridor_wall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/objects/meshes/gate_complex.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/objects/meshes/machine_barrelLarge.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/objects/meshes/chimney_detailed.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/objects/meshes/roof.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/objects/meshes/craft_cargoB.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/objects/meshes/machine_generatorLarge.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/objects/light/flickering_light.gd" type="Script" id=15]
+[ext_resource path="res://assets/objects/light/flicker_light_1.tres" type="Curve" id=16]
+[ext_resource path="res://assets/music/Menu_project.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/game_mode/game_mode_main_menu.gd" type="Script" id=18]
+[ext_resource path="res://assets/player/player.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/objects/meshes/barrels.tscn" type="PackedScene" id=20]
+
+[sub_resource type="SpatialMaterial" id=3]
+params_cull_mode = 2
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 3 )
+size = Vector2( 0.02, 0.02 )
+
+[sub_resource type="Environment" id=1]
+ambient_light_color = Color( 0.07, 0.07, 0.07, 1 )
+fog_enabled = true
+fog_color = Color( 0.576471, 0.701961, 0.501961, 1 )
+fog_depth_begin = 0.0
+fog_depth_curve = 0.732043
+
+[node name="MainMenuRoot" type="Spatial"]
+script = ExtResource( 18 )
+
+[node name="props" type="Spatial" parent="."]
+
+[node name="alien" parent="props" instance=ExtResource( 5 )]
+transform = Transform( 0.937955, 0, 0.346756, 0, 1, 0, -0.346756, 0, 0.937955, -3.42298, 0, 2.08614 )
+
+[node name="alien2" parent="props" instance=ExtResource( 5 )]
+transform = Transform( 0.988618, 0, 0.15045, 0, 1, 0, -0.15045, 0, 0.988618, -3.25432, 0, 1.25268 )
+
+[node name="alien3" parent="props" instance=ExtResource( 5 )]
+transform = Transform( 0.996471, 0, -0.0839387, 0, 1, 0, 0.0839387, 0, 0.996471, -2.681, 0, 1.50575 )
+
+[node name="craft_cargoB" parent="props" instance=ExtResource( 13 )]
+transform = Transform( -0.526956, 0, 0.849893, 0, 1, 0, -0.849893, 0, -0.526956, -2.678, 0, 3.206 )
+skeleton = NodePath("")
+
+[node name="barrels3" parent="props" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32201, 0, -1.67235 )
+
+[node name="barrels4" parent="props" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28573, -2.38419e-07, -2.27023 )
+
+[node name="chimney_detailed5" parent="props" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57998, 0, -1.43458 )
+skeleton = NodePath("")
+
+[node name="chimney_detailed6" parent="props" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.579985, 0, -1.43458 )
+skeleton = NodePath("")
+
+[node name="chimney_detailed7" parent="props" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.420015, 0, -1.43458 )
+skeleton = NodePath("")
+
+[node name="chimney_detailed8" parent="props" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42002, 0, -1.43458 )
+skeleton = NodePath("")
+
+[node name="barrels_rail2" parent="props" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.40732, 0, 0.00280786 )
+
+[node name="corridor_detailed2" parent="props" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33752, 0, -1.92055 )
+
+[node name="machine_barrelLarge4" parent="props" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56621, 0, -4.12854 )
+skeleton = NodePath("")
+
+[node name="machine_wireless2" parent="props" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93189, 0, -4.06004 )
+
+[node name="machine_barrelLarge5" parent="props" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56621, 0, -3.12854 )
+skeleton = NodePath("")
+
+[node name="machine_barrelLarge6" parent="props" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.566206, 0, -4.12854 )
+skeleton = NodePath("")
+
+[node name="machine_generatorLarge4" parent="props" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+skeleton = NodePath("")
+
+[node name="gate_complex2" parent="props" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.7838, 0, 1 )
+
+[node name="machine_generatorLarge5" parent="props" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4 )
+skeleton = NodePath("")
+
+[node name="machine_generatorLarge6" parent="props" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4 )
+skeleton = NodePath("")
+
+[node name="hangar_roundA2" parent="props" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3 )
+
+[node name="building" type="Spatial" parent="."]
+
+[node name="corridor_wall5" parent="building" instance=ExtResource( 8 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 10.2, 5, 0, 0 )
+skeleton = NodePath("")
+
+[node name="corridor_wall6" parent="building" instance=ExtResource( 8 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 10.2, -5, 0, 0 )
+skeleton = NodePath("")
+
+[node name="corridor_wall7" parent="building" instance=ExtResource( 8 )]
+transform = Transform( -4.88762e-07, 0, -10.2, 0, 3.2, 0, 3, 0, -1.66179e-06, 0, 0, -5 )
+skeleton = NodePath("../..")
+
+[node name="corridor_wall8" parent="building" instance=ExtResource( 8 )]
+transform = Transform( -4.88762e-07, 0, -10.2, 0, 3.2, 0, 3, 0, -1.66179e-06, 0, 0, 5 )
+skeleton = NodePath("../..")
+
+[node name="roof2" parent="building" instance=ExtResource( 12 )]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 2.50463, 0 )
+
+[node name="lights" type="Spatial" parent="building/roof2"]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, -2.50463, 0 )
+
+[node name="chimney_detailed5" type="MeshInstance" parent="building/roof2/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 0, 2.55, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="FlickeringLight" type="SpotLight" parent="building/roof2/lights/chimney_detailed5"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 4.0
+curve = ExtResource( 16 )
+
+[node name="chimney_detailed6" type="MeshInstance" parent="building/roof2/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 1.00665, 2.5343, -0.00446701 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="FlickeringLight" type="SpotLight" parent="building/roof2/lights/chimney_detailed6"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 4.0
+curve = ExtResource( 16 )
+
+[node name="chimney_detailed7" type="MeshInstance" parent="building/roof2/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -1, 2.55, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="FlickeringLight" type="SpotLight" parent="building/roof2/lights/chimney_detailed7"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 4.0
+curve = ExtResource( 16 )
+
+[node name="chimney_detailed8" type="MeshInstance" parent="building/roof2/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -2, 2.55, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="FlickeringLight" type="SpotLight" parent="building/roof2/lights/chimney_detailed8"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 40.0
+curve = ExtResource( 16 )
+
+[node name="chimney_detailed9" type="MeshInstance" parent="building/roof2/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 1, 2.55, 1 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="FlickeringLight" type="SpotLight" parent="building/roof2/lights/chimney_detailed9"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 60.0
+curve = ExtResource( 16 )
+
+[node name="chimney_detailed10" type="MeshInstance" parent="building/roof2/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 2, 2.55, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="FlickeringLight" type="SpotLight" parent="building/roof2/lights/chimney_detailed10"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 50.0
+curve = ExtResource( 16 )
+
+[node name="chimney_detailed11" type="MeshInstance" parent="building/roof2/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, 1, 2.55, -1 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="FlickeringLight" type="SpotLight" parent="building/roof2/lights/chimney_detailed11"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 4.0
+curve = ExtResource( 16 )
+
+[node name="chimney_detailed12" type="MeshInstance" parent="building/roof2/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -2, 2.55, 1 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="FlickeringLight" type="SpotLight" parent="building/roof2/lights/chimney_detailed12"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 4.0
+curve = ExtResource( 16 )
+
+[node name="chimney_detailed13" type="MeshInstance" parent="building/roof2/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -2, 2.55, -1 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="FlickeringLight" type="SpotLight" parent="building/roof2/lights/chimney_detailed13"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 10.0
+curve = ExtResource( 16 )
+
+[node name="chimney_detailed14" type="MeshInstance" parent="building/roof2/lights"]
+transform = Transform( -0.766163, -0.000822652, -0.00208428, 0.00107844, -0.0464482, 0.000715901, -0.00209691, 0.000542877, 0.766168, -3, 2.55, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+skeleton = NodePath("")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="FlickeringLight" type="SpotLight" parent="building/roof2/lights/chimney_detailed14"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+spot_range = 3.39566
+spot_angle = 12.8983
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+flicker_enabled = true
+flicker_threshold_random = 14.0
+curve = ExtResource( 16 )
+
+[node name="terrain2" parent="building" instance=ExtResource( 1 )]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+
+[node name="particle_dust" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0245711, 0 )
+amount = 920
+lifetime = 32.66
+mesh = SubResource( 2 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 5, 5 )
+direction = Vector3( -1, 0, 0 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.1
+angular_velocity = 1.0
+angular_velocity_random = 0.57
+tangential_accel_random = 0.52
+angle_random = 0.28
+color = Color( 0.3125, 0.3125, 0.3125, 1 )
+hue_variation_random = 0.13
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+autoplay = true
+
+[node name="Player" parent="." instance=ExtResource( 19 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.3302, 0.335041, 0.389998 )
