@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/player/light_particles.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=9]
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SphereMesh" id=10]
+material = SubResource( 9 )
+radius = 0.05
+height = 0.1
+
+[sub_resource type="Curve" id=12]
+min_value = -20.0
+max_value = 0.0
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.252336, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.514019, -20 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=13]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=11]
+offsets = PoolRealArray( 0, 0.822222 )
+colors = PoolColorArray( 0, 0, 0, 0, 1, 1, 1, 1 )
+
+[node name="LightParticles" type="CPUParticles"]
+amount = 30
+lifetime = 0.8
+speed_scale = 2.0
+explosiveness = 0.7
+mesh = SubResource( 10 )
+emission_shape = 5
+emission_ring_radius = 3.0
+emission_ring_inner_radius = 2.0
+emission_ring_height = 1.0
+emission_ring_axis = Vector3( 0, 1, 0 )
+gravity = Vector3( 0, 0, 0 )
+radial_accel_curve = SubResource( 12 )
+scale_amount_curve = SubResource( 13 )
+color_ramp = SubResource( 11 )
+script = ExtResource( 1 )
+__meta__ = {
+"apply_volumetrics": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
