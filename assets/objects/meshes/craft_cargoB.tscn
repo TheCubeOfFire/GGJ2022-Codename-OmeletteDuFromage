@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/craft_cargoB.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.231602, 0.207912, 1.23122 )
+
+[node name="craft_cargoB" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../barrels_rail")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.293477, 0.00694448 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2" type="StaticBody" parent="."]
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.316022, -0.246702 )
+shape = SubResource( 1 )
+
+[node name="StaticBody3" type="StaticBody" parent="."]
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.581459, 0.401577 )
+shape = SubResource( 1 )
+
+[node name="StaticBody4" type="StaticBody" parent="."]
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512552, 0.30708, -0.0133824 )
+shape = SubResource( 1 )
+
+[node name="StaticBody5" type="StaticBody" parent="."]
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524147, 0.30708, -0.0133824 )
+shape = SubResource( 1 )
