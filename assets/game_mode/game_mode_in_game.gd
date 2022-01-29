@@ -3,7 +3,7 @@ extends Spatial
 class_name GameModeInGame
 
 export(NodePath) var player_start_path
-onready var player_start := get_node(player_start_path) as Spatial
+onready var player_start := get_node_or_null(player_start_path) as Spatial
 
 export(NodePath) var end_level_path
 onready var end_level := get_node(end_level_path) as EndLevelTrigger
@@ -19,16 +19,16 @@ func _ready() -> void:
 	player = player_class.instance() as Player
 	add_child(player)
 	
-	player.player_light.connect("on_die", self, "_on_die")
+	var _connect_error := player.player_light.connect("on_die", self, "_on_die")
 	
 	if player_start != null:
 		player.transform = player_start.transform
 		
 	assert(end_level != null)
-	end_level.connect("on_triggered", self, "_on_end_level_triggered")
+	_connect_error = end_level.connect("on_triggered", self, "_on_end_level_triggered")
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
