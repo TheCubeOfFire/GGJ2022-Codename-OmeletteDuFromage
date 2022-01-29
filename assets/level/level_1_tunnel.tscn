@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/objects/meshes/terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/objectives/eatable_light_spot_flicker_ceiling.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Level/volumetric_fog.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/player/main_menu.tres" type="Environment" id=4]
+[ext_resource path="res://assets/level/level_2_outside.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/objects/meshes/corridor_wall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/objects/meshes/gate_complex.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/objects/meshes/roof.tscn" type="PackedScene" id=12]
@@ -172,6 +173,7 @@ environment = ExtResource( 4 )
 [node name="GameModeInGame" parent="." instance=ExtResource( 19 )]
 player_start_path = NodePath("Start")
 end_level_path = NodePath("EndLevelTrigger")
+next_scene = ExtResource( 5 )
 
 [node name="Start" type="Spatial" parent="GameModeInGame"]
 transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0, 0 )
