@@ -2,7 +2,7 @@ extends KinematicBody
 class_name Player
 
 const DASH_ACCELERATION: float = 3000.0
-const DRAG_FACTOR: float = 500.0
+const DRAG_FACTOR: float = 10.0
 
 const MOUSE_SENSIVITY: float = 5.0
 
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 		velocity += DASH_ACCELERATION * direction * delta
 
 	velocity = move_and_slide(velocity, Vector3.UP)
-	velocity += drag * delta * delta
+	velocity += drag * delta
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
