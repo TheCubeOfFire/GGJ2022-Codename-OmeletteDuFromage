@@ -24,17 +24,19 @@ func _physics_process(delta: float) -> void:
 
 	var drag := -DRAG_FACTOR * velocity
 
-	if can_dash and Input.is_action_just_pressed("dash"):
-		can_dash = false
-		dash_timer.start()
-		velocity += DASH_ACCELERATION * direction * delta
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		if can_dash and Input.is_action_just_pressed("dash"):
+			can_dash = false
+			dash_timer.start()
+			velocity += DASH_ACCELERATION * direction * delta
 
 	velocity = move_and_slide(velocity, Vector3.UP)
 	velocity += drag * delta
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		_rotate_camera(event.relative.y, event.relative.x, -MOUSE_SENSIVITY * get_physics_process_delta_time())
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			_rotate_camera(event.relative.y, event.relative.x, -MOUSE_SENSIVITY * get_physics_process_delta_time())
 
 func _rotate_camera(rx: float, ry: float, scale: float) -> void:
 	camera_target.rotate_x(deg2rad(rx * scale))

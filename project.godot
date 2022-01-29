@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Control",
+"class": "DeathScreen",
+"language": "GDScript",
+"path": "res://assets/ui/death_screen.gd"
+}, {
 "base": "Spatial",
 "class": "EatableLight",
 "language": "GDScript",
@@ -45,6 +50,7 @@ _global_script_classes=[ {
 "path": "res://assets/player/player_light.gd"
 } ]
 _global_script_class_icons={
+"DeathScreen": "",
 "EatableLight": "",
 "EndLevelTrigger": "",
 "FlickeringLight": "",

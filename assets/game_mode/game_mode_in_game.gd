@@ -11,11 +11,18 @@ onready var end_level := get_node(end_level_path) as EndLevelTrigger
 export(PackedScene) var next_scene: PackedScene
 export(PackedScene) var player_class: PackedScene
 export(PackedScene) var hud_class: PackedScene
+export(PackedScene) var death_screen_class: PackedScene
+
+export(float) var override_player_max_life := -1.0
+export(float) var override_player_initial_life := -1.0
+export(float) var override_player_life_loss_per_seconds := -1.0
 
 
 var player: Player
 var hud: HUD
+var death_screen: DeathScreen
 
+var active := false
 var current_counter_value := 0.0
 
 
@@ -23,15 +30,27 @@ func _ready() -> void:
 	_spawn_hud()
 	_spawn_player()
 	_register_to_end_level()
+	
+	active = true
 
 
 func _process(delta: float) -> void:
+	if !active:
+		return
+		
 	_update_time_counter(delta)
 
 
 func _spawn_hud() -> void:
 	hud = hud_class.instance() as HUD
 	add_child(hud)
+
+
+func _spawn_death_screen() -> void:
+	death_screen = death_screen_class.instance() as DeathScreen
+	add_child(death_screen)
+	active = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _spawn_player() -> void:
@@ -42,6 +61,15 @@ func _spawn_player() -> void:
 	
 	if player_start != null:
 		player.transform = player_start.transform
+		
+	if override_player_max_life > 0.0:
+		player.player_light.max_life = override_player_max_life
+		
+	if override_player_initial_life > 0.0:
+		player.player_light.current_life = override_player_initial_life
+		
+	if override_player_life_loss_per_seconds > 0.0:
+		player.player_light.life_loss_per_second = override_player_life_loss_per_seconds
 
 
 func _register_to_end_level() -> void:
@@ -55,7 +83,8 @@ func _update_time_counter(delta: float) -> void:
 
 
 func _on_die() -> void:
-	_retry_current_level()
+	_spawn_death_screen()
+	assert(death_screen.connect("on_retry_pressed", self, "_retry_current_level") == 0)
 
 
 func _on_end_level_triggered() -> void:
