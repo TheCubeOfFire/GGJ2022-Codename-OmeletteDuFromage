@@ -7,7 +7,7 @@ data = PoolVector3Array( 0.7, 0.6, -1.15, 0.3, 0.6, -1.25, 0.7, 0.6, -1.25, 0.3,
 
 [node name="craft_cargoB" type="MeshInstance"]
 mesh = ExtResource( 1 )
-skeleton = NodePath("../barrels_rail")
+skeleton = NodePath("")
 material/0 = null
 material/1 = null
 material/2 = null
