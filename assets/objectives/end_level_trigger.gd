@@ -11,8 +11,8 @@ signal on_triggered
 
 
 func _ready() -> void:
-	area.connect("body_entered", self, "_on_body_entered_area")
+	assert(area.connect("body_entered", self, "_on_body_entered_area") == 0)
 	
 
-func _on_body_entered_area(body: Node) -> void:
+func _on_body_entered_area(_body: Node) -> void:
 	emit_signal("on_triggered")

@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Spatial",
+"class": "EatableLight",
+"language": "GDScript",
+"path": "res://assets/objectives/eatable_light.gd"
+}, {
+"base": "Spatial",
 "class": "EndLevelTrigger",
 "language": "GDScript",
 "path": "res://assets/objectives/end_level_trigger.gd"
@@ -24,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://assets/game_mode/game_mode_in_game.gd"
 }, {
+"base": "Control",
+"class": "HUD",
+"language": "GDScript",
+"path": "res://assets/ui/hud.gd"
+}, {
 "base": "KinematicBody",
 "class": "Player",
 "language": "GDScript",
@@ -35,9 +45,11 @@ _global_script_classes=[ {
 "path": "res://assets/player/player_light.gd"
 } ]
 _global_script_class_icons={
+"EatableLight": "",
 "EndLevelTrigger": "",
 "FlickeringLight": "",
 "GameModeInGame": "",
+"HUD": "",
 "Player": "",
 "PlayerLight": ""
 }

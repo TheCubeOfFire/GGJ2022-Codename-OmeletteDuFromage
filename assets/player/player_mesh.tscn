@@ -1,11 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/player/player_mesh.gdshader" type="Shader" id=1]
-
-[sub_resource type="PhysicsMaterial" id=15]
-absorbent = true
-
-[sub_resource type="SphereShape" id=14]
 
 [sub_resource type="SphereMesh" id=1]
 
@@ -41,13 +36,7 @@ shader_param/sssTransmission = Vector3( 1, 1, 1 )
 shader_param/emissionColor = Vector3( 1, 0, 0 )
 shader_param/noise = SubResource( 5 )
 
-[node name="blobRigidBody" type="RigidBody"]
-physics_material_override = SubResource( 15 )
-
-[node name="blobShape" type="CollisionShape" parent="."]
-shape = SubResource( 14 )
-
-[node name="blobMeshInstance" type="MeshInstance" parent="blobShape"]
+[node name="blobMeshInstance" type="MeshInstance"]
 mesh = SubResource( 1 )
 skeleton = NodePath("../../..")
 material/0 = SubResource( 3 )
