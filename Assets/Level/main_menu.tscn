@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/barrels_rail.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/chimney_detailed.obj" type="ArrayMesh" id=2]
@@ -16,6 +16,11 @@
 [ext_resource path="res://Assets/3D/space_kit/Models/OBJ format/terrain.obj" type="ArrayMesh" id=14]
 [ext_resource path="res://assets/objects/light/flickering_light.gd" type="Script" id=15]
 [ext_resource path="res://assets/objects/light/flicker_light_1.tres" type="Curve" id=16]
+[ext_resource path="res://assets/music/Menu_project.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/game_mode/game_mode_main_menu.gd" type="Script" id=18]
+[ext_resource path="res://assets/player/player.tscn" type="PackedScene" id=19]
+
+[sub_resource type="BoxShape" id=4]
 
 [sub_resource type="SpatialMaterial" id=3]
 params_cull_mode = 2
@@ -32,10 +37,7 @@ fog_depth_begin = 0.0
 fog_depth_curve = 0.732043
 
 [node name="MainMenuRoot" type="Spatial"]
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.815421, 0, 0.578869, 0, 1, 0, -0.578868, 0, 0.815421, 0.775624, 0.565897, 1.49422 )
-current = true
+script = ExtResource( 18 )
 
 [node name="props" type="Spatial" parent="."]
 
@@ -325,6 +327,14 @@ mesh = ExtResource( 14 )
 skeleton = NodePath("../..")
 material/0 = null
 
+[node name="RigidBody" type="RigidBody" parent="building/terrain"]
+transform = Transform( 2.53997, 0, 0, 0, 0.421483, 0, 0, 0, 2.54902, 0, -0.0864976, 0 )
+mode = 1
+mass = 0.01
+
+[node name="CollisionShape" type="CollisionShape" parent="building/terrain/RigidBody"]
+shape = SubResource( 4 )
+
 [node name="roof" type="MeshInstance" parent="building"]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 2.50463, 0 )
 mesh = ExtResource( 7 )
@@ -563,3 +573,10 @@ hue_variation_random = 0.13
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+autoplay = true
+
+[node name="Player" parent="." instance=ExtResource( 19 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.3302, 0.335041, 0.389998 )

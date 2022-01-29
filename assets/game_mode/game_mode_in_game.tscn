@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/game_mode/game_mode_in_game.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/hud.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/ui/death_screen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/ui/pause_menu.tscn" type="PackedScene" id=5]
 
 [node name="GameModeInGame" type="Spatial"]
 script = ExtResource( 1 )
 player_class = ExtResource( 2 )
 hud_class = ExtResource( 3 )
+pause_menu_class = ExtResource( 5 )
+death_screen_class = ExtResource( 4 )

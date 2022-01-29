@@ -18,28 +18,28 @@ var current_life := max_life
 
 
 func _ready() -> void:
-	pass
+    pass
 
 
 func _process(delta: float) -> void:
-	if current_life <= 0.0:
-		return
-		
-	_update_current_life(delta)
-	_update_light_intensity()
-	
-	if current_life <= 0.0:
-		emit_signal("on_die")
+    if current_life <= 0.0:
+        return
+        
+    _update_current_life(delta)
+    _update_light_intensity()
+    
+    if current_life <= 0.0:
+        emit_signal("on_die")
 
 
 func modify_life(modification: float) -> void:
-	current_life += modification
-	current_life = clamp(current_life, 0.0, max_life)
+    current_life += modification
+    current_life = clamp(current_life, 0.0, max_life)
 
 
 func _update_current_life(delta: float) -> void:
-	modify_life(-life_loss_per_second * delta)
+    modify_life(-life_loss_per_second * delta)
 
 
 func _update_light_intensity() -> void:
-	light.light_energy = light_intensity_curve.interpolate(current_life / max_life)
+    light.light_energy = light_intensity_curve.interpolate(current_life / max_life)
