@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://assets/objects/light/flickering_light.gd"
 }, {
+"base": "Reference",
+"class": "FrustumAABBIntersection",
+"language": "GDScript",
+"path": "res://addons/silicon.vfx.volumetrics/utilities/frustum_aabb_intersection.gd"
+}, {
 "base": "Spatial",
 "class": "GameModeInGame",
 "language": "GDScript",
@@ -44,10 +49,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://assets/ui/hud.gd"
 }, {
+"base": "Reference",
+"class": "Halton",
+"language": "GDScript",
+"path": "res://addons/silicon.vfx.volumetrics/utilities/halton.gd"
+}, {
 "base": "Spatial",
 "class": "LoadLevelTrigger",
 "language": "GDScript",
 "path": "res://assets/objectives/load_level_trigger.gd"
+}, {
+"base": "Reference",
+"class": "Matrix4",
+"language": "GDScript",
+"path": "res://addons/silicon.vfx.volumetrics/utilities/matrix4.gd"
 }, {
 "base": "Control",
 "class": "PauseMenu",
@@ -63,6 +78,21 @@ _global_script_classes=[ {
 "class": "PlayerLight",
 "language": "GDScript",
 "path": "res://assets/player/player_light.gd"
+}, {
+"base": "Node",
+"class": "SceneBounds",
+"language": "GDScript",
+"path": "res://addons/silicon.vfx.volumetrics/utilities/scene_bounds.gd"
+}, {
+"base": "ShaderMaterial",
+"class": "TransparentVolumeOverlay",
+"language": "GDScript",
+"path": "res://addons/silicon.vfx.volumetrics/material/transparent_volume_overlayer.gd"
+}, {
+"base": "Resource",
+"class": "VolumetricMaterial",
+"language": "GDScript",
+"path": "res://addons/silicon.vfx.volumetrics/material/volumetric_material.gd"
 } ]
 _global_script_class_icons={
 "CameraTarget": "",
@@ -70,12 +100,18 @@ _global_script_class_icons={
 "EatableLight": "",
 "EndLevelTrigger": "",
 "FlickeringLight": "",
+"FrustumAABBIntersection": "",
 "GameModeInGame": "",
 "HUD": "",
+"Halton": "",
 "LoadLevelTrigger": "",
+"Matrix4": "",
 "PauseMenu": "",
 "Player": "",
-"PlayerLight": ""
+"PlayerLight": "",
+"SceneBounds": "",
+"TransparentVolumeOverlay": "",
+"VolumetricMaterial": "res://addons/silicon.vfx.volumetrics/material/volumetric_material.svg"
 }
 
 [application]
@@ -87,6 +123,11 @@ config/icon="res://icon.png"
 [autoload]
 
 PersistentData="*res://assets/game_mode/persistent_data.gd"
+VolumetricServer="*res://addons/silicon.vfx.volumetrics/volumetric_server.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/silicon.vfx.volumetrics/plugin.cfg" )
 
 [input]
 

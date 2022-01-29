@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/silicon.vfx.volumetrics/volume_proxy.gd" type="Script" id=1]
+[ext_resource path="res://addons/silicon.vfx.volumetrics/volumetric_fog.gd" type="Script" id=2]
+[ext_resource path="res://addons/silicon.vfx.volumetrics/material/volumetric_material.gd" type="Script" id=3]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 3 )
+scatter_color = Color( 0.74902, 0.74902, 0.74902, 1 )
+density = 0.3
+absorption_color = Color( 0, 0, 0, 1 )
+anisotropy = 0.0
+emission_enabled = false
+uvw_scale = Vector3( 1, 1, 1 )
+uvw_offset = Vector3( 0, 0, 0 )
+
+[node name="VolumetricFog" type="Spatial"]
+
+[node name="VolumetricFog" type="Node" parent="."]
+script = ExtResource( 2 )
+start = 0.1
+end = 500.0
+tile_size = 2
+samples = 1
+distribution = 1.0
+temporal_blending = 0.95
+volumetric_shadows = false
+shadow_atlas_size = 1024
+ambient_light_color = Color( 0, 0, 0, 1 )
+ambient_light_energy = 1.0
+cull_mask = 1048575
+
+[node name="VolumeProxy" type="Spatial" parent="."]
+script = ExtResource( 1 )
+material = SubResource( 1 )
+bounds_mode = 0
