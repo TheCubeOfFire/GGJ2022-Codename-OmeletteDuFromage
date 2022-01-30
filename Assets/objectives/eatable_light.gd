@@ -15,6 +15,7 @@ onready var light := get_node(light_path) as Light
 export(Curve) var light_intensity_curve: Curve = null
 export(float) var given_life := 5.0
 
+onready var light_particles_scene := preload("res://assets/player/light_particles.tscn") as PackedScene
 
 func _ready() -> void:
     assert(given_life <= MAX_GIVEN_LIFE)
@@ -34,4 +35,6 @@ func _on_area_entered(body: Node) -> void:
     if body is Player:
         var player := body as Player
         player.player_light.modify_life(given_life)
+        var light_particles := light_particles_scene.instance()
+        player.add_child(light_particles)
         queue_free()

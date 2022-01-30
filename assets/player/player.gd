@@ -47,6 +47,7 @@ func _dash(delta: float) -> void:
     dash_particles.emitting = true
     dash_timer.start()
     velocity += DASH_ACCELERATION * direction * delta
+    $DashStreamPlayer.play();
 
 func _rotate_camera(rx: float, ry: float, scale: float) -> void:
     camera_target.rotate_camera(rx, scale)

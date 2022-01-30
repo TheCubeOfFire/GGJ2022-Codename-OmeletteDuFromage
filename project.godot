@@ -54,6 +54,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/silicon.vfx.volumetrics/utilities/halton.gd"
 }, {
+"base": "CPUParticles",
+"class": "LightParticles",
+"language": "GDScript",
+"path": "res://assets/player/light_particles.gd"
+}, {
 "base": "Spatial",
 "class": "LoadLevelTrigger",
 "language": "GDScript",
@@ -104,6 +109,7 @@ _global_script_class_icons={
 "GameModeInGame": "",
 "HUD": "",
 "Halton": "",
+"LightParticles": "",
 "LoadLevelTrigger": "",
 "Matrix4": "",
 "PauseMenu": "",
