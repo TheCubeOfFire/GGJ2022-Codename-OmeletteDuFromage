@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/objects/meshes/terrain.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/objectives/eatable_light_spot_flicker_ceiling.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/objects/meshes/gate_complex.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/player/main_menu.tres" type="Environment" id=3]
 [ext_resource path="res://assets/objects/meshes/terrain_sideCornerInner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/objects/meshes/astronautA.tscn" type="PackedScene" id=5]
@@ -29,8 +29,29 @@ size = Vector2( 0.02, 0.02 )
 
 [node name="Lights" type="Spatial" parent="."]
 
-[node name="EatableLightSpotFlickerCeiling" parent="Lights" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318, 2.505, -27.5275 )
+[node name="EatableLightRockCrystal" parent="Lights" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2702, 0, -7.22343 )
+
+[node name="EatableLightRockCrystal2" parent="Lights" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6722, 0, -4.52963 )
+
+[node name="EatableLightRockCrystal3" parent="Lights" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6722, 0, -14.3276 )
+
+[node name="EatableLightRockCrystal5" parent="Lights" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6722, -10.5079, -9.28737 )
+
+[node name="EatableLightRockCrystal6" parent="Lights" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.0156, -10.5079, 4.53265 )
+
+[node name="EatableLightRockCrystal7" parent="Lights" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 76.0435, -10.5079, 4.53265 )
+
+[node name="EatableLightRockCrystal8" parent="Lights" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 101.633, -10.5079, -21.8415 )
+
+[node name="gate_complex2" parent="Lights" instance=ExtResource( 2 )]
+transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 126.469, -26.924, -0.929999 )
 
 [node name="terrain_lv1" type="Spatial" parent="."]
 
@@ -105,11 +126,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3 )
 
 [node name="craterLarge" parent="terrain_lv1/props" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1 )
-
-[node name="lights" type="Spatial" parent="terrain_lv1"]
-
-[node name="EatableLightRockCrystal" parent="terrain_lv1/lights" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2702, 0, -7.22343 )
 
 [node name="terrain_lv0" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
@@ -360,7 +376,7 @@ player_start_path = NodePath("Start")
 end_level_path = NodePath("EndLevelTrigger")
 
 [node name="Start" type="Spatial" parent="GameModeInGame"]
-transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0, 0 )
+transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, -6.85352, 0, 10.9151 )
 
 [node name="EndLevelTrigger" parent="GameModeInGame" instance=ExtResource( 21 )]
-transform = Transform( 1.49053, 0, 1.4602, 0, 1, 0, -1.4602, 0, 1.49053, 78.804, 0.330399, 60.2541 )
+transform = Transform( 1.49053, 0, 1.4602, 0, 1, 0, -1.4602, 0, 1.49053, 126.515, -27.2962, -0.587385 )
