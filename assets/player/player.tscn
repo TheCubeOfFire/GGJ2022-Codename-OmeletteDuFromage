@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/player_light.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/player/player_mesh.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/player/camera_target.gd" type="Script" id=4]
 [ext_resource path="res://assets/SoundFX/dash_v2.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/SoundFX/eat_light.wav" type="AudioStream" id=6]
 
 [sub_resource type="SphereShape" id=6]
 
@@ -70,3 +71,6 @@ __meta__ = {
 [node name="DashStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = -20.0
+
+[node name="EatLightSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )

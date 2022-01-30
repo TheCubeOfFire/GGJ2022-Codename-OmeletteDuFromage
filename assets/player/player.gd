@@ -61,3 +61,6 @@ func _enable_dash() -> void:
     camera_target.stop_dash_effect()
     dash_particles.emitting = false
     can_dash = true
+
+func absorb_light_play_sound() -> void:
+    $EatLightSoundPlayer.play()
