@@ -1,13 +1,22 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/objects/meshes/terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/objectives/eatable_light_spot_flicker_ceiling.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Level/volumetric_fog.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/player/main_menu.tres" type="Environment" id=4]
 [ext_resource path="res://assets/level/level_2_outside.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/objects/meshes/structure.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/objects/meshes/barrels.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/objects/meshes/corridor_wall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/objects/meshes/gate_complex.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/objects/meshes/structure_diagonal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/objects/meshes/machine_barrelLarge.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/objects/meshes/roof.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/objects/meshes/desk_computer.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/objects/meshes/turret_double.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/objects/meshes/machine_generatorLarge.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/objects/meshes/craft_cargoB.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/objects/meshes/barrels_rail.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/game_mode/game_mode_in_game.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/objectives/end_level_trigger.tscn" type="PackedScene" id=21]
 
@@ -44,6 +53,21 @@ skeleton = NodePath("../../..")
 transform = Transform( 5.08809, 0, 0, 0, 1, 0, 0, 0, 38.301, 0, 0, -14.4657 )
 skeleton = NodePath("../../..")
 
+[node name="barrels3" parent="building/Section1" instance=ExtResource( 7 )]
+transform = Transform( 1.89827, 0, 0.629741, 0, 2, 0, -0.629741, 0, 1.89827, 0.210118, 5.96046e-08, -20.6578 )
+skeleton = NodePath("..")
+
+[node name="barrels5" parent="building/Section1" instance=ExtResource( 7 )]
+transform = Transform( 1.99989, 0, 0.0206294, 0, 2, 0, -0.0206294, 0, 1.99989, -1.71362, 5.96046e-08, -19.2469 )
+skeleton = NodePath("..")
+
+[node name="barrels4" parent="building/Section1" instance=ExtResource( 7 )]
+transform = Transform( -0.644112, 0, 1.35467, 0, 1.5, 0, -1.35467, 0, -0.644112, 0.49998, 5.96046e-08, -19.106 )
+skeleton = NodePath("..")
+
+[node name="structure" parent="building/Section1" instance=ExtResource( 6 )]
+transform = Transform( 0.792773, 1.27254, 0.046411, -1.27339, 0.792206, 0.0299996, 0.000939122, -0.0552546, 1.49898, 0.545064, 0.571846, -19.6858 )
+
 [node name="Section2" type="Spatial" parent="building"]
 
 [node name="corridor_wall5" parent="building/Section2" instance=ExtResource( 8 )]
@@ -61,6 +85,24 @@ skeleton = NodePath("../../..")
 [node name="terrain" parent="building/Section2" instance=ExtResource( 1 )]
 transform = Transform( -2.22407e-07, 0, 38.2308, 0, 1, 0, -5.08809, 0, -1.67112e-06, 16.6071, 0, -27.8985 )
 
+[node name="structure_diagonal" parent="building/Section2" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4354, 0, -28.6328 )
+
+[node name="structure_diagonal2" parent="building/Section2" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4354, 0.932041, -28.6328 )
+
+[node name="structure_diagonal3" parent="building/Section2" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4354, 1.83878, -28.6328 )
+
+[node name="machine_barrelLarge4" parent="building/Section2" instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 25.0328, 0, -28.8693 )
+
+[node name="desk_computer" parent="building/Section2" instance=ExtResource( 13 )]
+transform = Transform( 0.886349, 0, -0.950992, 0, 1.3, 0, 0.950992, 0, 0.886349, 24.3852, -0.0177144, -28.2459 )
+
+[node name="desk_computer2" parent="building/Section2" instance=ExtResource( 13 )]
+transform = Transform( 0.913574, 0, 0.924869, 0, 1.3, 0, -0.924869, 0, 0.913574, 25.7077, -0.0177144, -28.203 )
+
 [node name="Section3" type="Spatial" parent="building"]
 
 [node name="corridor_wall6" parent="building/Section3" instance=ExtResource( 8 )]
@@ -77,6 +119,41 @@ skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section3" instance=ExtResource( 1 )]
 transform = Transform( 5.08809, 0, 0, 0, 1, 0, 0, 0, 39.962, 34.0843, 0, -5.61783 )
+
+[node name="turret_double" parent="building/Section3" instance=ExtResource( 14 )]
+transform = Transform( -1.59998, 0, -0.00890789, 0, 1.6, 0, 0.00890789, 0, -1.59998, 33.3815, 1.19209e-07, -11.7548 )
+
+[node name="machine_generatorLarge4" parent="building/Section3" instance=ExtResource( 15 )]
+transform = Transform( 1.19052, 0, -1.60707, 0, 2, 0, 1.60707, 0, 1.19052, 34.8747, 0, 10.6673 )
+
+[node name="roof2" parent="building/Section3" instance=ExtResource( 12 )]
+transform = Transform( 1.19052, 0.795749, -5.86765, 0, 1.73761, 4.16178, 1.60707, -0.58949, 4.34675, 43.6146, 0.961303, 21.9199 )
+skeleton = NodePath("..")
+
+[node name="roof3" parent="building/Section3" instance=ExtResource( 12 )]
+transform = Transform( 0.390499, 1.07566, 6.89322, -0.312738, -1.61692, 4.769, 1.93642, -0.478056, -0.619883, 40.6564, 1.21601, 20.2529 )
+skeleton = NodePath("..")
+
+[node name="craft_cargoB" parent="building/Section3" instance=ExtResource( 16 )]
+transform = Transform( 0.702982, 0, -1.32507, 0, 1.5, 0, 1.32507, 0, 0.702982, 51.3507, -1.66893e-06, 36.1232 )
+
+[node name="craft_cargoB2" parent="building/Section3" instance=ExtResource( 16 )]
+transform = Transform( 1.39505, 0, -0.551213, 0, 1.5, 0, 0.551213, 0, 1.39505, 56.4555, -1.66893e-06, 32.9588 )
+
+[node name="barrels_rail2" parent="building/Section3" instance=ExtResource( 17 )]
+transform = Transform( 1.67345, 0, 2.48989, 0, 3, 0, -2.48989, 0, 1.67345, 60.7629, 0, 42.0729 )
+
+[node name="barrels_rail3" parent="building/Section3" instance=ExtResource( 17 )]
+transform = Transform( 2.85754, 0, 0.913496, 0, 3, 0, -0.913496, 0, 2.85754, 62.5168, 0, 40.7882 )
+
+[node name="structure_diagonal" parent="building/Section3" instance=ExtResource( 10 )]
+transform = Transform( 0.67465, 1.47628, 3.2265e-08, 0, -8.74228e-08, 1, 0.738138, -1.3493, -2.94899e-08, 72.2405, 0.4076, 48.7196 )
+
+[node name="structure_diagonal2" parent="building/Section3" instance=ExtResource( 10 )]
+transform = Transform( 0.873143, 0.974927, 2.13077e-08, 0, -8.74228e-08, 1, 0.487464, -1.74629, -3.81663e-08, 71.1688, 0.4076, 50.4247 )
+
+[node name="structure_diagonal3" parent="building/Section3" instance=ExtResource( 10 )]
+transform = Transform( 0.873143, 0.974927, 2.13077e-08, 0, -8.74228e-08, 1, 0.487464, -1.74629, -3.81663e-08, 70.2454, 0.4076, 52.0788 )
 
 [node name="Section4" type="Spatial" parent="building"]
 
@@ -153,16 +230,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6459, 2.505, 26.8855 )
 given_life = 6.0
 
 [node name="EatableLightSpotFlickerCeiling12" parent="building/Lights" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.9008, 2.505, 43.4779 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.8932, 2.54725, 43.4306 )
 given_life = 8.0
 
 [node name="EatableLightSpotFlickerCeiling14" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.9098, 2.505, 37.475 )
-given_life = 6.0
+given_life = 10.0
 
 [node name="EatableLightSpotFlickerCeiling13" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.3448, 2.505, 52.2686 )
-given_life = 6.0
+given_life = 100.0
 
 [node name="particle_dust" type="CPUParticles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0245711, 0 )
@@ -181,7 +258,7 @@ angle_random = 0.28
 color = Color( 0.3125, 0.3125, 0.3125, 1 )
 hue_variation_random = 0.13
 __meta__ = {
-"_vol_id": 51
+"_vol_id": 2176
 }
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
