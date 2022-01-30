@@ -34,6 +34,7 @@ func _update_light_intensity() ->  void:
 func _on_area_entered(body: Node) -> void:
     if body is Player:
         var player := body as Player
+        player.absorb_light_play_sound()
         player.player_light.modify_life(given_life)
         var light_particles := light_particles_scene.instance()
         player.add_child(light_particles)

@@ -1,10 +1,11 @@
 extends KinematicBody
 class_name Player
 
-const DASH_ACCELERATION: float = 2000.0
-const DRAG_FACTOR: float = 10.0
-const JUMP_FACTOR: float = 0.1
+const DASH_SPEED: float = 3.0
+const DRAG_FACTOR: float = 0.02
+const JUMP_SPEED: float = 3.0
 
+const MASS: float = 100.0
 const GRAVITY: float = 9.81
 
 const MOUSE_SENSIVITY: float = 5.0
@@ -24,30 +25,33 @@ func _ready() -> void:
         push_error("Error connecting dash timer")
 
 func _physics_process(delta: float) -> void:
-    var drag := -DRAG_FACTOR * velocity
+    var drag := (-DRAG_FACTOR * velocity.length() / MASS) * velocity
 
     if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
         if is_on_floor() && can_dash && Input.is_action_pressed("dash"):
-            _dash(delta)
+            _dash()
 
     velocity += GRAVITY * Vector3.DOWN * delta
 
     velocity = move_and_slide(velocity, Vector3.UP)
-    velocity += drag * delta
+    if is_on_floor():
+        velocity = Vector3.ZERO
+    else:
+        velocity += drag * delta
 
 func _input(event: InputEvent) -> void:
     if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
         if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
             _rotate_camera(event.relative.y, event.relative.x, -MOUSE_SENSIVITY * get_physics_process_delta_time())
 
-func _dash(delta: float) -> void:
-    var direction := (Vector3.FORWARD.rotated(Vector3.UP, rotation.y) + Vector3.UP * JUMP_FACTOR).normalized()
+func _dash() -> void:
+    var direction := Vector3.FORWARD.rotated(Vector3.UP, rotation.y)
     camera_target.start_dash_effect()
     can_dash = false
     dash_particles.emitting = true
     dash_timer.start()
-    velocity += DASH_ACCELERATION * direction * delta
-    $DashStreamPlayer.play();
+    velocity += direction * DASH_SPEED + Vector3.UP * JUMP_SPEED
+    $DashStreamPlayer.play()
 
 func _rotate_camera(rx: float, ry: float, scale: float) -> void:
     camera_target.rotate_camera(rx, scale)
@@ -57,3 +61,6 @@ func _enable_dash() -> void:
     camera_target.stop_dash_effect()
     dash_particles.emitting = false
     can_dash = true
+
+func absorb_light_play_sound() -> void:
+    $EatLightSoundPlayer.play()
