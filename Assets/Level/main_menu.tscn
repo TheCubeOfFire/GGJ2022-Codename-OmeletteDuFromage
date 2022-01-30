@@ -446,3 +446,4 @@ autoplay = true
 
 [node name="Player" parent="." instance=ExtResource( 19 )]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.3302, 0.335041, 0.389998 )
+pad_rotation_deadzone_threshold = 0.25

@@ -15,7 +15,7 @@ var color_b_value : float = 0.0
 var color_variation_factor : float = 0.1
 var color_variation_threshold : float = 1.0
 
-var color_chosen : bool = false
+onready var persistent_data := get_node("/root/PersistentData") as PersistentData
 
 export(PackedScene) var pause_menu_class: PackedScene
 var pause_menu: PauseMenu
@@ -26,17 +26,20 @@ var active := true
 func _ready():
     blobMeshInstance = find_node("blobMeshInstance", true)
     assert(null != blobMeshInstance)
+    var playerLight = find_node("PlayerLight", true) as PlayerLight
+    assert(null != playerLight)
+    playerLight.set_invincible(true)
         
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     if not active:
         return
         
-    if color_chosen:
+    if persistent_data.color_chosen:
         return
     
     if Input.is_action_just_pressed("dash"):
-        color_chosen = true
+        persistent_data.color_chosen = true
         return
         
     sleep_elapsed_time += delta
