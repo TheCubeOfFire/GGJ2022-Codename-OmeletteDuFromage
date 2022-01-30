@@ -3,9 +3,8 @@ extends Node
 const HUE_VARIATION_FACTOR: float = 0.7
 const SATURATION_VARIATION_FACTOR: float = 0.2
 
-var blobMeshInstance : MeshInstance
-
 onready var persistent_data := get_node("/root/PersistentData") as PersistentData
+onready var player := $Player as Player
 
 export(PackedScene) var pause_menu_class: PackedScene
 var pause_menu: PauseMenu
@@ -17,8 +16,6 @@ var saturation_param := 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    blobMeshInstance = find_node("blobMeshInstance", true)
-    assert(null != blobMeshInstance)
     var playerLight = find_node("PlayerLight", true) as PlayerLight
     assert(null != playerLight)
     playerLight.set_invincible(true)
@@ -42,9 +39,7 @@ func _process(delta):
     var new_color := Color.from_hsv(hue, saturation, 1.0)
     
     persistent_data.player_color = Vector3(new_color.r, new_color.g, new_color.b)
-    
-    var material_blob := blobMeshInstance.get_surface_material(0) as ShaderMaterial
-    material_blob.set_shader_param("albedo", persistent_data.player_color)
+    player.update_color()
 
 func _input(event: InputEvent) -> void:
     if event.is_action_pressed("ui_pause_menu") && active:
