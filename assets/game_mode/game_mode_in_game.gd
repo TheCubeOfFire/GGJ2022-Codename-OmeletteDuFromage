@@ -28,6 +28,8 @@ var death_screen: DeathScreen
 var active := false
 var current_counter_value := 0.0
 
+var musicTimeStamp: float;
+
 
 func _ready() -> void:
     _spawn_hud()
@@ -55,6 +57,8 @@ func _spawn_hud() -> void:
 
 
 func _spawn_pause_menu() -> void:
+    musicTimeStamp = $LevelMusicPlayer.get_playback_position();
+    $LevelMusicPlayer.stop();
     pause_menu = pause_menu_class.instance() as PauseMenu
     add_child(pause_menu)
     assert(pause_menu.connect("on_resume", self, "_resume_game") == 0)
@@ -63,6 +67,8 @@ func _spawn_pause_menu() -> void:
 
 
 func _spawn_death_screen() -> void:
+    $LevelMusicPlayer.stop();
+    musicTimeStamp = 0.0;
     death_screen = death_screen_class.instance() as DeathScreen
     add_child(death_screen)
     active = false
@@ -70,6 +76,7 @@ func _spawn_death_screen() -> void:
 
 
 func _spawn_player() -> void:
+    $LevelMusicPlayer.play();
     player = player_class.instance() as Player
     add_child(player)
     
@@ -91,6 +98,7 @@ func _spawn_player() -> void:
 
 func _resume_game() -> void:
     Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+    $LevelMusicPlayer.play(musicTimeStamp);
     active = true
 
 
