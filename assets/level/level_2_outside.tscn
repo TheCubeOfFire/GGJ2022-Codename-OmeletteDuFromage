@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/objects/meshes/terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/objects/meshes/gate_complex.tscn" type="PackedScene" id=2]
@@ -14,9 +14,15 @@
 [ext_resource path="res://assets/objects/meshes/crater.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/objects/meshes/craterLarge.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/objects/meshes/terrain_sideCorner.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/objects/meshes/rocket.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/music/Menu_project.wav" type="AudioStream" id=17]
 [ext_resource path="res://assets/game_mode/game_mode_in_game.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/objectives/end_level_trigger.tscn" type="PackedScene" id=21]
+
+[sub_resource type="Curve" id=7]
+min_value = 2.5
+max_value = 10.0
+_data = [ Vector2( 0, 6.11364 ), 0.0, 3.88636, 0, 1, Vector2( 1, 10 ), 3.88636, 0.0, 1, 0 ]
 
 [sub_resource type="SpatialMaterial" id=3]
 params_cull_mode = 2
@@ -33,8 +39,8 @@ background_mode = 2
 background_sky = SubResource( 6 )
 background_energy = 0.05
 ambient_light_color = Color( 0.32549, 0.32549, 0.32549, 1 )
-ambient_light_sky_contribution = 0.1
-fog_enabled = true
+ambient_light_energy = 0.0
+ambient_light_sky_contribution = 0.0
 fog_color = Color( 0.0705882, 0.0784314, 0.0823529, 1 )
 fog_depth_begin = 0.0
 fog_depth_end = 50.0
@@ -81,12 +87,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.0156, -10.5079, 4.53265 )
 
 [node name="EatableLightRockCrystal7" parent="Lights" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 76.0435, -10.5079, 4.53265 )
+light_intensity_curve = SubResource( 7 )
+given_life = 60.0
 
 [node name="EatableLightRockCrystal8" parent="Lights" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 101.633, -10.5079, -21.8415 )
 
+[node name="EatableLightRockCrystal9" parent="Lights" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.1808, -10.5086, -8.35594 )
+
 [node name="gate_complex2" parent="Lights" instance=ExtResource( 2 )]
-transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 126.469, -26.924, -0.929999 )
+transform = Transform( 0.511938, 0, 0.859023, 0, 1, 0, -0.859023, 0, 0.511938, 126.469, -28.0268, -0.929999 )
 
 [node name="terrain_lv1" type="Spatial" parent="."]
 
@@ -337,9 +348,37 @@ skeleton = NodePath("../../..")
 transform = Transform( -7.86805e-07, -1, 4.37114e-07, 0, -4.37114e-08, -10, 18, -4.37114e-08, 1.91069e-14, 134, -5.5, -15.9 )
 skeleton = NodePath("../../../..")
 
+[node name="CSGTorus" type="CSGTorus" parent="terrain_lv3/ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 87.8019, -15.7494, -16.7957 )
+inner_radius = 8.0
+outer_radius = 20.0
+
+[node name="CSGTorus2" type="CSGTorus" parent="terrain_lv3/ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.9965, -15.7494, 0.00763416 )
+inner_radius = 8.0
+outer_radius = 20.0
+
 [node name="props" type="Spatial" parent="terrain_lv3"]
 
 [node name="lights" type="Spatial" parent="terrain_lv3"]
+
+[node name="rocket_baseA" parent="terrain_lv3" instance=ExtResource( 15 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 87.7556, -41.7538, -16.2681 )
+
+[node name="SpotLight" type="SpotLight" parent="terrain_lv3/rocket_baseA"]
+transform = Transform( 0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0, 10.4787, 0 )
+light_energy = 3.0
+spot_range = 16.8343
+spot_angle = 38.6811
+
+[node name="rocket_baseA2" parent="terrain_lv3" instance=ExtResource( 15 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 61.4785, -41.7538, -0.466071 )
+
+[node name="SpotLight2" type="SpotLight" parent="terrain_lv3/rocket_baseA2"]
+transform = Transform( 0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, -0.0416622, 10.4787, -0.00935245 )
+light_energy = 3.0
+spot_range = 17.9314
+spot_angle = 31.1955
 
 [node name="terrain_lv4" type="Spatial" parent="."]
 
@@ -411,9 +450,10 @@ stream = ExtResource( 17 )
 [node name="GameModeInGame" parent="." instance=ExtResource( 19 )]
 player_start_path = NodePath("Start")
 end_level_path = NodePath("EndLevelTrigger")
+override_player_initial_life = 70.0
 
 [node name="Start" type="Spatial" parent="GameModeInGame"]
 transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, -6.85352, 0, 10.9151 )
 
 [node name="EndLevelTrigger" parent="GameModeInGame" instance=ExtResource( 21 )]
-transform = Transform( 1.49053, 0, 1.4602, 0, 1, 0, -1.4602, 0, 1.49053, 126.515, -27.2962, -0.587385 )
+transform = Transform( 1.11451, 0, 1.76401, 0, 1, 0, -1.76401, 0, 1.11451, 126.138, -27.9105, -1.14536 )
