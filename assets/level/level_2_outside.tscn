@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/objects/meshes/terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/objects/meshes/gate_complex.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/objects/meshes/craterLarge.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/objects/meshes/terrain_sideCorner.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/objects/meshes/rocket.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/Level/level_3_rooms.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/music/Menu_project.wav" type="AudioStream" id=17]
 [ext_resource path="res://assets/game_mode/game_mode_in_game.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/objectives/end_level_trigger.tscn" type="PackedScene" id=21]
@@ -450,6 +451,7 @@ stream = ExtResource( 17 )
 [node name="GameModeInGame" parent="." instance=ExtResource( 19 )]
 player_start_path = NodePath("Start")
 end_level_path = NodePath("EndLevelTrigger")
+next_scene = ExtResource( 16 )
 override_player_initial_life = 70.0
 
 [node name="Start" type="Spatial" parent="GameModeInGame"]
