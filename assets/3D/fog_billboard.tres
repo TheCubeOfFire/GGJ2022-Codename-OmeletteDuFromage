@@ -1,0 +1,71 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[sub_resource type="Shader" id=2]
+code = "shader_type spatial;
+render_mode blend_add, diffuse_burley, specular_disabled, cull_disabled;
+
+void vertex() {
+	MODELVIEW_MATRIX = INV_CAMERA_MATRIX * mat4(CAMERA_MATRIX[0],WORLD_MATRIX[1],vec4(normalize(cross(CAMERA_MATRIX[0].xyz,WORLD_MATRIX[1].xyz)), 0.0),WORLD_MATRIX[3]);
+	MODELVIEW_MATRIX = MODELVIEW_MATRIX * mat4(vec4(1.0, 0.0, 0.0, 0.0),vec4(0.0, 1.0/length(WORLD_MATRIX[1].xyz), 0.0, 0.0), vec4(0.0, 0.0, 1.0, 0.0),vec4(0.0, 0.0, 0.0 ,1.0));
+}
+
+uniform float fFrequency;
+uniform float fTransparency;
+uniform sampler2D noiseMap;
+
+uniform float specular;
+uniform float roughness;
+uniform float rim;
+uniform float rimTint;
+uniform float clearcoat;
+uniform float clearcoatGloss;
+uniform float sssStrength;
+uniform vec3 sssTransmission;
+uniform vec3 emissionColor;
+
+void fragment()
+{
+    vec2 uv = UV;
+    if (!FRONT_FACING)
+    {
+        uv.x = 1.0 - uv.x;
+        uv.y = 1.0 - uv.y;
+    }
+    
+    ALBEDO = texture(noiseMap, uv + vec2(0.0, TIME/fFrequency)).xxx;
+    ALPHA = mix(fTransparency * texture(noiseMap, uv + vec2(0.0, TIME/fFrequency)).x, 0.0, min(exp(-(1.0 - uv.y)), 1.0));
+    METALLIC = 0.0;
+	SPECULAR = specular;
+	ROUGHNESS = roughness;
+	CLEARCOAT = clearcoat;
+	CLEARCOAT_GLOSS = clearcoatGloss;
+	SSS_STRENGTH = sssStrength;
+	TRANSMISSION = texture(noiseMap, UV + vec2(0.0, TIME/fFrequency)).xxx;
+	EMISSION = emissionColor;
+}
+
+"
+
+[sub_resource type="OpenSimplexNoise" id=4]
+period = 87.2
+persistence = 0.189
+lacunarity = 3.21
+
+[sub_resource type="NoiseTexture" id=5]
+seamless = true
+noise = SubResource( 4 )
+
+[resource]
+shader = SubResource( 2 )
+shader_param/fFrequency = 10.0
+shader_param/fTransparency = 0.5
+shader_param/specular = null
+shader_param/roughness = null
+shader_param/rim = null
+shader_param/rimTint = null
+shader_param/clearcoat = null
+shader_param/clearcoatGloss = null
+shader_param/sssStrength = 0.0
+shader_param/sssTransmission = Vector3( 1, 1, 1 )
+shader_param/emissionColor = null
+shader_param/noiseMap = SubResource( 5 )
