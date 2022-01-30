@@ -17,13 +17,21 @@ var color_variation_threshold : float = 1.0
 
 var color_chosen : bool = false
 
+export(PackedScene) var pause_menu_class: PackedScene
+var pause_menu: PauseMenu
+
+var active := true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
     blobMeshInstance = find_node("blobMeshInstance", true)
     assert(null != blobMeshInstance)
-
+        
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+    if not active:
+        return
+        
     if color_chosen:
         return
     
@@ -59,3 +67,17 @@ func _process(delta):
     var material_blob := blobMeshInstance.get_surface_material(0) as ShaderMaterial
     material_blob.set_shader_param("albedo", new_color)
 
+func _input(event: InputEvent) -> void:
+    if event.is_action_pressed("ui_pause_menu") && active:
+        _spawn_pause_menu()
+        
+func _spawn_pause_menu() -> void:
+    pause_menu = pause_menu_class.instance() as PauseMenu
+    add_child(pause_menu)
+    assert(pause_menu.connect("on_resume", self, "_resume_game") == 0)
+    active = false
+    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+func _resume_game() -> void:
+    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+    active = true
