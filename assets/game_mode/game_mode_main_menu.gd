@@ -20,6 +20,7 @@ func _ready():
     assert(null != playerLight)
     playerLight.set_invincible(true)
         
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     if not active:
@@ -30,6 +31,7 @@ func _process(delta):
     
     if Input.is_action_just_pressed("dash"):
         persistent_data.color_chosen = true
+        Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
         return
     
     hue = fmod(hue + delta * HUE_VARIATION_FACTOR, 1.0)
@@ -40,6 +42,7 @@ func _process(delta):
     
     persistent_data.player_color = Vector3(new_color.r, new_color.g, new_color.b)
     player.update_color()
+
 
 func _input(event: InputEvent) -> void:
     if event.is_action_pressed("ui_pause_menu") && active:
