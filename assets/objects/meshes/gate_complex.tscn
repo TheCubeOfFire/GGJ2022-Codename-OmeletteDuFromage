@@ -89,7 +89,7 @@ subdivide_depth = 120
 [node name="gate_complex2" type="MeshInstance"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 mesh = ExtResource( 1 )
-skeleton = NodePath("../..")
+skeleton = NodePath("")
 material/0 = null
 material/1 = null
 material/2 = null
