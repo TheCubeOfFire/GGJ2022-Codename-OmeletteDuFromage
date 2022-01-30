@@ -3,7 +3,7 @@ extends Control
 class_name PauseMenu
 
 
-export(String) var main_menu_scene := "res://assets/Level/main_menu.tscn"
+export(String) var main_menu_scene := "res://assets/level/main_menu.tscn"
 
 
 onready var button_resume := $VBoxContainer/ButtonResume
