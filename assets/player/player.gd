@@ -15,9 +15,6 @@ var velocity := Vector3.ZERO
 var can_dash := true
 
 export var pad_rotation_deadzone_threshold : float = 0.25
-var pad_rotation : bool = false
-var pad_rotation_value_x : float = 0.0
-var pad_rotation_value_y : float = 0.0
 
 onready var camera_target := $CameraTarget as CameraTarget
 onready var player_light := $PlayerLight as PlayerLight
