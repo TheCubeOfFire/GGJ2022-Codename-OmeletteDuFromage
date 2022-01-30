@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://assets/textures/metal_plate_1/MetalPlates014_1K_Color.png" type="Texture" id=1]
 [ext_resource path="res://assets/objects/meshes/gate_complex.tscn" type="PackedScene" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://assets/game_mode/game_mode_in_game.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/objects/meshes/corridor_end.tscn" type="PackedScene" id=20]
 [ext_resource path="res://assets/objectives/end_level_trigger.tscn" type="PackedScene" id=21]
+[ext_resource path="res://assets/objects/meshes/corridor_wall.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/objects/meshes/roof.tscn" type="PackedScene" id=23]
 
 [sub_resource type="SpatialMaterial" id=7]
 albedo_color = Color( 0.560784, 0.560784, 0.560784, 1 )
@@ -52,6 +54,19 @@ normal_texture = ExtResource( 12 )
 anisotropy_enabled = true
 anisotropy = 0.0
 uv1_scale = Vector3( 0.025, 0.11, 0.025 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_color = Color( 0.862745, 0.729412, 0.333333, 1 )
+albedo_texture = ExtResource( 8 )
+metallic = 1.0
+metallic_texture = ExtResource( 10 )
+roughness_texture = ExtResource( 11 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 12 )
+anisotropy_enabled = true
+anisotropy = 0.0
+uv1_scale = Vector3( 0.025, 0.075, 0.025 )
 
 [sub_resource type="SpatialMaterial" id=9]
 albedo_color = Color( 0.560784, 0.560784, 0.560784, 1 )
@@ -128,7 +143,7 @@ panorama = ExtResource( 3 )
 [sub_resource type="Environment" id=5]
 background_mode = 2
 background_sky = SubResource( 6 )
-background_energy = 16.0
+background_energy = 0.0
 ambient_light_color = Color( 0.32549, 0.32549, 0.32549, 1 )
 ambient_light_sky_contribution = 0.1
 fog_enabled = true
@@ -175,6 +190,9 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0
 [node name="EatableLightSpotFlickerCeiling" parent="template" instance=ExtResource( 16 )]
 transform = Transform( 0.5, 0, 0, 0, 0.4, 0, 0, 0, 0.5, -6.7391, 0.9, 5.25846 )
 
+[node name="EatableLightSpotFlickerCeilinghigh" parent="template" instance=ExtResource( 16 )]
+transform = Transform( 0.965971, 0, 0, 0, 1.16167, 0, 0, 0, 1.16122, 0.130869, 2.374, -5.89092 )
+
 [node name="corridor_detailed2" parent="template" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7391, 0, 5.25846 )
 
@@ -197,6 +215,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, -8, 0, -1 )
 [node name="ground_metal_plate_2" parent="template/corridor_end" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, -0.25 )
 
+[node name="corridor_wall" parent="template" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 1, -6.03014, 0, 0 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall7" parent="template" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, 0.975, 0, 1.95, 0, -3, 0, -4.26186e-08, -4.45528, 1.00112, 4.51593 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall7" parent="template/corridor_wall7" instance=ExtResource( 22 )]
+transform = Transform( 0.2, -9.88098e-15, 3.86358e-14, 0, 0.141057, 0.171454, -1.95399e-14, -0.0796306, 0.303711, 0.0298085, -0.0488702, -0.392666 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall8" parent="template/corridor_wall7" instance=ExtResource( 22 )]
+transform = Transform( 0.2, -6.74183e-09, 2.59705e-08, -1.48929e-08, -0.137971, 0.182722, 8.3242e-09, -0.0848639, -0.297068, 0.0298085, 0.00576174, 0.535586 )
+skeleton = NodePath(".")
+
 [node name="rooms" type="Spatial" parent="."]
 
 [node name="room1" type="Spatial" parent="rooms"]
@@ -205,15 +239,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, -0.25 )
 transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0 )
 material/0 = SubResource( 7 )
 
-[node name="Corridor_metal" type="Spatial" parent="rooms/room1"]
-
-[node name="corridor_detailed2" parent="rooms/room1/Corridor_metal" instance=ExtResource( 4 )]
+[node name="corridor_detailed3" parent="rooms/room1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 5 )
 
-[node name="ground_metal_plate_2" parent="rooms/room1/Corridor_metal/corridor_detailed2" instance=ExtResource( 15 )]
+[node name="ground_metal_plate_2" parent="rooms/room1/corridor_detailed3" instance=ExtResource( 15 )]
 material/0 = SubResource( 8 )
 
-[node name="EatableLightSpotFlickerCeiling" parent="rooms/room1/Corridor_metal" instance=ExtResource( 16 )]
+[node name="EatableLightSpotFlickerCeiling" parent="rooms/room1" instance=ExtResource( 16 )]
 transform = Transform( 0.5, 0, 0, 0, 0.4, 0, 0, 0, 0.5, 0.2609, 0.9, 5.25846 )
 
 [node name="corridor_cornerRound" parent="rooms/room1" instance=ExtResource( 13 )]
@@ -232,12 +264,96 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0
 transform = Transform( -4.37114e-08, 0, 3, 0, 1, 0, -1, 0, -1.31134e-07, 5, 0, -1 )
 
 [node name="ground_metal_plate_2" parent="rooms/room1/corridor_detailed2" instance=ExtResource( 15 )]
+material/0 = SubResource( 13 )
+
+[node name="corridor_wall" parent="rooms/room1" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 5, -2.65, 0, 0 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall2" parent="rooms/room1" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, -5, 0, 3.2, 0, 3, 0, -2.18557e-07, 0, 0, -2.6 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall3" parent="rooms/room1" instance=ExtResource( 22 )]
+transform = Transform( -0.5, 0, -2.75549e-07, 0, 3.2, 0, 7.54979e-08, 0, -1.82488, 2.52411, 0, -1.7002 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall4" parent="rooms/room1" instance=ExtResource( 22 )]
+transform = Transform( -3, 0, -3.01992e-07, 0, 3.2, 0, 4.52987e-07, 0, -2, 2.64807, 0, 1.49946 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall5" parent="rooms/room1" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, 2, 0, 3.2, 0, -3, 0, -8.74228e-08, 1.5004, 0, 2.649 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall6" parent="rooms/room1" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, 2.05, 0, 3.2, 0, -3, 0, -8.96083e-08, -1.5, 0, 2.65 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall7" parent="rooms/room1" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, 0.975, 0, 1.95, 0, -3, 0, -4.26186e-08, 0.0121867, 1.00112, 2.65 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall7" parent="rooms/room1/corridor_wall7" instance=ExtResource( 22 )]
+transform = Transform( 0.2, -9.88098e-15, 3.86358e-14, 0, 0.141057, 0.171454, -1.95399e-14, -0.0796306, 0.303711, 0.0298085, -0.0488702, -0.392666 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall8" parent="rooms/room1/corridor_wall7" instance=ExtResource( 22 )]
+transform = Transform( 0.2, -6.74183e-09, 2.59705e-08, -1.48929e-08, -0.137971, 0.182722, 8.3242e-09, -0.0848639, -0.297068, 0.0298085, 0.00576174, 0.535586 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall8" parent="rooms/room1" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 1.95, 0, 0, 0, 1.76106, 2.6976, 1.00112, -0.214082 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall7" parent="rooms/room1/corridor_wall8" instance=ExtResource( 22 )]
+transform = Transform( 0.2, -9.88098e-15, 3.86358e-14, 0, 0.141057, 0.171454, -1.95399e-14, -0.0796306, 0.303711, 0.0298085, -0.0488702, -0.392666 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall8" parent="rooms/room1/corridor_wall8" instance=ExtResource( 22 )]
+transform = Transform( 0.2, -6.74183e-09, 2.59705e-08, -1.48929e-08, -0.137971, 0.182722, 8.3242e-09, -0.0848639, -0.297068, 0.0298085, 0.00576174, 0.535586 )
+skeleton = NodePath(".")
 
 [node name="room2" type="Spatial" parent="rooms"]
 
 [node name="ground_metal_plate" parent="rooms/room2" instance=ExtResource( 14 )]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 8.5 )
 material/0 = SubResource( 7 )
+
+[node name="corridor_wall" parent="rooms/room2" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 2.00432, -1.15, 0, 8.5 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall2" parent="rooms/room2" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 2.00432, 1.15, 0, 8.5 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall3" parent="rooms/room2" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, 2.00432, 0, 3.2, 0, -3, 0, -8.76116e-08, 0, 0, 9.65 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall4" parent="rooms/room2" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, 0.54473, 0, 3.2, 0, -3, 0, -2.38109e-08, -0.789401, 0, 7.35 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall7" parent="rooms/room2" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, 1.17343, 0, 1.95, 0, -3, 0, -5.12921e-08, -0.0104494, 1.00112, 7.32119 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall7" parent="rooms/room2/corridor_wall7" instance=ExtResource( 22 )]
+transform = Transform( 0.2, -1.0103e-14, 3.86358e-14, 0, 0.141057, 0.171454, -1.95399e-14, -0.0796306, 0.303711, 0.0298085, -0.098577, -0.364605 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall8" parent="rooms/room2/corridor_wall7" instance=ExtResource( 22 )]
+transform = Transform( 0.2, -6.74183e-09, 2.59705e-08, -1.48929e-08, -0.137971, 0.182722, 8.3242e-09, -0.0848639, -0.297068, 0.0298085, 0.00026232, 0.505517 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall5" parent="rooms/room2" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, 0.54473, 0, 3.2, 0, -3, 0, -2.38109e-08, 0.768, 0, 7.35 )
+skeleton = NodePath(".")
+
+[node name="EatableLightSpotFlickerCeilinghigh" parent="rooms/room2" instance=ExtResource( 16 )]
+transform = Transform( 0.965971, 0, 0, 0, 1.16167, 0, 0, 0, 1.16122, -0.122329, 2.374, 8.53477 )
 
 [node name="room3" type="Spatial" parent="rooms"]
 
@@ -319,11 +435,59 @@ transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 5, 0, 4
 
 [node name="ground_metal_plate_2" parent="rooms/room3/corridor_detailed3/corridor_detailed8" instance=ExtResource( 15 )]
 
+[node name="corridor_wall" parent="rooms/room3" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 4.51889, 6.35, 0, 1.761 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall2" parent="rooms/room3" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 4.59622, 6.35, 0, -3.79595 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall3" parent="rooms/room3" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 7.001, 9.649, 0, -1.001 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall4" parent="rooms/room3" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 1.15501, 9.649, 0, -6.078 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall5" parent="rooms/room3" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 0.545, 9.649, 0, 3.772 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall6" parent="rooms/room3" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, 7.001, 0, 3.2, 0, -3, 0, -3.06023e-07, 7.97842, 0, -6.14456 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall7" parent="rooms/room3" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, 3.42728, 0, 3.2, 0, -3, 0, -1.49811e-07, 7.97842, 0, 4.14881 )
+skeleton = NodePath(".")
+
 [node name="room4" type="Spatial" parent="rooms"]
 
 [node name="ground_metal_plate" parent="rooms/room4" instance=ExtResource( 14 )]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 8.5, 0, 8 )
 material/0 = SubResource( 7 )
+
+[node name="corridor_wall7" parent="rooms/room4" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, 3.42728, 0, 3.2, 0, -3, 0, -1.49811e-07, 8, 0, 9.15 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall8" parent="rooms/room4" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, 3.42728, 0, 3.2, 0, -3, 0, -1.49811e-07, 8, 0, 6.85 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall9" parent="rooms/room4" instance=ExtResource( 22 )]
+transform = Transform( -3, 0, -5.17505e-07, 0, 3.2, 0, 4.52987e-07, 0, -3.42728, 9.64871, 0, 7.85 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall10" parent="rooms/room4" instance=ExtResource( 22 )]
+transform = Transform( -3, 0, -8.42958e-08, 0, 3.2, 0, 4.52987e-07, 0, -0.558266, 7.35334, 0, 7.21877 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall11" parent="rooms/room4" instance=ExtResource( 22 )]
+transform = Transform( -3, 0, -8.42958e-08, 0, 3.2, 0, 4.52987e-07, 0, -0.558266, 7.35334, 0, 8.77908 )
+skeleton = NodePath(".")
 
 [node name="room5" type="Spatial" parent="rooms"]
 
@@ -379,6 +543,37 @@ transform = Transform( -4.37114e-08, 0, -5, 0, 1, 0, 1, 0, -2.18557e-07, 23.5, 0
 [node name="ground_metal_plate_2" parent="rooms/room5/corridor_detailed6" instance=ExtResource( 15 )]
 material/0 = SubResource( 8 )
 
+[node name="corridor_wall3" parent="rooms/room5" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 9.75047, 12.851, 0, 0.375 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall4" parent="rooms/room5" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 5.3512, 21.1491, 0, -2.1713 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall5" parent="rooms/room5" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 5.3512, 21.1491, 0, 4.17431 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall6" parent="rooms/room5" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, -5.3512, 0, 3.2, 0, 3, 0, -2.33909e-07, 20.1594, 0, 4.64833 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall7" parent="rooms/room5" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, -4.32598, 0, 3.2, 0, 3, 0, -1.89095e-07, 14.3413, 0, 4.64833 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall8" parent="rooms/room5" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, -1, 0, 3.2, 0, 3, 0, -4.37114e-08, 16.0013, 0, -4.64606 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall9" parent="rooms/room5" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, -3.73496, 0, 3.2, 0, 3, 0, -1.6326e-07, 19.363, 0, -4.64606 )
+skeleton = NodePath(".")
+
+[node name="EatableLightSpotFlickerCeilinghigh" parent="rooms/room5" instance=ExtResource( 16 )]
+transform = Transform( 0.965971, 0, 0, 0, 1.16167, 0, 0, 0, 1.16122, 20.005, 2.374, -2.55817 )
+
 [node name="room6" type="Spatial" parent="rooms"]
 
 [node name="ground_metal_plate" parent="rooms/room6" instance=ExtResource( 14 )]
@@ -391,11 +586,51 @@ material/0 = SubResource( 7 )
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 11.5, 0, 11.5 )
 material/0 = SubResource( 7 )
 
+[node name="corridor_wall6" parent="rooms/room7" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, -2.54454, 0, 3.2, 0, 3, 0, -1.11225e-07, 11.6367, 0, 12.6516 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall7" parent="rooms/room7" instance=ExtResource( 22 )]
+transform = Transform( -3, 0, 3.84215e-07, 0, 3.2, 0, -4.52987e-07, 0, -2.54454, 10.3367, 0, 11.3516 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall8" parent="rooms/room7" instance=ExtResource( 22 )]
+transform = Transform( -3, 0, 3.84215e-07, 0, 3.2, 0, -4.52987e-07, 0, -2.54454, 12.6367, 0, 11.3516 )
+skeleton = NodePath(".")
+
 [node name="room8" type="Spatial" parent="rooms"]
 
 [node name="ground_metal_plate" parent="rooms/room8" instance=ExtResource( 14 )]
 transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, 28.5, 0, 0.9 )
 material/0 = SubResource( 7 )
+
+[node name="corridor_wall4" parent="rooms/room8" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 5.3512, 31.1498, 0, 0.851635 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall5" parent="rooms/room8" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, -5.3512, 0, 3.2, 0, 3, 0, -2.33909e-07, 28.6367, 0, -1.74837 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall6" parent="rooms/room8" instance=ExtResource( 22 )]
+transform = Transform( -1.31134e-07, 0, -5.3512, 0, 3.2, 0, 3, 0, -2.33909e-07, 28.6367, 0, 3.55163 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall7" parent="rooms/room8" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 2.15759, 25.8498, 0, 2.57926 )
+skeleton = NodePath(".")
+
+[node name="corridor_wall8" parent="rooms/room8" instance=ExtResource( 22 )]
+transform = Transform( 3, 0, 0, 0, 3.2, 0, 0, 0, 2.13139, 25.8498, 0, -0.567145 )
+skeleton = NodePath(".")
+
+[node name="EatableLightSpotFlickerCeilinghigh" parent="rooms/room8" instance=ExtResource( 16 )]
+transform = Transform( 0.965971, 0, 0, 0, 1.16167, 0, 0, 0, 1.16122, 29.8945, 2.374, 1.91568 )
+
+[node name="roof" parent="rooms" instance=ExtResource( 23 )]
+transform = Transform( 100.59, 0, 0, 0, 1, 0, 0, 0, 100.59, 0, 2.5, 0 )
+visible = false
+skeleton = NodePath("..")
 
 [node name="particle_dust" type="CPUParticles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0245711, 0 )
@@ -428,7 +663,7 @@ player_start_path = NodePath("Start")
 end_level_path = NodePath("EndLevelTrigger")
 
 [node name="Start" type="Spatial" parent="GameModeInGame"]
-transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, -6.85352, 0, 10.9151 )
+transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 0.516, 0, -0.09 )
 
 [node name="EndLevelTrigger" parent="GameModeInGame" instance=ExtResource( 21 )]
 transform = Transform( 0.419729, 0, 0, 0, 0.407527, 0, 0, 0, 0.38264, 11.453, 0.394078, 11.7277 )
