@@ -122,8 +122,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="OmeletteDuFromage"
+config/name="A Blob in the Dark"
 run/main_scene="res://assets/level/main_menu.tscn"
+boot_splash/image="res://assets/images/splashscreen.png"
 config/icon="res://icon.png"
 
 [autoload]
