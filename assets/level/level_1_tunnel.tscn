@@ -299,7 +299,6 @@ override_player_initial_life = 30.0
 override_player_life_loss_per_seconds = 2.0
 
 [node name="Start" type="Spatial" parent="GameModeInGame"]
-transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0, 0 )
 
 [node name="EndLevelTrigger" parent="GameModeInGame" instance=ExtResource( 21 )]
 transform = Transform( 1.49053, 0, 1.03416, 0, 1.8284, 0, -1.4602, 0, 1.05564, 79.0741, 0.317829, 60.5298 )
