@@ -22,13 +22,15 @@ onready var camera_target := $CameraTarget as CameraTarget
 onready var player_light := $PlayerLight as PlayerLight
 onready var dash_timer := $DashTimer as Timer
 onready var dash_particles := $DashParticles as CPUParticles
+onready var blob_mesh_instance := $blobMeshInstance as MeshInstance
 
 func _ready() -> void:
     Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
     var connect_error := dash_timer.connect("timeout", self, "_enable_dash")
     if connect_error != OK:
         push_error("Error connecting dash timer")
-    dash_particles.color = Color(persistent_data.player_color.x, persistent_data.player_color.y, persistent_data.player_color.z)
+    if persistent_data.color_chosen:
+        update_color()
 
 func _process(delta: float) -> void:
     var axis_0_x = Input.get_joy_axis(0, JOY_AXIS_1)
@@ -76,3 +78,9 @@ func _enable_dash() -> void:
 
 func absorb_light_play_sound() -> void:
     $EatLightSoundPlayer.play()
+
+func update_color() -> void:
+    var material_blob := blob_mesh_instance.get_surface_material(0) as ShaderMaterial
+    material_blob.set_shader_param("albedo", persistent_data.player_color)
+    var particles_material := dash_particles.mesh.surface_get_material(0) as SpatialMaterial
+    particles_material.emission = Color(persistent_data.player_color.x, persistent_data.player_color.y, persistent_data.player_color.z)
