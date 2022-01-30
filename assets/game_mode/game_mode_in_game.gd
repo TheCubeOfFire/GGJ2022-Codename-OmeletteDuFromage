@@ -14,6 +14,8 @@ export(PackedScene) var hud_class: PackedScene
 export(PackedScene) var pause_menu_class: PackedScene
 export(PackedScene) var death_screen_class: PackedScene
 
+export(String) var main_menu_scene := "res://assets/level/main_menu.tscn"
+
 export(float) var override_player_max_life := -1.0
 export(float) var override_player_initial_life := -1.0
 export(float) var override_player_life_loss_per_seconds := -1.0
@@ -43,6 +45,7 @@ func _ready() -> void:
     player.player_light.set_invincible(true)
     _register_to_end_level()
     start_timer.start()
+        
 
 func _process(delta: float) -> void:
     if !active:
@@ -135,7 +138,7 @@ func _proceed_to_next_scene() -> void:
     if next_scene != null:
         assert(get_tree().change_scene_to(next_scene) == 0)
     else:
-        print("No next scene to load !")
+        assert(get_tree().change_scene_to(load(main_menu_scene)) == 0)
 
 
 func _retry_current_level() -> void:
