@@ -294,6 +294,7 @@ environment = SubResource( 5 )
 player_start_path = NodePath("Start")
 end_level_path = NodePath("EndLevelTrigger")
 next_scene = ExtResource( 5 )
+override_player_max_life = 50.0
 override_player_initial_life = 30.0
 override_player_life_loss_per_seconds = 2.0
 
