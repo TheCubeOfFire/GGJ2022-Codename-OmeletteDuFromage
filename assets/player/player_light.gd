@@ -13,7 +13,7 @@ export(float) var life_loss_per_second := 2.0
 
 signal on_die
 
-
+var invincible : bool = false
 var current_life := max_life
 var current_speed : float;
 var max_speed : float;
@@ -40,8 +40,9 @@ func _process(delta: float) -> void:
 
 
 func modify_life(modification: float) -> void:
-    current_life += modification
-    current_life = clamp(current_life, 0.0, max_life)
+    if not invincible:
+        current_life += modification
+        current_life = clamp(current_life, 0.0, max_life)
 
 
 func _update_current_life(delta: float) -> void:
@@ -62,3 +63,6 @@ func _update_core_scale() -> void:
     coreNode.scale.x = max(coreNode.scale.x, 0.1);
     coreNode.scale.y = max(coreNode.scale.y, 0.1);
     coreNode.scale.z = max(coreNode.scale.z, 0.1);
+    
+func set_invincible(_invincible: bool) -> void:
+    invincible = _invincible
