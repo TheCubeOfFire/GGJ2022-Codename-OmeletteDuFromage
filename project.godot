@@ -129,11 +129,6 @@ config/icon="res://icon.png"
 [autoload]
 
 PersistentData="*res://assets/game_mode/persistent_data.gd"
-VolumetricServer="*res://addons/silicon.vfx.volumetrics/volumetric_server.gd"
-
-[editor_plugins]
-
-enabled=PoolStringArray( "res://addons/silicon.vfx.volumetrics/plugin.cfg" )
 
 [input]
 

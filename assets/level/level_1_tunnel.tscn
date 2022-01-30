@@ -2,8 +2,6 @@
 
 [ext_resource path="res://assets/objects/meshes/terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/objectives/eatable_light_spot_flicker_ceiling.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/Level/volumetric_fog.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/player/main_menu.tres" type="Environment" id=4]
 [ext_resource path="res://assets/level/level_2_outside.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/objects/meshes/structure.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/objects/meshes/barrels.tscn" type="PackedScene" id=7]
@@ -26,6 +24,33 @@ params_cull_mode = 2
 [sub_resource type="QuadMesh" id=2]
 material = SubResource( 3 )
 size = Vector2( 0.02, 0.02 )
+
+[sub_resource type="ProceduralSky" id=4]
+
+[sub_resource type="Environment" id=5]
+background_sky = SubResource( 4 )
+ambient_light_color = Color( 0.352941, 0.447059, 0.447059, 1 )
+ambient_light_energy = 0.0
+fog_color = Color( 0.180392, 0.203922, 0.172549, 1 )
+fog_depth_begin = 0.0
+fog_transmit_enabled = true
+fog_height_enabled = true
+fog_height_min = -1.0
+fog_height_max = 2.0
+tonemap_mode = 3
+tonemap_white = 14.0
+auto_exposure_scale = 0.1
+auto_exposure_max_luma = 2.92
+ss_reflections_enabled = true
+ssao_enabled = true
+dof_blur_far_enabled = true
+dof_blur_far_distance = 3.07
+dof_blur_far_amount = 0.07
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.1
+glow_blend_mode = 0
+adjustment_enabled = true
+adjustment_contrast = 1.05
 
 [node name="MainMenuRoot2" type="Spatial"]
 
@@ -258,11 +283,11 @@ angle_random = 0.28
 color = Color( 0.3125, 0.3125, 0.3125, 1 )
 hue_variation_random = 0.13
 __meta__ = {
-"_vol_id": 2176
+"_vol_id": 74
 }
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 4 )
+environment = SubResource( 5 )
 
 [node name="GameModeInGame" parent="." instance=ExtResource( 19 )]
 player_start_path = NodePath("Start")
@@ -276,5 +301,3 @@ transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0, 0 )
 
 [node name="EndLevelTrigger" parent="GameModeInGame" instance=ExtResource( 21 )]
 transform = Transform( 1.49053, 0, 1.03416, 0, 1.8284, 0, -1.4602, 0, 1.05564, 79.0741, 0.317829, 60.5298 )
-
-[node name="VolumetricFog" parent="." instance=ExtResource( 3 )]
