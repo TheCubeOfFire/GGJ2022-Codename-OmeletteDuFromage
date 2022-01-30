@@ -14,10 +14,9 @@ const PAD_SENSIVITY: float = 250.0
 var velocity := Vector3.ZERO
 var can_dash := true
 
+onready var persistent_data := get_node("/root/PersistentData") as PersistentData
+
 export var pad_rotation_deadzone_threshold : float = 0.25
-var pad_rotation : bool = false
-var pad_rotation_value_x : float = 0.0
-var pad_rotation_value_y : float = 0.0
 
 onready var camera_target := $CameraTarget as CameraTarget
 onready var player_light := $PlayerLight as PlayerLight
@@ -29,6 +28,7 @@ func _ready() -> void:
     var connect_error := dash_timer.connect("timeout", self, "_enable_dash")
     if connect_error != OK:
         push_error("Error connecting dash timer")
+    dash_particles.color = Color(persistent_data.player_color.x, persistent_data.player_color.y, persistent_data.player_color.z)
 
 func _process(delta: float) -> void:
     var axis_0_x = Input.get_joy_axis(0, JOY_AXIS_1)
