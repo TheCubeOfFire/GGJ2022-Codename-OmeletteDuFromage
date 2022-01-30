@@ -131,6 +131,10 @@ config/icon="res://assets/images/logo.png"
 
 PersistentData="*res://assets/game_mode/persistent_data.gd"
 
+[display]
+
+window/size/fullscreen=true
+
 [input]
 
 dash={

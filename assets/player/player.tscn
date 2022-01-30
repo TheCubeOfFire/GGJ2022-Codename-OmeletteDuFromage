@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/player_light.tscn" type="PackedScene" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://assets/SoundFX/eat_light.wav" type="AudioStream" id=6]
 
 [sub_resource type="SphereShape" id=6]
+
+[sub_resource type="Curve" id=9]
+max_value = 2.0
+_data = [ Vector2( 0, 0 ), 0.0, 7.0, 0, 1, Vector2( 0.142857, 1 ), 1.17895, 1.17895, 0, 0, Vector2( 1, 2 ), 1.16667, 0.0, 1, 0 ]
 
 [sub_resource type="SpatialMaterial" id=7]
 emission_enabled = true
@@ -45,6 +49,7 @@ far = 1000.0
 
 [node name="PlayerLight" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0347508, 0.0409084, -0.0473249 )
+light_intensity_curve = SubResource( 9 )
 
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.5

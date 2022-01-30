@@ -442,4 +442,4 @@ stream = ExtResource( 17 )
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource( 19 )]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.3302, 0.335041, 0.389998 )
+transform = Transform( -8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 0.3302, 0.335041, 0.389998 )
