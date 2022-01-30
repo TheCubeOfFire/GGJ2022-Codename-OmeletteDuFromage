@@ -93,7 +93,7 @@ transform = Transform( 2.08028, 0, -7.40422, 0, 3.2, 0, 2.16158, 0, 7.12574, 81.
 skeleton = NodePath("")
 
 [node name="roof" parent="building/Section4" instance=ExtResource( 12 )]
-transform = Transform( 9.34288, 0, 65.4001, 0, 1, 0, -9.34288, 0, 65.4001, 58.7119, 2.505, 39.5805 )
+transform = Transform( 9.34288, 0, 65.4001, 0, 1, 0, -9.34288, 0, 65.4001, 58.6676, 2.51041, 39.6239 )
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section4" instance=ExtResource( 1 )]
@@ -110,42 +110,59 @@ skeleton = NodePath("../../../../..")
 
 [node name="EatableLightSpotFlickerCeiling" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318, 2.505, -27.5275 )
+given_life = 6.0
 
 [node name="EatableLightSpotFlickerCeiling2" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318, 2.505, -22.04 )
+given_life = 6.0
 
 [node name="EatableLightSpotFlickerCeiling3" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318, 2.505, -12.3295 )
+given_life = 6.0
 
 [node name="EatableLightSpotFlickerCeiling4" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318, 2.505, -2.30459 )
+given_life = 6.0
 
 [node name="EatableLightSpotFlickerCeiling5" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0885, 2.505, -28.5152 )
+given_life = 6.0
 
 [node name="EatableLightSpotFlickerCeiling6" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8259, 2.505, -28.2109 )
+given_life = 6.0
 
 [node name="EatableLightSpotFlickerCeiling7" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2878, 2.505, -28.0761 )
+given_life = 6.0
 
 [node name="EatableLightSpotFlickerCeiling8" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.0924, 2.505, -10.2906 )
+given_life = 6.0
 
 [node name="EatableLightSpotFlickerCeiling9" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.7151, 2.505, 2.42575 )
+given_life = 6.0
 
 [node name="EatableLightSpotFlickerCeiling10" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6369, 2.505, 22.8787 )
+given_life = 6.0
 
 [node name="EatableLightSpotFlickerCeiling11" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6459, 2.505, 26.8855 )
+given_life = 6.0
 
 [node name="EatableLightSpotFlickerCeiling12" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.9008, 2.505, 43.4779 )
+given_life = 8.0
+
+[node name="EatableLightSpotFlickerCeiling14" parent="building/Lights" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.9098, 2.505, 37.475 )
+given_life = 6.0
 
 [node name="EatableLightSpotFlickerCeiling13" parent="building/Lights" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.3448, 2.505, 52.2686 )
+given_life = 6.0
 
 [node name="particle_dust" type="CPUParticles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0245711, 0 )
@@ -164,7 +181,7 @@ angle_random = 0.28
 color = Color( 0.3125, 0.3125, 0.3125, 1 )
 hue_variation_random = 0.13
 __meta__ = {
-"_vol_id": 415
+"_vol_id": 51
 }
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -174,11 +191,13 @@ environment = ExtResource( 4 )
 player_start_path = NodePath("Start")
 end_level_path = NodePath("EndLevelTrigger")
 next_scene = ExtResource( 5 )
+override_player_initial_life = 30.0
+override_player_life_loss_per_seconds = 2.0
 
 [node name="Start" type="Spatial" parent="GameModeInGame"]
 transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0, 0 )
 
 [node name="EndLevelTrigger" parent="GameModeInGame" instance=ExtResource( 21 )]
-transform = Transform( 1.49053, 0, 1.4602, 0, 1, 0, -1.4602, 0, 1.49053, 78.804, 0.330399, 60.2541 )
+transform = Transform( 1.49053, 0, 1.03416, 0, 1.8284, 0, -1.4602, 0, 1.05564, 79.0741, 0.317829, 60.5298 )
 
 [node name="VolumetricFog" parent="." instance=ExtResource( 3 )]
