@@ -14,6 +14,8 @@ const PAD_SENSIVITY: float = 250.0
 var velocity := Vector3.ZERO
 var can_dash := true
 
+var block_inputs := false
+
 onready var persistent_data := get_node("/root/PersistentData") as PersistentData
 
 export var pad_rotation_deadzone_threshold : float = 0.25
@@ -32,7 +34,7 @@ func _ready() -> void:
     if persistent_data.color_chosen:
         update_color()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
     var axis_0_x = Input.get_joy_axis(0, JOY_AXIS_1)
     var axis_0_y = Input.get_joy_axis(0, JOY_AXIS_0)
     if abs(axis_0_x) > pad_rotation_deadzone_threshold or abs(axis_0_y) > pad_rotation_deadzone_threshold:
@@ -41,7 +43,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
     var drag := (-DRAG_FACTOR * velocity.length() / MASS) * velocity
 
-    if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+    if not block_inputs and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
         if is_on_floor() && can_dash && Input.is_action_pressed("dash"):
             _dash()
 
@@ -54,8 +56,8 @@ func _physics_process(delta: float) -> void:
         velocity += drag * delta
 
 func _input(event: InputEvent) -> void:
-    if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-        if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+    if not block_inputs and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+        if event is InputEventMouseMotion:
             _rotate_camera(event.relative.y, event.relative.x, -MOUSE_SENSIVITY * get_physics_process_delta_time())
                
 func _dash() -> void:
