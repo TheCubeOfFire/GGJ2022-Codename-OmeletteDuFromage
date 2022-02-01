@@ -29,7 +29,7 @@ func _on_resume() -> void:
 
 func _on_return_to_main_menu() -> void:
     _set_pause(false)
-    get_tree().change_scene_to(load(main_menu_scene) as PackedScene)
+    assert(get_tree().change_scene_to(load(main_menu_scene) as PackedScene) == OK)
 
 
 func _on_quit() -> void:

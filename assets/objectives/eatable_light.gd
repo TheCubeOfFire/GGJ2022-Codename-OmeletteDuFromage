@@ -22,14 +22,14 @@ func _ready() -> void:
     assert(area.connect("body_entered", self, "_on_area_entered") == 0)
     _update_light_intensity()
 
-    
+
 func _update_light_intensity() ->  void:
     light.light_energy = light_intensity_curve.interpolate(given_life / MAX_GIVEN_LIFE)
-    
+
     if light is FlickeringLight:
         var flickering_light := light as FlickeringLight
         flickering_light.light_energy_init = light.light_energy
-    
+
 
 func _on_area_entered(body: Node) -> void:
     if body is Player:

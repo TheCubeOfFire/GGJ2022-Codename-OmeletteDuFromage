@@ -59,7 +59,7 @@ func _input(event: InputEvent) -> void:
     if not block_inputs and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
         if event is InputEventMouseMotion:
             _rotate_camera(event.relative.y, event.relative.x, -MOUSE_SENSIVITY * get_physics_process_delta_time())
-               
+
 func _dash() -> void:
     var direction := Vector3.FORWARD.rotated(Vector3.UP, rotation.y)
     camera_target.start_dash_effect()

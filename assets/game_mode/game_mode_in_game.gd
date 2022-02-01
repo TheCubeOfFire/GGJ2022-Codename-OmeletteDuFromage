@@ -45,7 +45,7 @@ func _ready() -> void:
     player.player_light.set_invincible(true)
     _register_to_end_level()
     start_timer.start()
-        
+
 
 func _process(delta: float) -> void:
     if !active:

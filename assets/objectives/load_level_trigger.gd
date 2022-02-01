@@ -15,4 +15,4 @@ func _ready() -> void:
 
 func _on_area_entered(node: Node) -> void:
     if node is Player:
-        get_tree().change_scene_to(level_to_load)
+        assert(get_tree().change_scene_to(level_to_load) == OK)

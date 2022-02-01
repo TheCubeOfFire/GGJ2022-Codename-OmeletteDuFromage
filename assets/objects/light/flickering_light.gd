@@ -17,12 +17,12 @@ var light_energy_init = 1;
 func _ready():
     light_energy_init = self.light_energy
     flicker_threshold = rand_range(0.0, flicker_threshold_random)
-    
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void :
     if not flicker_enabled:
         return
-        
+
     flicker_elapsed_time_on += delta;
     if flicker_elapsed_time_on > flicker_threshold:
         if flicker_elapsed_time_on > flicker_threshold + curve_time_scale:
