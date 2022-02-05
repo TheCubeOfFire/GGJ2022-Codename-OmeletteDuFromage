@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://assets/objectives/end_level_trigger.gd"
 }, {
+"base": "ColorRect",
+"class": "EntryPoint",
+"language": "GDScript",
+"path": "res://assets/ui/entry_point.gd"
+}, {
 "base": "SpotLight",
 "class": "FlickeringLight",
 "language": "GDScript",
@@ -84,6 +89,7 @@ _global_script_class_icons={
 "DeathScreen": "",
 "EatableLight": "",
 "EndLevelTrigger": "",
+"EntryPoint": "",
 "FlickeringLight": "",
 "GameModeInGame": "",
 "GameModeMainMenu": "",
@@ -102,6 +108,7 @@ config/name="A Blob in the Dark"
 run/main_scene="res://assets/level/main_menu.tscn"
 boot_splash/image="res://assets/images/splashscreen.png"
 config/icon="res://assets/images/logo.png"
+run/main_scene.web="res://assets/ui/entry_point.tscn"
 
 [autoload]
 
