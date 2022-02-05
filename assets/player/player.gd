@@ -17,6 +17,7 @@ var can_dash := true
 var block_inputs := false
 
 onready var persistent_data := get_node("/root/PersistentData") as PersistentData
+onready var controller_manager := get_node("/root/ControllerManager") as ControllerManager
 
 export var pad_rotation_deadzone_threshold : float = 0.25
 
@@ -32,7 +33,7 @@ func _on_DashTimer_timeout() -> void:
 
 
 func _ready() -> void:
-    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+    controller_manager.take_control()
 
     if persistent_data.color_chosen:
         update_color()

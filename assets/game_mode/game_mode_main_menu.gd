@@ -5,6 +5,7 @@ const HUE_VARIATION_FACTOR: float = 0.7
 const SATURATION_VARIATION_FACTOR: float = 0.2
 
 onready var persistent_data := get_node("/root/PersistentData") as PersistentData
+onready var controller_manager := get_node("/root/ControllerManager") as ControllerManager
 onready var player := $Player as Player
 
 export(PackedScene) var pause_menu_class: PackedScene
@@ -53,8 +54,8 @@ func _spawn_pause_menu() -> void:
     add_child(pause_menu)
     Utils.safe_connect(pause_menu, "resume", self, "_resume_game")
     active = false
-    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+    controller_manager.release_control()
 
 func _resume_game() -> void:
-    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+    controller_manager.take_control()
     active = true

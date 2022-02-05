@@ -113,6 +113,7 @@ run/main_scene.entry_point="res://assets/ui/entry_point.tscn"
 [autoload]
 
 PersistentData="*res://assets/game_mode/persistent_data.gd"
+ControllerManager="*res://assets/controller_manager.gd"
 
 [display]
 

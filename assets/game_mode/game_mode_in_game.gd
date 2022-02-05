@@ -22,6 +22,7 @@ export(float) var override_player_life_loss_per_seconds := -1.0
 
 
 onready var persistent_data := get_node("/root/PersistentData") as PersistentData
+onready var controller_manager := get_node("/root/ControllerManager") as ControllerManager
 
 onready var start_timer := $StartTimer as Timer
 
@@ -73,7 +74,7 @@ func _spawn_pause_menu() -> void:
     add_child(pause_menu)
     Utils.safe_connect(pause_menu, "resume", self, "_resume_game")
     active = false
-    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+    controller_manager.release_control()
 
 
 func _spawn_death_screen() -> void:
@@ -82,7 +83,7 @@ func _spawn_death_screen() -> void:
     death_screen = death_screen_class.instance() as DeathScreen
     add_child(death_screen)
     active = false
-    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+    controller_manager.release_control()
 
 
 func _spawn_player() -> void:
@@ -107,7 +108,7 @@ func _spawn_player() -> void:
 
 
 func _resume_game() -> void:
-    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+    controller_manager.take_control()
     $LevelMusicPlayer.play(musicTimeStamp);
     active = true
 
