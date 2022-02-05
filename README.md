@@ -21,7 +21,7 @@ The levels are designed to be dark, with only few lit elements. Choose your colo
 - Keyboard/mouse
   - Mouse movement to rotate the camera
   - Left click to dash
-  - Escape to pause
+  - Tab to pause
 - Pad
   - Left stick to rotate the camera
   - A/Cross to dash

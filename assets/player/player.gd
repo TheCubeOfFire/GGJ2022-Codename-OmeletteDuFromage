@@ -32,8 +32,7 @@ func _on_DashTimer_timeout() -> void:
 
 
 func _ready() -> void:
-    if not OS.has_feature("web"):
-        Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
     if persistent_data.color_chosen:
         update_color()

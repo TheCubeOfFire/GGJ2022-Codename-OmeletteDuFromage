@@ -32,7 +32,6 @@ func _process(delta):
 
     if Input.is_action_just_pressed("dash"):
         persistent_data.color_chosen = true
-        Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
         return
 
     hue = fmod(hue + delta * HUE_VARIATION_FACTOR, 1.0)
