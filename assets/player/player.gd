@@ -47,7 +47,7 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
     var drag := (-DRAG_FACTOR * velocity.length() / MASS) * velocity
 
-    if not block_inputs and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+    if not block_inputs and controller_manager.game_has_control:
         if is_on_floor() && can_dash && Input.is_action_pressed("dash"):
             _dash()
 
@@ -60,7 +60,7 @@ func _physics_process(delta: float) -> void:
         velocity += drag * delta
 
 func _input(event: InputEvent) -> void:
-    if not block_inputs and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+    if not block_inputs and controller_manager.game_has_control:
         if event is InputEventMouseMotion:
             _rotate_camera(event.relative.y, event.relative.x, -MOUSE_SENSIVITY * get_physics_process_delta_time())
 

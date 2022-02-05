@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/images/splashscreen.png" type="Texture" id=1]
 [ext_resource path="res://assets/ui/font/sarpanch-regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/ui/entry_point.gd" type="Script" id=3]
+[ext_resource path="res://assets/ui/auto_give_focus.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -59,6 +60,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Splash" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -85,5 +89,8 @@ text = "Play!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AutoGiveFocus" parent="." instance=ExtResource( 4 )]
+control_to_focus_path = NodePath("../PlayButton")
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]

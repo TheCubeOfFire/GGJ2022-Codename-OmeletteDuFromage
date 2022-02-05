@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/ui/pause_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/font/sarpanch-regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/ui/font/sarpanch_regular.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/ui/auto_give_focus.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/music/Pause_music.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -42,13 +43,24 @@ text = "Pause"
 margin_top = 47.0
 margin_right = 99.0
 margin_bottom = 76.0
+focus_neighbour_top = NodePath("../ButtonQuit")
+focus_neighbour_bottom = NodePath("../ButtonReturnToMainMenu")
+focus_next = NodePath("../ButtonReturnToMainMenu")
+focus_previous = NodePath("../ButtonQuit")
 custom_fonts/font = ExtResource( 3 )
 text = "Resume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ButtonReturnToMainMenu" type="Button" parent="VBoxContainer"]
 margin_top = 80.0
 margin_right = 99.0
 margin_bottom = 109.0
+focus_neighbour_top = NodePath("../ButtonResume")
+focus_neighbour_bottom = NodePath("../ButtonQuit")
+focus_next = NodePath("../ButtonQuit")
+focus_previous = NodePath("../ButtonResume")
 custom_fonts/font = ExtResource( 3 )
 text = "Main Menu"
 __meta__ = {
@@ -59,12 +71,19 @@ __meta__ = {
 margin_top = 113.0
 margin_right = 99.0
 margin_bottom = 142.0
+focus_neighbour_top = NodePath("../ButtonReturnToMainMenu")
+focus_neighbour_bottom = NodePath("../ButtonResume")
+focus_next = NodePath("../ButtonResume")
+focus_previous = NodePath("../ButtonReturnToMainMenu")
 custom_fonts/font = ExtResource( 3 )
 text = "Quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
+
+[node name="AutoGiveFocus" parent="." instance=ExtResource( 4 )]
+control_to_focus_path = NodePath("../VBoxContainer/ButtonResume")
 
 [connection signal="pressed" from="VBoxContainer/ButtonResume" to="." method="_on_ButtonResume_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonReturnToMainMenu" to="." method="_on_ButtonReturnToMainMenu_pressed"]

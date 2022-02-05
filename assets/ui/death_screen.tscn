@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/ui/death_screen.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/font/sarpanch-regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/music/dead_music.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/ui/auto_give_focus.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -52,5 +53,8 @@ text = "Retry"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
+
+[node name="AutoGiveFocus" parent="." instance=ExtResource( 4 )]
+control_to_focus_path = NodePath("../VBoxContainer/ButtonRetry")
 
 [connection signal="pressed" from="VBoxContainer/ButtonRetry" to="." method="_on_ButtonRetry_pressed"]
