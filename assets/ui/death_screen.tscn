@@ -52,3 +52,5 @@ text = "Retry"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/ButtonRetry" to="." method="_on_ButtonRetry_pressed"]

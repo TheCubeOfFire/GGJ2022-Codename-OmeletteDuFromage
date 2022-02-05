@@ -1,4 +1,5 @@
 extends Node
+class_name GameModeMainMenu
 
 const HUE_VARIATION_FACTOR: float = 0.7
 const SATURATION_VARIATION_FACTOR: float = 0.2
@@ -51,7 +52,7 @@ func _input(event: InputEvent) -> void:
 func _spawn_pause_menu() -> void:
     pause_menu = pause_menu_class.instance() as PauseMenu
     add_child(pause_menu)
-    assert(pause_menu.connect("on_resume", self, "_resume_game") == 0)
+    Utils.safe_connect(pause_menu, "resume", self, "_resume_game")
     active = false
     Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 

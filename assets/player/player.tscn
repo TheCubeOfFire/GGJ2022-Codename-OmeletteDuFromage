@@ -79,3 +79,5 @@ volume_db = -20.0
 
 [node name="EatLightSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]

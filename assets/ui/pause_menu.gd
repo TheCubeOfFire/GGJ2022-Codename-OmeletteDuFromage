@@ -11,30 +11,24 @@ onready var button_return_to_main_menu := $VBoxContainer/ButtonReturnToMainMenu
 onready var button_quit := $VBoxContainer/ButtonQuit
 
 
-signal on_resume
+signal resume
 
 
-func _ready() -> void:
-    assert(button_resume.connect("pressed", self, "_on_resume") == 0)
-    assert(button_return_to_main_menu.connect("pressed", self, "_on_return_to_main_menu") == 0)
-    assert(button_quit.connect("pressed", self, "_on_quit") == 0)
-    _set_pause(true)
-
-
-func _on_resume() -> void:
-    emit_signal("on_resume")
+func _on_ButtonResume_pressed() -> void:
+    emit_signal("resume")
     _set_pause(false)
     queue_free()
 
-
-func _on_return_to_main_menu() -> void:
+func _on_ButtonReturnToMainMenu_pressed() -> void:
     _set_pause(false)
-    assert(get_tree().change_scene_to(load(main_menu_scene) as PackedScene) == OK)
+    Utils.safe_change_scene(get_tree(), main_menu_scene)
 
-
-func _on_quit() -> void:
+func _on_ButtonQuit_pressed() -> void:
     get_tree().quit(0)
 
+
+func _ready() -> void:
+    _set_pause(true)
 
 func _set_pause(paused: bool) -> void:
     get_tree().paused = paused

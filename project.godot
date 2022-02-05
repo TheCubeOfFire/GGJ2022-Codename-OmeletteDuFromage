@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://assets/game_mode/game_mode_in_game.gd"
 }, {
+"base": "Node",
+"class": "GameModeMainMenu",
+"language": "GDScript",
+"path": "res://assets/game_mode/game_mode_main_menu.gd"
+}, {
 "base": "Control",
 "class": "HUD",
 "language": "GDScript",
@@ -68,6 +73,11 @@ _global_script_classes=[ {
 "class": "PlayerLight",
 "language": "GDScript",
 "path": "res://assets/player/player_light.gd"
+}, {
+"base": "Object",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://assets/utils.gd"
 } ]
 _global_script_class_icons={
 "CameraTarget": "",
@@ -76,12 +86,14 @@ _global_script_class_icons={
 "EndLevelTrigger": "",
 "FlickeringLight": "",
 "GameModeInGame": "",
+"GameModeMainMenu": "",
 "HUD": "",
 "LightParticles": "",
 "LoadLevelTrigger": "",
 "PauseMenu": "",
 "Player": "",
-"PlayerLight": ""
+"PlayerLight": "",
+"Utils": ""
 }
 
 [application]

@@ -11,7 +11,7 @@ export(float) var max_life := 100.0
 export(float) var life_loss_per_second := 2.0
 
 
-signal on_die
+signal death
 
 var invincible : bool = false
 var current_life := max_life
@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 
 
     if current_life <= 0.0:
-        emit_signal("on_die")
+        emit_signal("death")
 
 
 func modify_life(modification: float) -> void:

@@ -48,3 +48,5 @@ __meta__ = {
 
 [node name="GoTimer" type="Timer" parent="."]
 one_shot = true
+
+[connection signal="timeout" from="GoTimer" to="." method="_on_GoTimer_timeout"]

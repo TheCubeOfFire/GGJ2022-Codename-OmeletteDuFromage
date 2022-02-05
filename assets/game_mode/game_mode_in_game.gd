@@ -36,10 +36,12 @@ var current_counter_value := 0.0
 var musicTimeStamp: float;
 
 
+func _on_StartTimer_timeout() -> void:
+    _start_level()
+
+
 func _ready() -> void:
     _spawn_hud()
-
-    assert(start_timer.connect("timeout", self, "_start_level") == OK)
     _spawn_player()
     player.block_inputs = true
     player.player_light.set_invincible(true)
@@ -69,7 +71,7 @@ func _spawn_pause_menu() -> void:
     $LevelMusicPlayer.stop();
     pause_menu = pause_menu_class.instance() as PauseMenu
     add_child(pause_menu)
-    assert(pause_menu.connect("on_resume", self, "_resume_game") == 0)
+    Utils.safe_connect(pause_menu, "resume", self, "_resume_game")
     active = false
     Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
@@ -88,7 +90,7 @@ func _spawn_player() -> void:
     player = player_class.instance() as Player
     add_child(player)
 
-    assert(player.player_light.connect("on_die", self, "_on_die") == 0)
+    Utils.safe_connect(player.player_light, "death", self, "_on_death")
 
     if player_start != null:
         player.set_translation(player_start.get_translation())
@@ -111,8 +113,7 @@ func _resume_game() -> void:
 
 
 func _register_to_end_level() -> void:
-    assert(end_level != null)
-    assert(end_level.connect("on_triggered", self, "_on_end_level_triggered") == 0)
+    Utils.safe_connect(end_level, "triggered", self, "_on_end_level_triggered")
 
 
 func _update_time_counter(delta: float) -> void:
@@ -120,9 +121,9 @@ func _update_time_counter(delta: float) -> void:
     hud.set_counter_value(current_counter_value)
 
 
-func _on_die() -> void:
+func _on_death() -> void:
     _spawn_death_screen()
-    assert(death_screen.connect("on_retry_pressed", self, "_retry_current_level") == 0)
+    Utils.safe_connect(death_screen, "retry_pressed", self, "_retry_current_level")
 
 
 func _on_end_level_triggered() -> void:
@@ -136,13 +137,13 @@ func _compute_and_update_total_score() -> void:
 
 func _proceed_to_next_scene() -> void:
     if next_scene != null:
-        assert(get_tree().change_scene_to(next_scene) == 0)
+        Utils.safe_change_scene_to(get_tree(), next_scene)
     else:
-        assert(get_tree().change_scene_to(load(main_menu_scene)) == 0)
+        Utils.safe_change_scene(get_tree(), main_menu_scene)
 
 
 func _retry_current_level() -> void:
-    assert(get_tree().reload_current_scene() == 0)
+    Utils.safe_reload_current_scene(get_tree())
 
 func _start_level() -> void:
     hud.set_go()

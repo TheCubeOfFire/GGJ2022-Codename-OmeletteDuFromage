@@ -26,11 +26,15 @@ onready var dash_timer := $DashTimer as Timer
 onready var dash_particles := $DashParticles as CPUParticles
 onready var blob_mesh_instance := $blobMeshInstance as MeshInstance
 
+
+func _on_DashTimer_timeout() -> void:
+    _enable_dash()
+
+
 func _ready() -> void:
-    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-    var connect_error := dash_timer.connect("timeout", self, "_enable_dash")
-    if connect_error != OK:
-        push_error("Error connecting dash timer")
+    if not OS.has_feature("web"):
+        Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
     if persistent_data.color_chosen:
         update_color()
 

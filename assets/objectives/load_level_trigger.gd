@@ -10,9 +10,9 @@ export(PackedScene) var level_to_load: PackedScene
 
 
 func _ready() -> void:
-    assert(area.connect("body_entered", self, "_on_area_entered") == 0)
+    Utils.safe_connect(area, "body_entered", self, "_on_area_entered")
 
 
 func _on_area_entered(node: Node) -> void:
     if node is Player:
-        assert(get_tree().change_scene_to(level_to_load) == OK)
+        Utils.safe_change_scene_to(get_tree(), level_to_load)

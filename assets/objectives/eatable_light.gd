@@ -19,7 +19,7 @@ onready var light_particles_scene := preload("res://assets/player/light_particle
 
 func _ready() -> void:
     assert(given_life <= MAX_GIVEN_LIFE)
-    assert(area.connect("body_entered", self, "_on_area_entered") == 0)
+    Utils.safe_connect(area, "body_entered", self, "_on_area_entered")
     _update_light_intensity()
 
 
@@ -29,7 +29,6 @@ func _update_light_intensity() ->  void:
     if light is FlickeringLight:
         var flickering_light := light as FlickeringLight
         flickering_light.light_energy_init = light.light_energy
-
 
 func _on_area_entered(body: Node) -> void:
     if body is Player:
