@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rocket_topA.obj-122a0b64cc53191b79f0b2d05dcb7e3c.mesh"
+
+[deps]
+
+files=[ "res://.import/rocket_topA.obj-122a0b64cc53191b79f0b2d05dcb7e3c.mesh" ]
+
+source_file="res://assets/3d/space_kit/Models/OBJ format/rocket_topA.obj"
+dest_files=[ "res://.import/rocket_topA.obj-122a0b64cc53191b79f0b2d05dcb7e3c.mesh", "res://.import/rocket_topA.obj-122a0b64cc53191b79f0b2d05dcb7e3c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

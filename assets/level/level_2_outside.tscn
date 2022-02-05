@@ -16,7 +16,7 @@
 [ext_resource path="res://assets/objects/meshes/terrain_sideCorner.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/objects/meshes/rocket.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/level/level_3_rooms.tscn" type="PackedScene" id=16]
-[ext_resource path="res://assets/music/Menu_project.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/music/menu_project.wav" type="AudioStream" id=17]
 [ext_resource path="res://assets/game_mode/game_mode_in_game.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/objectives/end_level_trigger.tscn" type="PackedScene" id=21]
 

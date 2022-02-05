@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/monorail_trainBox.obj-1c789757dc5ddfb3f0618a5f37a3b13f.mesh"
+
+[deps]
+
+files=[ "res://.import/monorail_trainBox.obj-1c789757dc5ddfb3f0618a5f37a3b13f.mesh" ]
+
+source_file="res://assets/3d/space_kit/Models/OBJ format/monorail_trainBox.obj"
+dest_files=[ "res://.import/monorail_trainBox.obj-1c789757dc5ddfb3f0618a5f37a3b13f.mesh", "res://.import/monorail_trainBox.obj-1c789757dc5ddfb3f0618a5f37a3b13f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

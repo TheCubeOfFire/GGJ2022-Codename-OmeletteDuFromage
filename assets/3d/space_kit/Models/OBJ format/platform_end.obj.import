@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/platform_end.obj-5de7977226db250fdf89cf1cdc9bb6d0.mesh"
+
+[deps]
+
+files=[ "res://.import/platform_end.obj-5de7977226db250fdf89cf1cdc9bb6d0.mesh" ]
+
+source_file="res://assets/3d/space_kit/Models/OBJ format/platform_end.obj"
+dest_files=[ "res://.import/platform_end.obj-5de7977226db250fdf89cf1cdc9bb6d0.mesh", "res://.import/platform_end.obj-5de7977226db250fdf89cf1cdc9bb6d0.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/meteor_half.obj-3d222a553887e2d224ab0a4cbcdc12c2.mesh"
+
+[deps]
+
+files=[ "res://.import/meteor_half.obj-3d222a553887e2d224ab0a4cbcdc12c2.mesh" ]
+
+source_file="res://assets/3d/space_kit/Models/OBJ format/meteor_half.obj"
+dest_files=[ "res://.import/meteor_half.obj-3d222a553887e2d224ab0a4cbcdc12c2.mesh", "res://.import/meteor_half.obj-3d222a553887e2d224ab0a4cbcdc12c2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

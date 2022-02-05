@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/objectives/eatable_light.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/objects/meshes/rock_crystals.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/3D/fog_billboard.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/3d/fog_billboard.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Curve" id=1]
 min_value = 2.5

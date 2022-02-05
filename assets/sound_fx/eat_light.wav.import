@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/eat_light.wav-2eab743fe3032e7a635bd264bc133d81.sample"
+
+[deps]
+
+source_file="res://assets/sound_fx/eat_light.wav"
+dest_files=[ "res://.import/eat_light.wav-2eab743fe3032e7a635bd264bc133d81.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

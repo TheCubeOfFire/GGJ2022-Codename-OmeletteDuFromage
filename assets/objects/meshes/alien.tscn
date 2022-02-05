@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/3D/space_kit/Models/OBJ format/alien.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/3d/space_kit/Models/OBJ format/alien.obj" type="ArrayMesh" id=1]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.220888

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/structure_closed.obj-8f29cb033654f0c2b22390ce8888ed40.mesh"
+
+[deps]
+
+files=[ "res://.import/structure_closed.obj-8f29cb033654f0c2b22390ce8888ed40.mesh" ]
+
+source_file="res://assets/3d/space_kit/Models/OBJ format/structure_closed.obj"
+dest_files=[ "res://.import/structure_closed.obj-8f29cb033654f0c2b22390ce8888ed40.mesh", "res://.import/structure_closed.obj-8f29cb033654f0c2b22390ce8888ed40.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/player/player_mesh.gdshader" type="Shader" id=1]
-[ext_resource path="res://assets/player/blobCoreScript.gd" type="Script" id=2]
+[ext_resource path="res://assets/player/blob_core_script.gd" type="Script" id=2]
 
 [sub_resource type="SphereMesh" id=1]
 
