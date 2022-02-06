@@ -17,9 +17,7 @@ signal resume
 
 
 func _on_ButtonResume_pressed() -> void:
-    emit_signal("resume")
-    _set_pause(false)
-    queue_free()
+    _resume()
 
 func _on_ButtonReturnToMainMenu_pressed() -> void:
     _set_pause(false)
@@ -36,6 +34,16 @@ func _on_ButtonQuit_pressed() -> void:
 
 func _ready() -> void:
     _set_pause(true)
+
+func _unhandled_input(event: InputEvent) -> void:
+    if event.is_action_pressed("ui_pause_menu"):
+        get_tree().set_input_as_handled()
+        _resume()
+
+func _resume() -> void:
+    emit_signal("resume")
+    _set_pause(false)
+    queue_free()
 
 func _set_pause(paused: bool) -> void:
     get_tree().paused = paused

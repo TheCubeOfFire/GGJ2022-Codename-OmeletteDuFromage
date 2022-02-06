@@ -45,8 +45,9 @@ func _process(delta):
     player.update_color()
 
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
     if event.is_action_pressed("ui_pause_menu") && active:
+        get_tree().set_input_as_handled()
         _spawn_pause_menu()
 
 func _spawn_pause_menu() -> void:
