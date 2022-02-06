@@ -11,6 +11,7 @@ func take_control() -> void:
 func release_control() -> void:
     if using_gamepad:
         Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+        get_tree().call_group("auto_give_focus", "give_focus")
     else:
         Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
     game_has_control = false
