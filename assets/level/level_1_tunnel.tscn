@@ -76,7 +76,7 @@ transform = Transform( 5.02126, 0, 0, 0, 1, 0, 0, 0, 34.7117, 0, 2.50463, -12.75
 skeleton = NodePath("../../..")
 
 [node name="terrain" parent="building/Section1" instance=ExtResource( 1 )]
-transform = Transform( 5.08809, 0, 0, 0, 1, 0, 0, 0, 38.301, 0, 0, -14.4657 )
+transform = Transform( 5.08809, 0, 0, 0, 1, 0, 0, 0, 30.1015, 0, 0, -10.3069 )
 skeleton = NodePath("../../..")
 
 [node name="barrels3" parent="building/Section1" instance=ExtResource( 7 )]
