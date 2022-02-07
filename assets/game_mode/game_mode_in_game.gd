@@ -31,7 +31,7 @@ var hud: HUD
 var pause_menu: PauseMenu
 var death_screen: DeathScreen
 
-var active := false
+var in_game := false
 var current_counter_value := 0.0
 
 var musicTimeStamp: float;
@@ -44,6 +44,7 @@ func _on_StartTimer_timeout() -> void:
 func _ready() -> void:
     _spawn_hud()
     _spawn_player()
+    in_game = true
     player.block_inputs = true
     player.player_light.set_invincible(true)
     _register_to_end_level()
@@ -51,14 +52,14 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-    if !active:
+    if !in_game || player.block_inputs:
         return
 
     _update_time_counter(delta)
 
 
 func _input(event: InputEvent) -> void:
-    if event.is_action_pressed("ui_pause_menu") && active:
+    if event.is_action_pressed("ui_pause_menu") && in_game:
         get_tree().set_input_as_handled()
         _spawn_pause_menu()
 
@@ -74,7 +75,7 @@ func _spawn_pause_menu() -> void:
     pause_menu = pause_menu_class.instance() as PauseMenu
     add_child(pause_menu)
     Utils.safe_connect(pause_menu, "resume", self, "_resume_game")
-    active = false
+    in_game = false
     controller_manager.release_control()
 
 
@@ -83,7 +84,7 @@ func _spawn_death_screen() -> void:
     musicTimeStamp = 0.0;
     death_screen = death_screen_class.instance() as DeathScreen
     add_child(death_screen)
-    active = false
+    in_game = false
     controller_manager.release_control()
 
 
@@ -111,7 +112,7 @@ func _spawn_player() -> void:
 func _resume_game() -> void:
     controller_manager.take_control()
     $LevelMusicPlayer.play(musicTimeStamp);
-    active = true
+    in_game = true
 
 
 func _register_to_end_level() -> void:
@@ -149,6 +150,5 @@ func _retry_current_level() -> void:
 
 func _start_level() -> void:
     hud.set_go()
-    active = true
     player.block_inputs = false
     player.player_light.set_invincible(false)

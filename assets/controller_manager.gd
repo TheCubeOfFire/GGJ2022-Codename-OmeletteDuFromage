@@ -28,6 +28,9 @@ func _input(event: InputEvent) -> void:
                 Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
         elif event is InputEventJoypadButton:
             using_gamepad = true
+
+        if event.is_action_pressed("retry"):
+            Utils.safe_reload_current_scene(get_tree())
     else:
         if not using_gamepad and event is InputEventJoypadButton:
             using_gamepad = true
