@@ -17,6 +17,12 @@ func release_control() -> void:
     game_has_control = false
 
 func _ready() -> void:
+    var pause_input_key := InputEventKey.new()
+    if OS.has_feature("web"):
+        pause_input_key.scancode = KEY_P
+    else:
+        pause_input_key.scancode = KEY_ESCAPE
+    InputMap.action_add_event("ui_pause_menu", pause_input_key)
     pause_mode = PAUSE_MODE_PROCESS
 
 func _input(event: InputEvent) -> void:

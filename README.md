@@ -21,8 +21,10 @@ The levels are designed to be dark, with only few lit elements. Choose your colo
 - Keyboard/mouse
   - Mouse movement to rotate the camera
   - Left click to dash
-  - Tab to pause
+  - R to restart level
+  - Escape to pause (P in browser)
 - Pad
   - Left stick to rotate the camera
   - A/Cross to dash
+  - Y/Triangle to restart level
   - Start/Menu/Options to pause
