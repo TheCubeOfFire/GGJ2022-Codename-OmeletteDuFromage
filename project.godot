@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://assets/ui/death_screen.gd"
 }, {
+"base": "Area",
+"class": "DeathZone",
+"language": "GDScript",
+"path": "res://assets/objects/death_zones/death_zone.gd"
+}, {
 "base": "Spatial",
 "class": "EatableLight",
 "language": "GDScript",
@@ -93,6 +98,7 @@ _global_script_class_icons={
 "AutoGiveFocus": "",
 "CameraTarget": "",
 "DeathScreen": "",
+"DeathZone": "",
 "EatableLight": "",
 "EndLevelTrigger": "",
 "EntryPoint": "",

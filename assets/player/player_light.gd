@@ -26,16 +26,13 @@ func _ready() -> void:
     origin_scale = coreNode.get_scale();
 
 func _process(delta: float) -> void:
-    if current_life <= 0.0:
+    if is_dead():
         return
 
     _update_current_life(delta)
-    _update_light_intensity()
-    _update_speed_core()
-    _update_core_scale()
+    _update_visuals()
 
-
-    if current_life <= 0.0:
+    if is_dead():
         emit_signal("death")
 
 
@@ -44,6 +41,13 @@ func modify_life(modification: float) -> void:
         current_life += modification
         current_life = clamp(current_life, 0.0, max_life)
 
+func kill() -> void:
+    current_life = 0.0
+    _update_visuals()
+    emit_signal("death")
+
+func is_dead() -> bool:
+    return current_life <= 0.0
 
 func _update_current_life(delta: float) -> void:
     modify_life(-life_loss_per_second * delta)
@@ -63,6 +67,11 @@ func _update_core_scale() -> void:
     coreNode.scale.x = max(coreNode.scale.x, 0.1);
     coreNode.scale.y = max(coreNode.scale.y, 0.1);
     coreNode.scale.z = max(coreNode.scale.z, 0.1);
+
+func _update_visuals() -> void:
+    _update_light_intensity()
+    _update_speed_core()
+    _update_core_scale()
 
 func set_invincible(_invincible: bool) -> void:
     invincible = _invincible
