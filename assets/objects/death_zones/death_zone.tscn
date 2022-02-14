@@ -1,13 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/objects/death_zones/death_zone.gd" type="Script" id=1]
+[ext_resource path="res://assets/objects/death_zones/death_zone.gdshader" type="Shader" id=2]
 
 [sub_resource type="BoxShape" id=1]
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 2 )
+shader_param/u_noise_size = 2.0
+shader_param/u_time_scale = 1.0
+shader_param/u_background_color = Vector3( 0, 0, 0 )
+shader_param/u_foreground_color = Vector3( 1, 0, 0 )
+shader_param/u_bg_threshold = 0.4
 
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0, 0, 0, 1 )
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 3 )
 
 [node name="DeathZone" type="Area"]
 script = ExtResource( 1 )
@@ -17,6 +24,6 @@ shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
+material/0 = null
 
 [connection signal="body_entered" from="." to="." method="_on_DeathZone_body_entered"]
