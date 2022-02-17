@@ -1,8 +1,8 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/objects/meshes/terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/objects/meshes/gate_complex.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/textures/tim-barton-skybox-1-equirectangular-for-da.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/objects/death_zones/death_zone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/objects/meshes/terrain_sideCornerInner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/objects/meshes/astronautA.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/objects/meshes/terrain_ramp.tscn" type="PackedScene" id=6]
@@ -17,7 +17,9 @@
 [ext_resource path="res://assets/objects/meshes/rocket.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/level/level_3_rooms.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/music/menu_project.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/level/level_2_env.tres" type="Environment" id=18]
 [ext_resource path="res://assets/game_mode/game_mode_in_game.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/objects/meshes/silo.tscn" type="PackedScene" id=20]
 [ext_resource path="res://assets/objectives/end_level_trigger.tscn" type="PackedScene" id=21]
 
 [sub_resource type="Curve" id=7]
@@ -25,77 +27,47 @@ min_value = 2.5
 max_value = 10.0
 _data = [ Vector2( 0, 6.11364 ), 0.0, 3.88636, 0, 1, Vector2( 1, 10 ), 3.88636, 0.0, 1, 0 ]
 
-[sub_resource type="SpatialMaterial" id=3]
-params_cull_mode = 2
-
-[sub_resource type="QuadMesh" id=2]
-material = SubResource( 3 )
-size = Vector2( 0.02, 0.02 )
-
-[sub_resource type="PanoramaSky" id=6]
-panorama = ExtResource( 3 )
-
-[sub_resource type="Environment" id=5]
-background_mode = 2
-background_sky = SubResource( 6 )
-background_energy = 0.05
-ambient_light_color = Color( 0.32549, 0.32549, 0.32549, 1 )
-ambient_light_energy = 0.0
-ambient_light_sky_contribution = 0.0
-fog_color = Color( 0.0705882, 0.0784314, 0.0823529, 1 )
-fog_depth_begin = 0.0
-fog_depth_end = 50.0
-fog_depth_curve = 0.57435
-fog_transmit_enabled = true
-fog_height_enabled = true
-fog_height_min = -20.0
-fog_height_max = 10.0
-fog_height_curve = 1.18921
-tonemap_mode = 3
-ssao_enabled = true
-dof_blur_far_enabled = true
-dof_blur_far_distance = 43.39
-dof_blur_far_transition = 0.9
-dof_blur_far_amount = 0.05
-dof_blur_far_quality = 2
-dof_blur_near_enabled = true
-dof_blur_near_distance = 0.1
-dof_blur_near_transition = 0.92
-dof_blur_near_amount = 0.05
-dof_blur_near_quality = 2
-adjustment_enabled = true
-adjustment_brightness = 0.76
-adjustment_saturation = 0.81
+[sub_resource type="SpatialMaterial" id=1]
+resource_name = "rock"
+albedo_color = Color( 0.909804, 0.517647, 0.388235, 1 )
 
 [node name="Level2" type="Spatial"]
 
 [node name="Lights" type="Spatial" parent="."]
 
-[node name="EatableLightRockCrystal" parent="Lights" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2702, 0, -7.22343 )
-
-[node name="EatableLightRockCrystal2" parent="Lights" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6722, 0, -4.52963 )
+[node name="EatableLightRockCrystal4" parent="Lights" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18606, 0, 0.841456 )
+given_life = 10.0
 
 [node name="EatableLightRockCrystal3" parent="Lights" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6722, 0, -14.3276 )
 
-[node name="EatableLightRockCrystal5" parent="Lights" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6722, -10.5079, -9.28737 )
-
 [node name="EatableLightRockCrystal6" parent="Lights" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.0156, -10.5079, 4.53265 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3156, -10.5079, 4.53265 )
+given_life = 10.0
+
+[node name="EatableLightRockCrystal12" parent="Lights" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.159, -10.5079, -9.51015 )
+given_life = 20.0
 
 [node name="EatableLightRockCrystal7" parent="Lights" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 76.0435, -10.5079, 4.53265 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 109.844, -10.5079, 4.53265 )
 light_intensity_curve = SubResource( 7 )
 given_life = 60.0
 
 [node name="EatableLightRockCrystal8" parent="Lights" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 101.633, -10.5079, -21.8415 )
 
+[node name="EatableLightRockCrystal10" parent="Lights" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.133, -10.5079, 3.2585 )
+given_life = 15.0
+
 [node name="EatableLightRockCrystal9" parent="Lights" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.1808, -10.5086, -8.35594 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.1808, -10.3532, -7.05594 )
+
+[node name="EatableLightRockCrystal11" parent="Lights" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 90.1439, -10.3532, -10.6292 )
+given_life = 20.0
 
 [node name="gate_complex2" parent="Lights" instance=ExtResource( 2 )]
 transform = Transform( 0.511938, 0, 0.859023, 0, 1, 0, -0.859023, 0, 0.511938, 126.469, -28.0268, -0.929999 )
@@ -129,7 +101,11 @@ transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 14.5, 0, -13.5 )
 skeleton = NodePath("../../..")
 
 [node name="terrain143" parent="terrain_lv1/ground" instance=ExtResource( 1 )]
-transform = Transform( 10.993, 0, 0, 0, 1.0993, 0, 0, 0, 10.993, 24.5, 0, 0.5 )
+transform = Transform( 10.993, 0, 0, 0, 1.0993, 0, 0, 0, 19.7874, 24.8, 0, 4.694 )
+skeleton = NodePath("../../..")
+
+[node name="terrain148" parent="terrain_lv1/ground" instance=ExtResource( 1 )]
+transform = Transform( 24.7845, 0, 0, 0, 1.0993, 0, 0, 0, 13.4023, 122.316, -28.0025, -0.534639 )
 skeleton = NodePath("../../..")
 
 [node name="terrain144" parent="terrain_lv1/ground" instance=ExtResource( 1 )]
@@ -137,16 +113,16 @@ transform = Transform( 10.5, 0, 0, 0, 1, 0, 0, 0, 10, 24.7, 0, -18.5 )
 skeleton = NodePath("../../..")
 
 [node name="terrain_sideCornerInner" parent="terrain_lv1/ground" instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.5, -0.5, -4.5 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.5, -0.5, -5.2 )
 
 [node name="terrain_sideCliff3" parent="terrain_lv1/ground" instance=ExtResource( 11 )]
-transform = Transform( -3.0598e-07, 0, 1, 0, 1, 0, -7, 0, -4.37114e-08, 20, -0.5, -12.5 )
+transform = Transform( -2.75382e-07, 0, 1, 0, 1, 0, -6.3, 0, -4.37114e-08, 20, -0.5, -12.5 )
 
 [node name="terrain_sideCornerInner2" parent="terrain_lv1/ground" instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.5, -0.5, -13.5 )
 
 [node name="terrain_sideCliff4" parent="terrain_lv1/ground" instance=ExtResource( 11 )]
-transform = Transform( -10, 0, -1.50996e-07, 0, 1, 0, 1.50996e-06, 0, -1, 20.1, -0.5, -5.5 )
+transform = Transform( -10, 0, -1.50996e-07, 0, 1, 0, 1.50996e-06, 0, -1, 20.4, -0.5, -5.7 )
 
 [node name="terrain_sideCliff5" parent="terrain_lv1/ground" instance=ExtResource( 11 )]
 transform = Transform( 9.45, 0, 2.05444e-07, 0, 1, 0, -1.4381e-06, 0, 1, 29.9, -0.5, -13 )
@@ -174,6 +150,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3 )
 [node name="craterLarge" parent="terrain_lv1/props" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1 )
 
+[node name="DeathZone" parent="terrain_lv1" instance=ExtResource( 3 )]
+transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 10, 7.22844, -9.8334, 5.4706 )
+
 [node name="terrain_lv0" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 
@@ -186,9 +165,6 @@ skeleton = NodePath("../../../terrain_lv1")
 [node name="terrain_sideCorner" parent="terrain_lv0/ground" instance=ExtResource( 14 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, 1.5 )
 skeleton = NodePath("../../..")
-
-[node name="terrain_sideCornerInner" parent="terrain_lv0/ground" instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, 0.5 )
 
 [node name="terrain_sideCliff2" parent="terrain_lv0/ground" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2 )
@@ -216,6 +192,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 2 )
 [node name="terrain_sideCliff7" parent="terrain_lv0/ground" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 2 )
 
+[node name="terrain_sideCliff9" parent="terrain_lv0/ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 2 )
+
 [node name="terrain_sideCliff8" parent="terrain_lv0/ground" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2 )
 
@@ -235,67 +214,168 @@ transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -7, 0, 7 )
 
 [node name="bounds" type="Spatial" parent="terrain_lv0"]
 
-[node name="terrain_sideCliff" parent="terrain_lv0/bounds" instance=ExtResource( 11 )]
-transform = Transform( -4.37114e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 10, 4.37114e-08, 1.91069e-15, -10.5, 0.5, 12.5 )
+[node name="cliff" type="Spatial" parent="terrain_lv0/bounds"]
 
-[node name="terrain_sideCliff2" parent="terrain_lv0/bounds" instance=ExtResource( 11 )]
+[node name="terrain43" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 1 )]
+transform = Transform( -8.74228e-08, 1, 0, -2, -4.37114e-08, 0, 0, 0, 4, -10.5, 3, 0.5 )
+skeleton = NodePath("../../../..")
+
+[node name="terrain_sideCliff12" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -1.74846e-07, 1, 4.37114e-08, -6.99382e-07, -4.37114e-08, 1, 4, 4.37114e-08, 1.74846e-07, -11, 4.5, 2.5 )
+
+[node name="terrain44" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 1 )]
+transform = Transform( -8.74228e-08, 1, 0, -2, -4.37114e-08, 0, 0, 0, 4, -10.5, 3, -3.5 )
+skeleton = NodePath("../../../..")
+
+[node name="terrain_sideCliff13" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -1.74846e-07, 1, 4.37114e-08, -6.99382e-07, -4.37114e-08, 1, 4, 4.37114e-08, 1.74846e-07, -11, 4.5, -1.5 )
+
+[node name="terrain45" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 1 )]
+transform = Transform( -8.74228e-08, 1, 0, -2, -4.37114e-08, 0, 0, 0, 4, -10.5, 3, -7.5 )
+skeleton = NodePath("../../../..")
+
+[node name="terrain_sideCliff14" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -1.74846e-07, 1, 4.37114e-08, -6.99382e-07, -4.37114e-08, 1, 4, 4.37114e-08, 1.74846e-07, -11, 4.5, -5.5 )
+
+[node name="terrain46" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 1 )]
+transform = Transform( -8.74228e-08, 1, 0, -2, -4.37114e-08, 0, 0, 0, 4, -10.5, 3, -11.5 )
+skeleton = NodePath("../../../..")
+
+[node name="terrain_sideCliff15" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -1.74846e-07, 1, 4.37114e-08, -6.99382e-07, -4.37114e-08, 1, 4, 4.37114e-08, 1.74846e-07, -11, 4.5, -9.5 )
+
+[node name="terrain47" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 1 )]
+transform = Transform( -8.74228e-08, 1, 0, -2, -4.37114e-08, 0, 0, 0, 4, -10.5, 3, -15.5 )
+skeleton = NodePath("../../../..")
+
+[node name="terrain_sideCliff16" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -1.74846e-07, 1, 4.37114e-08, -6.99382e-07, -4.37114e-08, 1, 4, 4.37114e-08, 1.74846e-07, -11, 4.5, -13.5 )
+
+[node name="terrain_sideCliff8" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 10, 4.37114e-08, 1.91069e-15, -11.5, 6.1, 2.5 )
+
+[node name="terrain39" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 10, -11, 5.5, -2.5 )
+skeleton = NodePath("../../../..")
+
+[node name="terrain_sideCliff9" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( 0.00379139, 1, -0.000106316, -0.00511773, 0.000106483, 1, 10, -0.000379092, 0.000511808, -12.1038, 7.60512, 2.5 )
+
+[node name="terrain40" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 10, -11.6, 7, -2.5 )
+skeleton = NodePath("../../../..")
+
+[node name="terrain_sideCliff10" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 10, 4.37114e-08, 1.91069e-15, -11.5, 6.1, -7.5 )
+
+[node name="terrain41" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 10, -11, 5.5, -12.5 )
+skeleton = NodePath("../../../..")
+
+[node name="terrain_sideCliff11" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( 0.00379139, 1, -0.000106316, -0.00511773, 0.000106483, 1, 10, -0.000379092, 0.000511808, -12.1076, 7.61024, -7.5 )
+
+[node name="terrain42" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 10, -11.6, 7, -12.5 )
+skeleton = NodePath("../../../..")
+
+[node name="terrain" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 1 )]
+transform = Transform( -1.5146e-07, 1, 0, -3.465, -4.37114e-08, 0, 0, 0, 19.8198, -10, -0.7, -7.4 )
+skeleton = NodePath("../../..")
+
+[node name="terrain_sideCliff6" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -1.09278e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 2.5, 4.37114e-08, 1.91069e-15, -10.5, 1.5, 2.5 )
+
+[node name="terrain_sideCliff17" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -1.09278e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 2.5, 4.37114e-08, 1.91069e-15, -10.5, 1.5, -4.76837e-07 )
+
+[node name="terrain_sideCliff18" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -1.09278e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 2.5, 4.37114e-08, 1.91069e-15, -10.5, 1.5, -2.5 )
+
+[node name="terrain_sideCliff19" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -1.09278e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 2.5, 4.37114e-08, 1.91069e-15, -10.5, 1.5, -5 )
+
+[node name="terrain_sideCliff20" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -1.09278e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 2.5, 4.37114e-08, 1.91069e-15, -10.5, 1.5, -7.5 )
+
+[node name="terrain_sideCliff21" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -1.09278e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 2.5, 4.37114e-08, 1.91069e-15, -10.5, 1.5, -10 )
+
+[node name="terrain_sideCliff22" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -1.09278e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 2.5, 4.37114e-08, 1.91069e-15, -10.5, 1.5, -12.5 )
+
+[node name="terrain_sideCliff23" parent="terrain_lv0/bounds/cliff" instance=ExtResource( 11 )]
+transform = Transform( -1.09278e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 2.5, 4.37114e-08, 1.91069e-15, -10.5, 1.5, -15 )
+
+[node name="cliff2" type="Spatial" parent="terrain_lv0/bounds"]
+
+[node name="terrain_sideCliff" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 9, 3.93403e-08, 1.71962e-15, -10.5, 0.5, 12.5 )
+
+[node name="terrain_sideCliff2" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 11 )]
 transform = Transform( -2.18557e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 5, 4.37114e-08, 1.91069e-15, -11, 2.5, 12.5 )
 
-[node name="terrain34" parent="terrain_lv0/bounds" instance=ExtResource( 1 )]
+[node name="terrain34" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 10, -10.5, 1.5, 7.5 )
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="terrain_sideCornerInner" parent="terrain_lv0/bounds" instance=ExtResource( 4 )]
+[node name="terrain_sideCornerInner" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 4 )]
 transform = Transform( 1.31134e-07, 1, -3.82137e-15, -1, 1.31134e-07, 8.74228e-08, 8.74228e-08, -7.64274e-15, 1, -11, 2, 6.5 )
 
-[node name="terrain35" parent="terrain_lv0/bounds" instance=ExtResource( 1 )]
+[node name="terrain35" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 1 )]
 transform = Transform( -8.74228e-08, 1, 0, -2, -4.37114e-08, 0, 0, 0, 4, -10.5, 3, 4.5 )
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="terrain_sideCliff3" parent="terrain_lv0/bounds" instance=ExtResource( 11 )]
+[node name="terrain_sideCliff3" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 11 )]
 transform = Transform( -1.74846e-07, 1, 4.37114e-08, -6.99382e-07, -4.37114e-08, 1, 4, 4.37114e-08, 1.74846e-07, -11, 4.5, 6.5 )
 
-[node name="terrain_sideCliff7" parent="terrain_lv0/bounds" instance=ExtResource( 11 )]
+[node name="terrain_sideCliff7" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 11 )]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -11, 3, 7 )
 
-[node name="terrain_sideCorner" parent="terrain_lv0/bounds" instance=ExtResource( 14 )]
+[node name="terrain_sideCorner" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 14 )]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -11, 4, 6.5 )
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="terrain_sideCliff4" parent="terrain_lv0/bounds" instance=ExtResource( 11 )]
+[node name="terrain_sideCliff4" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 11 )]
 transform = Transform( -4.37114e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 10, 4.37114e-08, 1.91069e-15, -11.5, 6.1, 12.5 )
 
-[node name="terrain36" parent="terrain_lv0/bounds" instance=ExtResource( 1 )]
+[node name="terrain36" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 1 )]
 transform = Transform( -8.74228e-08, 1, 0, -2, -4.37114e-08, 0, 0, 0, 5, -11, 4, 10 )
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="terrain37" parent="terrain_lv0/bounds" instance=ExtResource( 1 )]
+[node name="terrain37" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 10, -11, 5.5, 7.5 )
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="terrain_sideCliff6" parent="terrain_lv0/bounds" instance=ExtResource( 11 )]
-transform = Transform( 4.37114e-07, -4.80825e-07, 1, 10, 4.37114e-08, -4.37114e-08, -4.37114e-06, 10, 4.80825e-07, -4.49999, 20.1, -108.5 )
+[node name="terrain_sideCliff5" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 11 )]
+transform = Transform( 0.00379139, 1, -0.000106316, -0.00511773, 0.000106483, 1, 10, -0.000379092, 0.000511808, -12.1, 7.6, 12.5 )
 
-[node name="terrain_sideCliff5" parent="terrain_lv0/bounds" instance=ExtResource( 11 )]
-transform = Transform( -4.37114e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 10, 4.37114e-08, 1.91069e-15, -12.1, 7.6, 12.5 )
-
-[node name="terrain38" parent="terrain_lv0/bounds" instance=ExtResource( 1 )]
+[node name="terrain38" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 10, -11.6, 7, 7.5 )
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
+
+[node name="terrain_sideCornerInner2" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 4 )]
+transform = Transform( 2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 0, 0, 1, -10.5, 0, 2.5 )
+
+[node name="terrain_sideCorner2" parent="terrain_lv0/bounds/cliff2" instance=ExtResource( 14 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10.5, 1, 2.5 )
+
+[node name="terrain" parent="terrain_lv0/bounds" instance=ExtResource( 1 )]
+transform = Transform( 142.104, 0, 0, 0, -4.37114e-08, 22.25, 0, -1, -9.72578e-07, 45.3, -3.4, 12.5 )
 
 [node name="terrain_lv2" type="Spatial" parent="."]
 
 [node name="ground" type="Spatial" parent="terrain_lv2"]
 
 [node name="terrain_sideCliff3" parent="terrain_lv2/ground" instance=ExtResource( 11 )]
-transform = Transform( -4.37114e-07, 0, 1, 0, 1, 0, -11, 0, -4.80825e-08, 30.5, -0.5, -5 )
+transform = Transform( -4.37114e-07, 0, 1, 0, 1, 0, -11, 0, -4.80825e-08, 30.8, -0.5, -5.2 )
 
 [node name="terrain147" parent="terrain_lv2/ground" instance=ExtResource( 1 )]
 transform = Transform( -5.24537e-07, 1, -4.37114e-07, 0, -4.37114e-08, -10, -12, -4.37114e-08, 1.91069e-14, 31, -5.5, 1.96695e-06 )
 skeleton = NodePath("../../..")
 
 [node name="terrain_sideCorner" parent="terrain_lv2/ground" instance=ExtResource( 14 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 30, -0.5, -5 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 30.3, -0.5, -5.2 )
 skeleton = NodePath("../../..")
 
 [node name="terrain148" parent="terrain_lv2/ground" instance=ExtResource( 1 )]
@@ -321,25 +401,9 @@ transform = Transform( -4.37114e-07, 0, 1, 0, 1, 0, -11, 0, -4.80825e-08, 30.4, 
 transform = Transform( 11, 0, 0, 0, 1, 0, 0, 0, 7, 25.4, -10.5, -9 )
 skeleton = NodePath("../../..")
 
-[node name="terrain149" parent="terrain_lv3/ground" instance=ExtResource( 1 )]
-transform = Transform( 24.2, 0, 0, 0, 1, 0, 0, 0, 31.5, 43, -10.5, -9 )
-skeleton = NodePath("../../..")
-
 [node name="terrain147" parent="terrain_lv3/ground" instance=ExtResource( 1 )]
 transform = Transform( -78.66, -5.73056e-07, 2.50491e-13, 0, -4.37114e-08, -10, 1.04907e-06, -1, 4.37114e-07, 70, -5.5, 6 )
 skeleton = NodePath("../../..")
-
-[node name="terrain150" parent="terrain_lv3/ground" instance=ExtResource( 1 )]
-transform = Transform( 24, 0, 0, 0, 1, 0, 0, 0, 17, 67, -10.5, -16.3 )
-skeleton = NodePath("../../../..")
-
-[node name="terrain151" parent="terrain_lv3/ground" instance=ExtResource( 1 )]
-transform = Transform( 38.4677, 0, 0, 0, 1.00155, 0, 0, 0, 14.3222, 91.4, -10.5, -0.7 )
-skeleton = NodePath("../../..")
-
-[node name="terrain152" parent="terrain_lv3/ground" instance=ExtResource( 1 )]
-transform = Transform( 35.28, 0, 0, 0, 1, 0, 0, 0, 17.3, 116.4, -10.5, -16.3 )
-skeleton = NodePath("../../../..")
 
 [node name="terrain153" parent="terrain_lv3/ground" instance=ExtResource( 1 )]
 transform = Transform( 104, 0, 0, 0, -4.37114e-08, -10, 0, 1, -4.37114e-07, 82.1, -5.5, -24.7 )
@@ -349,37 +413,65 @@ skeleton = NodePath("../../..")
 transform = Transform( -7.86805e-07, -1, 4.37114e-07, 0, -4.37114e-08, -10, 18, -4.37114e-08, 1.91069e-14, 134, -5.5, -15.9 )
 skeleton = NodePath("../../../..")
 
-[node name="CSGTorus" type="CSGTorus" parent="terrain_lv3/ground"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 87.8019, -15.7494, -16.7957 )
-inner_radius = 8.0
-outer_radius = 20.0
+[node name="CSGBox" type="CSGBox" parent="terrain_lv3/ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 83.4, -11, -9.5 )
+use_collision = true
+width = 105.0
+height = 1.0
+depth = 31.8
+material = SubResource( 1 )
 
-[node name="CSGTorus2" type="CSGTorus" parent="terrain_lv3/ground"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.9965, -15.7494, 0.00763416 )
-inner_radius = 8.0
-outer_radius = 20.0
+[node name="CSGCylinder" type="CSGCylinder" parent="terrain_lv3/ground/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7, 0, 10.1 )
+operation = 2
+radius = 7.2
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="terrain_lv3/ground/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00001, 0, -6.3 )
+operation = 2
+radius = 7.5
+
+[node name="CSGBox" type="CSGBox" parent="terrain_lv3/ground/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, 9.1 )
+operation = 2
+width = 23.6
+depth = 14.4
 
 [node name="props" type="Spatial" parent="terrain_lv3"]
 
 [node name="lights" type="Spatial" parent="terrain_lv3"]
 
-[node name="rocket_baseA" parent="terrain_lv3" instance=ExtResource( 15 )]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 87.7556, -41.7538, -16.2681 )
+[node name="Silo" parent="terrain_lv3" instance=ExtResource( 20 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 61.479, -25.354, 0.634 )
 
-[node name="SpotLight" type="SpotLight" parent="terrain_lv3/rocket_baseA"]
-transform = Transform( 0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0, 10.4787, 0 )
-light_energy = 3.0
-spot_range = 16.8343
-spot_angle = 38.6811
+[node name="rocket_baseA2" parent="terrain_lv3/Silo" instance=ExtResource( 15 )]
+transform = Transform( 1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, 0, -4.633, 0 )
+skeleton = NodePath("../..")
 
-[node name="rocket_baseA2" parent="terrain_lv3" instance=ExtResource( 15 )]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 61.4785, -41.7538, -0.466071 )
-
-[node name="SpotLight2" type="SpotLight" parent="terrain_lv3/rocket_baseA2"]
+[node name="SpotLight2" type="SpotLight" parent="terrain_lv3/Silo/rocket_baseA2"]
 transform = Transform( 0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, -0.0416622, 10.4787, -0.00935245 )
 light_energy = 3.0
 spot_range = 17.9314
 spot_angle = 31.1955
+
+[node name="DeathZone" parent="terrain_lv3/Silo" instance=ExtResource( 3 )]
+transform = Transform( 2.33333, 0, 0, 0, 0.333333, 0, 0, 0, 2.33333, 0, -5.315, 0 )
+
+[node name="Silo2" parent="terrain_lv3" instance=ExtResource( 20 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 85.279, -25.354, -15.966 )
+
+[node name="rocket_baseA2" parent="terrain_lv3/Silo2" instance=ExtResource( 15 )]
+transform = Transform( 1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, 0, -4.633, 0 )
+skeleton = NodePath("../..")
+
+[node name="SpotLight2" type="SpotLight" parent="terrain_lv3/Silo2/rocket_baseA2"]
+transform = Transform( 0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, -0.0416622, 10.4787, -0.00935245 )
+light_energy = 3.0
+spot_range = 17.9314
+spot_angle = 31.1955
+
+[node name="DeathZone2" parent="terrain_lv3/Silo2" instance=ExtResource( 3 )]
+transform = Transform( 2.33333, 0, 0, 0, 0.333333, 0, 0, 0, 2.33333, 0, -5.315, 0 )
 
 [node name="terrain_lv4" type="Spatial" parent="."]
 
@@ -402,16 +494,12 @@ skeleton = NodePath("../../../..")
 transform = Transform( -1.24298e-06, 1, -1.07307e-06, 0, -4.37114e-08, -24.5491, -28.4361, -4.37114e-08, 4.69056e-14, 111.559, -23.3413, -6.9 )
 skeleton = NodePath("../../..")
 
-[node name="terrain151" parent="terrain_lv4/ground" instance=ExtResource( 1 )]
-transform = Transform( 38.4677, 0, 0, 0, 1.00155, 0, 0, 0, 28.6443, 123.6, -28, -0.7 )
-skeleton = NodePath("../../..")
-
 [node name="terrain153" parent="terrain_lv4/ground" instance=ExtResource( 1 )]
 transform = Transform( 38.6614, 0, 0, 0, -4.37114e-08, -24.6555, 0, 1, -1.07773e-06, 127.942, -23.211, -7.178 )
 skeleton = NodePath("../../..")
 
 [node name="terrain155" parent="terrain_lv4/ground" instance=ExtResource( 1 )]
-transform = Transform( 38.6614, 0, 0, 0, -4.37114e-08, 39.8904, 0, -1, -1.74366e-06, 127.942, -10.5654, 7.09733 )
+transform = Transform( 38.6614, 0, 0, 0, -4.37114e-08, 39.8904, 0, -1, -1.74366e-06, 127.942, -10.5654, 5.99733 )
 skeleton = NodePath("../../..")
 
 [node name="props" type="Spatial" parent="terrain_lv4"]
@@ -422,28 +510,8 @@ skeleton = NodePath("../../..")
 transform = Transform( -7.86805e-07, -1, 4.37114e-07, 0, -4.37114e-08, -10, 18, -4.37114e-08, 1.91069e-14, 134, -5.5, -15.9 )
 skeleton = NodePath("../../..")
 
-[node name="particle_dust" type="CPUParticles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0245711, 0 )
-amount = 920
-lifetime = 32.66
-mesh = SubResource( 2 )
-emission_shape = 2
-emission_box_extents = Vector3( 5, 5, 5 )
-direction = Vector3( -1, 0, 0 )
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 0.1
-angular_velocity = 1.0
-angular_velocity_random = 0.57
-tangential_accel_random = 0.52
-angle_random = 0.28
-color = Color( 0.3125, 0.3125, 0.3125, 1 )
-hue_variation_random = 0.13
-__meta__ = {
-"apply_volumetrics": false
-}
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 5 )
+environment = ExtResource( 18 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
@@ -452,10 +520,11 @@ stream = ExtResource( 17 )
 player_start_path = NodePath("Start")
 end_level_path = NodePath("EndLevelTrigger")
 next_scene = ExtResource( 16 )
-override_player_initial_life = 70.0
+override_player_max_life = 50.0
+override_player_initial_life = 30.0
 
 [node name="Start" type="Spatial" parent="GameModeInGame"]
 transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, -6.85352, 0, 10.9151 )
 
 [node name="EndLevelTrigger" parent="GameModeInGame" instance=ExtResource( 21 )]
-transform = Transform( 1.11451, 0, 1.76401, 0, 1, 0, -1.76401, 0, 1.11451, 126.138, -27.9105, -1.14536 )
+transform = Transform( 0.227639, 0, 0.2801, 0, 1, 0, -0.360299, 0, 0.176968, 126.477, -27.9105, -0.932642 )
