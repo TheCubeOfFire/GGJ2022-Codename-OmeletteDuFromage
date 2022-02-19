@@ -28,7 +28,7 @@ shader_param/fRepetition = 1.0
 shader_param/vClipNoiseX = Vector2( 0.1, 0.9 )
 shader_param/columnVoronoi = 3.0
 shader_param/rowVoronoi = 19.0
-shader_param/albedo = Vector3( 1, 0, 0 )
+shader_param/albedo = Color( 1, 0, 0, 1 )
 shader_param/transparency = 0.6
 shader_param/metallic = 0.0
 shader_param/specular = 0.5
@@ -38,8 +38,8 @@ shader_param/rimTint = 0.0
 shader_param/clearcoat = 0.0
 shader_param/clearcoatGloss = 0.0
 shader_param/sssStrength = 1.0
-shader_param/sssTransmission = Vector3( 0.4, 0.4, 0.4 )
-shader_param/emissionColor = Vector3( 0, 0, 0 )
+shader_param/sssTransmission = Color( 0.4, 0.4, 0.4, 1 )
+shader_param/emissionColor = Color( 0, 0, 0, 1 )
 shader_param/noise = SubResource( 5 )
 
 [sub_resource type="SphereMesh" id=10]

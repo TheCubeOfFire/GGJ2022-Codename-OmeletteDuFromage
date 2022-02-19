@@ -89,4 +89,4 @@ func update_color() -> void:
     var material_blob := blob_mesh_instance.get_surface_material(0) as ShaderMaterial
     material_blob.set_shader_param("albedo", persistent_data.player_color)
     var particles_material := dash_particles.mesh.surface_get_material(0) as SpatialMaterial
-    particles_material.emission = Color(persistent_data.player_color.x, persistent_data.player_color.y, persistent_data.player_color.z)
+    particles_material.emission = persistent_data.player_color

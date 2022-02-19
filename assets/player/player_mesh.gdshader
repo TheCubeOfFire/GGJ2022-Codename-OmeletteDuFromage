@@ -51,7 +51,7 @@ void vertex()
 	}
 }
 
-uniform vec3 albedo;
+uniform vec4 albedo : hint_color;
 uniform float transparency;
 uniform float metallic;
 uniform float specular;
@@ -61,12 +61,12 @@ uniform float rimTint;
 uniform float clearcoat;
 uniform float clearcoatGloss;
 uniform float sssStrength;
-uniform vec3 sssTransmission;
-uniform vec3 emissionColor;
+uniform vec4 sssTransmission : hint_color;
+uniform vec4 emissionColor : hint_color;
 
 void fragment()
 {
-	ALBEDO = albedo;
+	ALBEDO = albedo.rgb;
 	ALPHA = transparency;
 	METALLIC = metallic;
 	SPECULAR = specular;
@@ -76,6 +76,6 @@ void fragment()
 	CLEARCOAT = clearcoat;
 	CLEARCOAT_GLOSS = clearcoatGloss;
 	SSS_STRENGTH = sssStrength;
-	TRANSMISSION = sssTransmission;
-	EMISSION = emissionColor;
+	TRANSMISSION = sssTransmission.rgb;
+	EMISSION = emissionColor.rgb;
 }

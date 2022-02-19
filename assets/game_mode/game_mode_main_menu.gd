@@ -39,9 +39,8 @@ func _process(delta):
     saturation_param = fmod(saturation_param + delta * SATURATION_VARIATION_FACTOR, 1.0)
     var saturation := (sin(saturation_param * 2 * PI) + 1.0) / 2.0
     assert(0.0 <= saturation && saturation <= 1.0)
-    var new_color := Color.from_hsv(hue, saturation, 1.0)
 
-    persistent_data.player_color = Vector3(new_color.r, new_color.g, new_color.b)
+    persistent_data.player_color = Color.from_hsv(hue, saturation, 1.0)
     player.update_color()
 
 
